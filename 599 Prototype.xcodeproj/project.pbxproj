@@ -15,7 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		7856B1BF1FBCC7DE0014C0F9 /* sampleJournal2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sampleJournal2.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7856B1BF1FBCC7DE0014C0F9 /* 599 Prototype.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "599 Prototype.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7856B1C21FBCC7DE0014C0F9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7856B1C41FBCC7DE0014C0F9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7856B1C71FBCC7DE0014C0F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -46,7 +46,7 @@
 		7856B1C01FBCC7DE0014C0F9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7856B1BF1FBCC7DE0014C0F9 /* sampleJournal2.app */,
+				7856B1BF1FBCC7DE0014C0F9 /* 599 Prototype.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -67,9 +67,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		7856B1BE1FBCC7DE0014C0F9 /* sampleJournal2 */ = {
+		7856B1BE1FBCC7DE0014C0F9 /* 599 Prototype */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7856B1D11FBCC7DE0014C0F9 /* Build configuration list for PBXNativeTarget "sampleJournal2" */;
+			buildConfigurationList = 7856B1D11FBCC7DE0014C0F9 /* Build configuration list for PBXNativeTarget "599 Prototype" */;
 			buildPhases = (
 				7856B1BB1FBCC7DE0014C0F9 /* Sources */,
 				7856B1BC1FBCC7DE0014C0F9 /* Frameworks */,
@@ -79,9 +79,9 @@
 			);
 			dependencies = (
 			);
-			name = sampleJournal2;
+			name = "599 Prototype";
 			productName = sampleJournal2;
-			productReference = 7856B1BF1FBCC7DE0014C0F9 /* sampleJournal2.app */;
+			productReference = 7856B1BF1FBCC7DE0014C0F9 /* 599 Prototype.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -100,7 +100,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 7856B1BA1FBCC7DE0014C0F9 /* Build configuration list for PBXProject "sampleJournal2" */;
+			buildConfigurationList = 7856B1BA1FBCC7DE0014C0F9 /* Build configuration list for PBXProject "599 Prototype" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -113,7 +113,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				7856B1BE1FBCC7DE0014C0F9 /* sampleJournal2 */,
+				7856B1BE1FBCC7DE0014C0F9 /* 599 Prototype */,
 			);
 		};
 /* End PBXProject section */
@@ -278,7 +278,7 @@
 				DEVELOPMENT_TEAM = X4KE9EQFN3;
 				INFOPLIST_FILE = sampleJournal2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = tartgold.sampleJournal2;
+				PRODUCT_BUNDLE_IDENTIFIER = cpsc599.599prototype;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -293,7 +293,7 @@
 				DEVELOPMENT_TEAM = X4KE9EQFN3;
 				INFOPLIST_FILE = sampleJournal2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = tartgold.sampleJournal2;
+				PRODUCT_BUNDLE_IDENTIFIER = cpsc599.599prototype;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -303,7 +303,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		7856B1BA1FBCC7DE0014C0F9 /* Build configuration list for PBXProject "sampleJournal2" */ = {
+		7856B1BA1FBCC7DE0014C0F9 /* Build configuration list for PBXProject "599 Prototype" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7856B1CF1FBCC7DE0014C0F9 /* Debug */,
@@ -312,7 +312,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7856B1D11FBCC7DE0014C0F9 /* Build configuration list for PBXNativeTarget "sampleJournal2" */ = {
+		7856B1D11FBCC7DE0014C0F9 /* Build configuration list for PBXNativeTarget "599 Prototype" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7856B1D21FBCC7DE0014C0F9 /* Debug */,
