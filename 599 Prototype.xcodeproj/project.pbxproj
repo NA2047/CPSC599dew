@@ -12,6 +12,24 @@
 		7856B1C81FBCC7DE0014C0F9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7856B1C61FBCC7DE0014C0F9 /* Main.storyboard */; };
 		7856B1CA1FBCC7DE0014C0F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7856B1C91FBCC7DE0014C0F9 /* Assets.xcassets */; };
 		7856B1CD1FBCC7DE0014C0F9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7856B1CB1FBCC7DE0014C0F9 /* LaunchScreen.storyboard */; };
+		8BD7179D1FBFBB1D002AB936 /* DocumentConversionV1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BD7178E1FBFBB1C002AB936 /* DocumentConversionV1.framework */; };
+		8BD7179E1FBFBB1D002AB936 /* SpeechToTextV1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BD7178F1FBFBB1C002AB936 /* SpeechToTextV1.framework */; };
+		8BD7179F1FBFBB1D002AB936 /* TradeoffAnalyticsV1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BD717901FBFBB1C002AB936 /* TradeoffAnalyticsV1.framework */; };
+		8BD717A01FBFBB1D002AB936 /* NaturalLanguageUnderstandingV1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BD717911FBFBB1C002AB936 /* NaturalLanguageUnderstandingV1.framework */; };
+		8BD717A11FBFBB1D002AB936 /* ToneAnalyzerV3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BD717921FBFBB1C002AB936 /* ToneAnalyzerV3.framework */; };
+		8BD717A21FBFBB1D002AB936 /* DialogV1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BD717931FBFBB1C002AB936 /* DialogV1.framework */; };
+		8BD717A31FBFBB1D002AB936 /* AlchemyLanguageV1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BD717941FBFBB1C002AB936 /* AlchemyLanguageV1.framework */; };
+		8BD717A41FBFBB1D002AB936 /* RelationshipExtractionV1Beta.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BD717951FBFBB1D002AB936 /* RelationshipExtractionV1Beta.framework */; };
+		8BD717A51FBFBB1D002AB936 /* LanguageTranslatorV2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BD717961FBFBB1D002AB936 /* LanguageTranslatorV2.framework */; };
+		8BD717A61FBFBB1D002AB936 /* DiscoveryV1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BD717971FBFBB1D002AB936 /* DiscoveryV1.framework */; };
+		8BD717A71FBFBB1D002AB936 /* PersonalityInsightsV3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BD717981FBFBB1D002AB936 /* PersonalityInsightsV3.framework */; };
+		8BD717A81FBFBB1D002AB936 /* RetrieveAndRankV1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BD717991FBFBB1D002AB936 /* RetrieveAndRankV1.framework */; };
+		8BD717A91FBFBB1D002AB936 /* TextToSpeechV1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BD7179A1FBFBB1D002AB936 /* TextToSpeechV1.framework */; };
+		8BD717AA1FBFBB1D002AB936 /* ConversationV1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BD7179B1FBFBB1D002AB936 /* ConversationV1.framework */; };
+		8BD717AB1FBFBB1D002AB936 /* NaturalLanguageClassifierV1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BD7179C1FBFBB1D002AB936 /* NaturalLanguageClassifierV1.framework */; };
+		8BD717B41FBFC167002AB936 /* Models in Resources */ = {isa = PBXBuildFile; fileRef = 8BD717B11FBFC167002AB936 /* Models */; };
+		8BD717B51FBFC167002AB936 /* Extentions in Resources */ = {isa = PBXBuildFile; fileRef = 8BD717B21FBFC167002AB936 /* Extentions */; };
+		8BD717B61FBFC167002AB936 /* IBM in Resources */ = {isa = PBXBuildFile; fileRef = 8BD717B31FBFC167002AB936 /* IBM */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +40,24 @@
 		7856B1C91FBCC7DE0014C0F9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7856B1CC1FBCC7DE0014C0F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7856B1CE1FBCC7DE0014C0F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8BD7178E1FBFBB1C002AB936 /* DocumentConversionV1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DocumentConversionV1.framework; path = Carthage/Build/iOS/DocumentConversionV1.framework; sourceTree = "<group>"; };
+		8BD7178F1FBFBB1C002AB936 /* SpeechToTextV1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpeechToTextV1.framework; path = Carthage/Build/iOS/SpeechToTextV1.framework; sourceTree = "<group>"; };
+		8BD717901FBFBB1C002AB936 /* TradeoffAnalyticsV1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TradeoffAnalyticsV1.framework; path = Carthage/Build/iOS/TradeoffAnalyticsV1.framework; sourceTree = "<group>"; };
+		8BD717911FBFBB1C002AB936 /* NaturalLanguageUnderstandingV1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NaturalLanguageUnderstandingV1.framework; path = Carthage/Build/iOS/NaturalLanguageUnderstandingV1.framework; sourceTree = "<group>"; };
+		8BD717921FBFBB1C002AB936 /* ToneAnalyzerV3.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ToneAnalyzerV3.framework; path = Carthage/Build/iOS/ToneAnalyzerV3.framework; sourceTree = "<group>"; };
+		8BD717931FBFBB1C002AB936 /* DialogV1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DialogV1.framework; path = Carthage/Build/iOS/DialogV1.framework; sourceTree = "<group>"; };
+		8BD717941FBFBB1C002AB936 /* AlchemyLanguageV1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlchemyLanguageV1.framework; path = Carthage/Build/iOS/AlchemyLanguageV1.framework; sourceTree = "<group>"; };
+		8BD717951FBFBB1D002AB936 /* RelationshipExtractionV1Beta.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RelationshipExtractionV1Beta.framework; path = Carthage/Build/iOS/RelationshipExtractionV1Beta.framework; sourceTree = "<group>"; };
+		8BD717961FBFBB1D002AB936 /* LanguageTranslatorV2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LanguageTranslatorV2.framework; path = Carthage/Build/iOS/LanguageTranslatorV2.framework; sourceTree = "<group>"; };
+		8BD717971FBFBB1D002AB936 /* DiscoveryV1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DiscoveryV1.framework; path = Carthage/Build/iOS/DiscoveryV1.framework; sourceTree = "<group>"; };
+		8BD717981FBFBB1D002AB936 /* PersonalityInsightsV3.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PersonalityInsightsV3.framework; path = Carthage/Build/iOS/PersonalityInsightsV3.framework; sourceTree = "<group>"; };
+		8BD717991FBFBB1D002AB936 /* RetrieveAndRankV1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RetrieveAndRankV1.framework; path = Carthage/Build/iOS/RetrieveAndRankV1.framework; sourceTree = "<group>"; };
+		8BD7179A1FBFBB1D002AB936 /* TextToSpeechV1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TextToSpeechV1.framework; path = Carthage/Build/iOS/TextToSpeechV1.framework; sourceTree = "<group>"; };
+		8BD7179B1FBFBB1D002AB936 /* ConversationV1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ConversationV1.framework; path = Carthage/Build/iOS/ConversationV1.framework; sourceTree = "<group>"; };
+		8BD7179C1FBFBB1D002AB936 /* NaturalLanguageClassifierV1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NaturalLanguageClassifierV1.framework; path = Carthage/Build/iOS/NaturalLanguageClassifierV1.framework; sourceTree = "<group>"; };
+		8BD717B11FBFC167002AB936 /* Models */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Models; sourceTree = "<group>"; };
+		8BD717B21FBFC167002AB936 /* Extentions */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Extentions; sourceTree = "<group>"; };
+		8BD717B31FBFC167002AB936 /* IBM */ = {isa = PBXFileReference; lastKnownFileType = folder; path = IBM; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +65,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BD7179D1FBFBB1D002AB936 /* DocumentConversionV1.framework in Frameworks */,
+				8BD7179E1FBFBB1D002AB936 /* SpeechToTextV1.framework in Frameworks */,
+				8BD7179F1FBFBB1D002AB936 /* TradeoffAnalyticsV1.framework in Frameworks */,
+				8BD717A01FBFBB1D002AB936 /* NaturalLanguageUnderstandingV1.framework in Frameworks */,
+				8BD717A11FBFBB1D002AB936 /* ToneAnalyzerV3.framework in Frameworks */,
+				8BD717A21FBFBB1D002AB936 /* DialogV1.framework in Frameworks */,
+				8BD717A31FBFBB1D002AB936 /* AlchemyLanguageV1.framework in Frameworks */,
+				8BD717A41FBFBB1D002AB936 /* RelationshipExtractionV1Beta.framework in Frameworks */,
+				8BD717A51FBFBB1D002AB936 /* LanguageTranslatorV2.framework in Frameworks */,
+				8BD717A61FBFBB1D002AB936 /* DiscoveryV1.framework in Frameworks */,
+				8BD717A71FBFBB1D002AB936 /* PersonalityInsightsV3.framework in Frameworks */,
+				8BD717A81FBFBB1D002AB936 /* RetrieveAndRankV1.framework in Frameworks */,
+				8BD717A91FBFBB1D002AB936 /* TextToSpeechV1.framework in Frameworks */,
+				8BD717AA1FBFBB1D002AB936 /* ConversationV1.framework in Frameworks */,
+				8BD717AB1FBFBB1D002AB936 /* NaturalLanguageClassifierV1.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -38,8 +89,10 @@
 		7856B1B61FBCC7DE0014C0F9 = {
 			isa = PBXGroup;
 			children = (
+				8BD717AE1FBFBF6E002AB936 /* Models */,
 				7856B1C11FBCC7DE0014C0F9 /* sampleJournal2 */,
 				7856B1C01FBCC7DE0014C0F9 /* Products */,
+				8BD7178D1FBFBB1C002AB936 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +117,38 @@
 			path = sampleJournal2;
 			sourceTree = "<group>";
 		};
+		8BD7178D1FBFBB1C002AB936 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8BD717941FBFBB1C002AB936 /* AlchemyLanguageV1.framework */,
+				8BD7179B1FBFBB1D002AB936 /* ConversationV1.framework */,
+				8BD717931FBFBB1C002AB936 /* DialogV1.framework */,
+				8BD717971FBFBB1D002AB936 /* DiscoveryV1.framework */,
+				8BD7178E1FBFBB1C002AB936 /* DocumentConversionV1.framework */,
+				8BD717961FBFBB1D002AB936 /* LanguageTranslatorV2.framework */,
+				8BD7179C1FBFBB1D002AB936 /* NaturalLanguageClassifierV1.framework */,
+				8BD717911FBFBB1C002AB936 /* NaturalLanguageUnderstandingV1.framework */,
+				8BD717981FBFBB1D002AB936 /* PersonalityInsightsV3.framework */,
+				8BD717951FBFBB1D002AB936 /* RelationshipExtractionV1Beta.framework */,
+				8BD717991FBFBB1D002AB936 /* RetrieveAndRankV1.framework */,
+				8BD7178F1FBFBB1C002AB936 /* SpeechToTextV1.framework */,
+				8BD7179A1FBFBB1D002AB936 /* TextToSpeechV1.framework */,
+				8BD717921FBFBB1C002AB936 /* ToneAnalyzerV3.framework */,
+				8BD717901FBFBB1C002AB936 /* TradeoffAnalyticsV1.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8BD717AE1FBFBF6E002AB936 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8BD717B21FBFC167002AB936 /* Extentions */,
+				8BD717B31FBFC167002AB936 /* IBM */,
+				8BD717B11FBFC167002AB936 /* Models */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,6 +159,7 @@
 				7856B1BB1FBCC7DE0014C0F9 /* Sources */,
 				7856B1BC1FBCC7DE0014C0F9 /* Frameworks */,
 				7856B1BD1FBCC7DE0014C0F9 /* Resources */,
+				8BD717AC1FBFBBB1002AB936 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -123,13 +209,47 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BD717B51FBFC167002AB936 /* Extentions in Resources */,
 				7856B1CD1FBCC7DE0014C0F9 /* LaunchScreen.storyboard in Resources */,
 				7856B1CA1FBCC7DE0014C0F9 /* Assets.xcassets in Resources */,
+				8BD717B61FBFC167002AB936 /* IBM in Resources */,
+				8BD717B41FBFC167002AB936 /* Models in Resources */,
 				7856B1C81FBCC7DE0014C0F9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8BD717AC1FBFBBB1002AB936 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/TextToSpeechV1.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/DocumentConversionV1.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SpeechToTextV1.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/TradeoffAnalyticsV1.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/NaturalLanguageUnderstanding.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ToneAnalyzerV3.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/DialogV1.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/AlchemyLanguageV1.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RelationshipExtractionV1Beta.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/LanguageTranslatorV2.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/DiscoveryV1.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/PersonalityInsightsV3.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RetrieveAndRankV1.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/NaturalLanguageClassifierV1.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ConversationV1.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-framework";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		7856B1BB1FBCC7DE0014C0F9 /* Sources */ = {
@@ -276,6 +396,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X4KE9EQFN3;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = sampleJournal2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cpsc599.599prototype;
@@ -291,6 +415,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X4KE9EQFN3;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = sampleJournal2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cpsc599.599prototype;
