@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--New Journal Entry-->
+        <!--New Journal-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="NewJournalViewController" customModule="_99_Prototype" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="New Journal" id="BYZ-38-t0r" customClass="NewJournalViewController" customModule="_99_Prototype" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -37,7 +37,7 @@
                                 </state>
                                 <connections>
                                     <action selector="saveJournalEntry:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6vE-GV-Udx"/>
-                                    <segue destination="SuU-f4-Kqb" kind="show" identifier="SaveNewJournal" id="pbp-3M-XVo"/>
+                                    <segue destination="8W9-VN-iVj" kind="presentation" identifier="SaveNewJournalEntry" id="I11-bQ-PEV"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -53,7 +53,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="New Journal Entry" id="09j-Us-Ge9"/>
+                    <navigationItem key="navigationItem" title="New Journal Entry" id="1L1-Dt-1Ge">
+                        <barButtonItem key="leftBarButtonItem" title="&lt; Cancel" id="wfX-3N-tIZ">
+                            <connections>
+                                <segue destination="aOH-Cu-pEZ" kind="presentation" identifier="CancelNewJournalEntry" id="cVZ-sZ-4bH"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="ViewTextField" destination="Vy1-gY-xmp" id="V2E-ku-uzZ"/>
                         <outlet property="toolbar" destination="qul-R4-yAr" id="V5O-Gb-N2t"/>
@@ -73,7 +79,28 @@
                     </items>
                 </toolbar>
             </objects>
-            <point key="canvasLocation" x="861.60000000000002" y="-314.39280359820094"/>
+            <point key="canvasLocation" x="1630" y="-1193"/>
+        </scene>
+        <!--Journal Entries Entry-->
+        <scene sceneID="qUu-qn-cpu">
+            <objects>
+                <navigationController title="Journal Entries Entry" id="8W9-VN-iVj" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="b4A-AM-gmG">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.12941176469999999" green="0.20784313730000001" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.12941176469999999" green="0.20784313730000001" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.97858951989999998" green="1" blue="0.9716497704" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="SuU-f4-Kqb" kind="relationship" relationship="rootViewController" id="RTM-nt-J5y"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wJf-fc-rBz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-711" y="-272"/>
         </scene>
         <!--Journal Entries-->
         <scene sceneID="uvd-Qk-cNf">
@@ -84,6 +111,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.12941176469999999" green="0.20784313730000001" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="separatorColor" red="0.97858951989999998" green="1" blue="0.9716497704" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="sectionIndexColor" red="0.97858951989999998" green="1" blue="0.9716497704" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="sectionIndexBackgroundColor" red="0.12941176469999999" green="0.20784313730000001" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="nxJ-xN-aGw">
@@ -96,7 +124,7 @@
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.12941176469999999" green="0.20784313730000001" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
-                                    <segue destination="Bg7-Sv-ZJP" kind="show" identifier="ShowJournalDetails" id="g5i-aG-KpL"/>
+                                    <segue destination="eeg-4H-BzB" kind="presentation" identifier="ViewSingleJournal" id="eK8-rw-u7z"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -106,18 +134,47 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Journal Entries" id="ztB-zp-PTn">
+                        <barButtonItem key="leftBarButtonItem" title="&lt; Home" id="Oh3-pt-T6V">
+                            <connections>
+                                <segue destination="aOH-Cu-pEZ" kind="presentation" identifier="ReturnHomeFromList" id="jgT-w9-T3r"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="+" id="a8I-DU-eXJ">
                             <connections>
-                                <segue destination="BYZ-38-t0r" kind="show" identifier="CreateJournalEntryFromList" id="ADL-S6-fR2"/>
+                                <segue destination="3Cl-g4-T5H" kind="presentation" identifier="NewJournalEntryFromList" id="F6r-xx-tDs"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7bU-hI-gJh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-74" y="457"/>
+            <point key="canvasLocation" x="478" y="-272"/>
         </scene>
-        <!--Journal Details View Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="r2F-ch-Igw">
+            <objects>
+                <navigationController id="eeg-4H-BzB" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="6Bp-Ky-8lR">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.12941176469999999" green="0.20784313730000001" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.12941176469999999" green="0.20784313730000001" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.97858951989999998" green="1" blue="0.9716497704" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" red="0.97858951989999998" green="1" blue="0.9716497704" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Bg7-Sv-ZJP" kind="relationship" relationship="rootViewController" id="ofX-kJ-8wb"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Ik-TT-aSI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1630" y="-272"/>
+        </scene>
+        <!--MMM/DD/YYYY-->
         <scene sceneID="Ffj-z6-i3F">
             <objects>
                 <viewController id="Bg7-Sv-ZJP" customClass="JournalDetailsViewController" customModule="_99_Prototype" customModuleProvider="target" sceneMemberID="viewController">
@@ -127,12 +184,44 @@
                         <color key="backgroundColor" red="0.12941176469999999" green="0.20784313730000001" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
                         <viewLayoutGuide key="safeArea" id="xq3-Lc-KED"/>
                     </view>
+                    <navigationItem key="navigationItem" title="MMM/DD/YYYY" id="1VK-M4-Rbn">
+                        <barButtonItem key="leftBarButtonItem" title="&lt; Back" id="gy3-Jz-vEy">
+                            <connections>
+                                <segue destination="8W9-VN-iVj" kind="presentation" identifier="ViewListFromSingleJournal" id="9kb-69-1n7"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Edit" id="k6J-GU-WGr"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jTZ-OY-BAv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="862" y="457"/>
+            <point key="canvasLocation" x="2842" y="-272"/>
         </scene>
-        <!--Entry Point View Controller-->
+        <!--New Journal Entry-->
+        <scene sceneID="JOj-5R-gDu">
+            <objects>
+                <navigationController title="New Journal Entry" id="3Cl-g4-T5H" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="dvB-Yc-9Wy">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.12941176469999999" green="0.20784313730000001" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.12941176469999999" green="0.20784313730000001" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.97858951989999998" green="1" blue="0.9716497704" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="vPQ-ky-Mzz">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="kyu-19-q4g"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dw7-7k-8yM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="478" y="-1193"/>
+        </scene>
+        <!--dew.-->
         <scene sceneID="Ksp-oV-HHw">
             <objects>
                 <viewController id="kK4-JG-bxC" customClass="EntryPointViewController" customModule="_99_Prototype" customModuleProvider="target" sceneMemberID="viewController">
@@ -149,7 +238,7 @@
                                     <color key="titleColor" red="0.97858951989999998" green="1" blue="0.9716497704" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" identifier="CreateJournalEntryFromMain" id="0Hd-xe-pG0"/>
+                                    <segue destination="3Cl-g4-T5H" kind="presentation" identifier="NewJournalEntryFromHome" id="XUj-cr-OZi"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AdL-td-1j7">
@@ -166,27 +255,28 @@
                                     <color key="titleColor" red="0.97858951989999998" green="1" blue="0.9716497704" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="SuU-f4-Kqb" kind="show" identifier="ShowJournalList" id="T6e-0m-7Md"/>
+                                    <segue destination="8W9-VN-iVj" kind="presentation" identifier="ViewJournalList" id="Mys-YU-2eI"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.12941176470588234" green="0.20784313725490194" blue="0.25098039215686274" alpha="1" colorSpace="calibratedRGB"/>
                         <viewLayoutGuide key="safeArea" id="6qh-Gq-bue"/>
                     </view>
-                    <navigationItem key="navigationItem" id="N8Q-9g-tw4"/>
+                    <navigationItem key="navigationItem" title="dew." id="N8Q-9g-tw4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="THk-mu-msh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-74.400000000000006" y="-314.39280359820094"/>
+            <point key="canvasLocation" x="-710" y="-1193"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--dew. Entry-->
         <scene sceneID="o3T-VK-YCW">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aOH-Cu-pEZ" sceneMemberID="viewController">
+                <navigationController title="dew. Entry" automaticallyAdjustsScrollViewInsets="NO" id="aOH-Cu-pEZ" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="c0M-DM-IkL">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.12941176469999999" green="0.20784313730000001" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="barTintColor" red="0.12941176469999999" green="0.20784313730000001" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" red="0.97858951989999998" green="1" blue="0.9716497704" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -202,11 +292,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Iag-qm-frP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-826" y="-314"/>
+            <point key="canvasLocation" x="-1910" y="-1193"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="T6e-0m-7Md"/>
-        <segue reference="ADL-S6-fR2"/>
+        <segue reference="jgT-w9-T3r"/>
+        <segue reference="F6r-xx-tDs"/>
+        <segue reference="9kb-69-1n7"/>
     </inferredMetricsTieBreakers>
 </document>
