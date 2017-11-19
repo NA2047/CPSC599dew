@@ -166,16 +166,11 @@
 				8B554B491FC235EE00CD4AC5 /* IBM */,
 				8B554B4A1FC235F900CD4AC5 /* Tagger */,
 				8B554B4B1FC2361E00CD4AC5 /* CoreML */,
-				7856B1C21FBCC7DE0014C0F9 /* AppDelegate.swift */,
-				7856B1C41FBCC7DE0014C0F9 /* NewJournalViewController.swift */,
-				7856B1C61FBCC7DE0014C0F9 /* Main.storyboard */,
+				8B554B4D1FC23DB200CD4AC5 /* Storyboard_SupportingFiles */,
+				8B554B4C1FC23D9200CD4AC5 /* Controllers */,
 				7856B1C91FBCC7DE0014C0F9 /* Assets.xcassets */,
-				7856B1CB1FBCC7DE0014C0F9 /* LaunchScreen.storyboard */,
 				7856B1CE1FBCC7DE0014C0F9 /* Info.plist */,
-				7878B7391FC12794003482B5 /* EntryPointViewController.swift */,
-				7878B73D1FC127C1003482B5 /* JournalDetailsViewController.swift */,
-				7878B73F1FC12960003482B5 /* JournalListTableViewController.swift */,
-				7878B7411FC12F47003482B5 /* JournalProperties.swift */,
+				8B554B4E1FC23DF800CD4AC5 /* Journal */,
 			);
 			path = sampleJournal2;
 			sourceTree = "<group>";
@@ -205,6 +200,35 @@
 				8BEE6C321FC226DC00A87588 /* Sentiment.swift */,
 			);
 			path = CoreML;
+			sourceTree = "<group>";
+		};
+		8B554B4C1FC23D9200CD4AC5 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				7856B1C41FBCC7DE0014C0F9 /* NewJournalViewController.swift */,
+				7878B7391FC12794003482B5 /* EntryPointViewController.swift */,
+				7878B73D1FC127C1003482B5 /* JournalDetailsViewController.swift */,
+				7878B73F1FC12960003482B5 /* JournalListTableViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		8B554B4D1FC23DB200CD4AC5 /* Storyboard_SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				7856B1C21FBCC7DE0014C0F9 /* AppDelegate.swift */,
+				7856B1C61FBCC7DE0014C0F9 /* Main.storyboard */,
+				7856B1CB1FBCC7DE0014C0F9 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboard_SupportingFiles;
+			sourceTree = "<group>";
+		};
+		8B554B4E1FC23DF800CD4AC5 /* Journal */ = {
+			isa = PBXGroup;
+			children = (
+				7878B7411FC12F47003482B5 /* JournalProperties.swift */,
+			);
+			path = Journal;
 			sourceTree = "<group>";
 		};
 		8BD7178D1FBFBB1C002AB936 /* Frameworks */ = {
