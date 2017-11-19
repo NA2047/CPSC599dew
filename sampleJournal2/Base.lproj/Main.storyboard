@@ -36,8 +36,7 @@
                                     <color key="titleColor" red="0.97858951989999998" green="1" blue="0.9716497704" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="saveJournalEntry:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6vE-GV-Udx"/>
-                                    <segue destination="8W9-VN-iVj" kind="presentation" identifier="SaveNewJournalEntry" id="I11-bQ-PEV"/>
+                                    <segue destination="CbC-if-L7J" kind="unwind" unwindAction="unwindToJournalListWithSender:" id="oJH-9b-as5"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -66,6 +65,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <exit id="CbC-if-L7J" userLabel="Exit" sceneMemberID="exit"/>
                 <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="qul-R4-yAr">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
@@ -141,7 +141,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="+" id="a8I-DU-eXJ">
                             <connections>
-                                <segue destination="3Cl-g4-T5H" kind="presentation" identifier="NewJournalEntryFromList" id="F6r-xx-tDs"/>
+                                <segue destination="3Cl-g4-T5H" kind="presentation" identifier="CreateJournalEntryFromList" id="ECE-m2-Ere"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -190,7 +190,11 @@
                                 <segue destination="8W9-VN-iVj" kind="presentation" identifier="ViewListFromSingleJournal" id="9kb-69-1n7"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Edit" id="k6J-GU-WGr"/>
+                        <barButtonItem key="rightBarButtonItem" title="Edit" id="k6J-GU-WGr">
+                            <connections>
+                                <segue destination="BYZ-38-t0r" kind="presentation" id="fKP-lx-8F3"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jTZ-OY-BAv" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -296,9 +300,10 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="jgT-w9-T3r"/>
-        <segue reference="XUj-cr-OZi"/>
+        <segue reference="cVZ-sZ-4bH"/>
+        <segue reference="ECE-m2-Ere"/>
         <segue reference="PF2-rZ-FbB"/>
-        <segue reference="Mys-YU-2eI"/>
+        <segue reference="9kb-69-1n7"/>
+        <segue reference="kyu-19-q4g"/>
     </inferredMetricsTieBreakers>
 </document>
