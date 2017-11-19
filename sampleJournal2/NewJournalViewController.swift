@@ -8,12 +8,13 @@
 
 import UIKit
 
-class NewJournalViewController: UIViewController, UITextViewDelegate {
+class NewJournalViewController: UIViewController,UITextViewDelegate {
 
     @IBOutlet var toolbar: UIToolbar!
     @IBOutlet weak var ViewTextField: UITextView!
     
     var startEditing: Bool = false
+    private let classificationService = ClassificationService()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,4 +71,6 @@ class NewJournalViewController: UIViewController, UITextViewDelegate {
         self.view.endEditing(true)
     }
 }
+
+
 
