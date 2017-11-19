@@ -16,6 +16,11 @@ class JournalDetailsViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        self.title = selectedJournal?.date
+        
+        print(selectedJournal?.journalEntry)
+        print(selectedJournal?.time)
     }
 
     override func didReceiveMemoryWarning() {
