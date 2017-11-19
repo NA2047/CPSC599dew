@@ -10,74 +10,50 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--New Journal View Controller-->
+        <!--New Journal Entry-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="NewJournalViewController" customModule="_99_Prototype" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Write here..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Vy1-gY-xmp">
-                                <rect key="frame" x="16" y="133" width="343" height="459"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="frame" x="16" y="13" width="343" height="515"/>
+                                <color key="backgroundColor" red="0.22535832870005473" green="0.36349842034986535" blue="0.43404260716462495" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" red="0.97858951989999998" green="1" blue="0.9716497704" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" spellCheckingType="yes"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5fs-EY-kud">
-                                <rect key="frame" x="16" y="592" width="343" height="55"/>
-                                <color key="backgroundColor" red="0.4640730776415728" green="1" blue="0.89230501456848077" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <rect key="frame" x="16" y="528" width="343" height="55"/>
+                                <color key="backgroundColor" red="0.67450980390000004" green="0.72549019609999998" blue="0.73725490199999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="r2y-iJ-nLS"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="Save Entry">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="titleColor" red="0.97858951989999998" green="1" blue="0.9716497704" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="saveJournalEntry:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6vE-GV-Udx"/>
-                                    <segue destination="SuU-f4-Kqb" kind="show" id="pbp-3M-XVo"/>
+                                    <segue destination="SuU-f4-Kqb" kind="show" identifier="SaveNewJournal" id="pbp-3M-XVo"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="bottomLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Entry" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Asu-g9-8Oq">
-                                <rect key="frame" x="16" y="64" width="141" height="59"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="141" id="8Vi-Tf-m3g"/>
-                                    <constraint firstAttribute="height" constant="59" id="Fpc-Uh-2xb"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hdt-mJ-O0j">
-                                <rect key="frame" x="311" y="78" width="48" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="48" id="6C4-uG-3TG"/>
-                                    <constraint firstAttribute="height" constant="30" id="bZJ-cJ-TBo"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <state key="normal" title="Cancel"/>
-                            </button>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.12941176469999999" green="0.20784313730000001" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Hdt-mJ-O0j" secondAttribute="trailing" constant="16" id="094-z7-f4z"/>
-                            <constraint firstItem="Hdt-mJ-O0j" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" symbolic="YES" id="0xm-kM-RaZ"/>
                             <constraint firstItem="Vy1-gY-xmp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="6hY-Aj-bY4"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Vy1-gY-xmp" secondAttribute="trailing" constant="16" id="Jcl-Rt-eBz"/>
                             <constraint firstItem="5fs-EY-kud" firstAttribute="top" secondItem="Vy1-gY-xmp" secondAttribute="bottom" id="QD2-RF-axz"/>
                             <constraint firstItem="5fs-EY-kud" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="SJd-GY-4Ve"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5fs-EY-kud" secondAttribute="trailing" constant="16" id="VRd-DV-Xmt"/>
-                            <constraint firstItem="Vy1-gY-xmp" firstAttribute="top" secondItem="Hdt-mJ-O0j" secondAttribute="bottom" constant="25" id="YzP-gF-lz9"/>
-                            <constraint firstItem="Vy1-gY-xmp" firstAttribute="top" secondItem="Asu-g9-8Oq" secondAttribute="bottom" constant="10" id="hV2-jb-BOU"/>
+                            <constraint firstItem="Vy1-gY-xmp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="13" id="YCM-Pp-uKu"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="5fs-EY-kud" secondAttribute="bottom" constant="20" id="pCA-zY-MeV"/>
-                            <constraint firstItem="Asu-g9-8Oq" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="qL1-Nj-OAA"/>
-                            <constraint firstItem="Asu-g9-8Oq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="u0E-Oi-5de"/>
-                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Asu-g9-8Oq" secondAttribute="trailing" constant="20" symbolic="YES" id="vme-mh-5un"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" title="New Journal Entry" id="09j-Us-Ge9"/>
                     <connections>
                         <outlet property="ViewTextField" destination="Vy1-gY-xmp" id="V2E-ku-uzZ"/>
                         <outlet property="toolbar" destination="qul-R4-yAr" id="V5O-Gb-N2t"/>
@@ -97,16 +73,18 @@
                     </items>
                 </toolbar>
             </objects>
-            <point key="canvasLocation" x="862" y="-314"/>
+            <point key="canvasLocation" x="861.60000000000002" y="-314.39280359820094"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Journal Entries-->
         <scene sceneID="uvd-Qk-cNf">
             <objects>
                 <tableViewController id="SuU-f4-Kqb" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="FQg-1K-9MP">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.12941176469999999" green="0.20784313730000001" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="separatorColor" red="0.97858951989999998" green="1" blue="0.9716497704" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="sectionIndexBackgroundColor" red="0.12941176469999999" green="0.20784313730000001" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="nxJ-xN-aGw">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
@@ -114,9 +92,11 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nxJ-xN-aGw" id="2ZR-n9-wXW">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" red="0.12941176469999999" green="0.20784313730000001" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.12941176469999999" green="0.20784313730000001" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
-                                    <segue destination="Bg7-Sv-ZJP" kind="show" id="g5i-aG-KpL"/>
+                                    <segue destination="Bg7-Sv-ZJP" kind="show" identifier="ShowJournalDetails" id="g5i-aG-KpL"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -125,6 +105,13 @@
                             <outlet property="delegate" destination="SuU-f4-Kqb" id="qE6-1d-zFz"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Journal Entries" id="ztB-zp-PTn">
+                        <barButtonItem key="rightBarButtonItem" title="+" id="a8I-DU-eXJ">
+                            <connections>
+                                <segue destination="BYZ-38-t0r" kind="show" identifier="CreateJournalEntryFromList" id="ADL-S6-fR2"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7bU-hI-gJh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -135,9 +122,9 @@
             <objects>
                 <viewController id="Bg7-Sv-ZJP" customClass="JournalDetailsViewController" customModule="_99_Prototype" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="i2l-iK-Jan">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.12941176469999999" green="0.20784313730000001" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
                         <viewLayoutGuide key="safeArea" id="xq3-Lc-KED"/>
                     </view>
                 </viewController>
@@ -150,16 +137,19 @@
             <objects>
                 <viewController id="kK4-JG-bxC" customClass="EntryPointViewController" customModule="_99_Prototype" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kTr-Ta-kCm">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tkW-HN-2Uj">
                                 <rect key="frame" x="63" y="163" width="249" height="106"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.92351441059999995" green="0.92351441059999995" blue="0.92351441059999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <state key="normal" title="New Journal Entry"/>
+                                <color key="backgroundColor" red="0.2253583287" green="0.36349842030000001" blue="0.43404260719999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="New Journal Entry">
+                                    <color key="titleColor" red="0.97858951989999998" green="1" blue="0.9716497704" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="0Hd-xe-pG0"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="CreateJournalEntryFromMain" id="0Hd-xe-pG0"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AdL-td-1j7">
@@ -170,14 +160,17 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jGk-rq-G8A">
                                 <rect key="frame" x="63" y="338" width="249" height="121"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.92351441062176165" green="0.92351441062176165" blue="0.92351441062176165" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <state key="normal" title="List of Journals"/>
+                                <color key="backgroundColor" red="0.2253583287" green="0.36349842030000001" blue="0.43404260719999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="List of Journals">
+                                    <color key="titleColor" red="0.97858951989999998" green="1" blue="0.9716497704" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
-                                    <segue destination="SuU-f4-Kqb" kind="show" id="T6e-0m-7Md"/>
+                                    <segue destination="SuU-f4-Kqb" kind="show" identifier="ShowJournalList" id="T6e-0m-7Md"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.12941176470588234" green="0.20784313725490194" blue="0.25098039215686274" alpha="1" colorSpace="calibratedRGB"/>
                         <viewLayoutGuide key="safeArea" id="6qh-Gq-bue"/>
                     </view>
                     <navigationItem key="navigationItem" id="N8Q-9g-tw4"/>
@@ -191,9 +184,16 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aOH-Cu-pEZ" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="c0M-DM-IkL">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="c0M-DM-IkL">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.12941176469999999" green="0.20784313730000001" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.97858951989999998" green="1" blue="0.9716497704" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" red="0.97858951989999998" green="1" blue="0.9716497704" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -206,6 +206,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="pbp-3M-XVo"/>
+        <segue reference="T6e-0m-7Md"/>
+        <segue reference="ADL-S6-fR2"/>
     </inferredMetricsTieBreakers>
 </document>
