@@ -59,6 +59,15 @@ class JournalListTableViewController: UITableViewController {
     }
     */
 
+    // MARK: - Action
+    @IBAction func unwindToJournalList(sender: UIStoryboardSegue) {
+        if let sourceViewController = sender.source as? NewJournalViewController {
+            let journal = sourceViewController.newJournal
+            listOfJournals.append(journal!)
+        }
+        tableView.reloadData()
+    }
+    
     
     // MARK: - Navigation
 
@@ -70,9 +79,12 @@ class JournalListTableViewController: UITableViewController {
         super.prepare(for: segue, sender: sender)
         
         switch(segue.identifier ?? "") {
+       
+        // Tap + icon from Journal Entries View
         case "CreateJournalEntryFromList":
             break
         
+        // Tapping on a journal in the list
         case "ViewSingleJournal":
             guard let journalDetailsViewController = segue.destination as? JournalDetailsViewController else {
                 fatalError("Unexpected destination: \(segue.destination)")
@@ -90,6 +102,12 @@ class JournalListTableViewController: UITableViewController {
             journalDetailsViewController.selectedJournal = selectedJournal
             
             break
+            
+        // Tapping "home" from Journal Entries
+        case "ReturnHomeFromList":
+            break
+        
+            
         default:
             fatalError("Unexpected Segue Identifier; \(segue.identifier ?? "nil")")
         }
