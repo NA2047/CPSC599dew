@@ -19,18 +19,6 @@ class NewJournalViewController: UIViewController, UITextViewDelegate {
         super.viewDidLoad()
         ViewTextField.delegate = self;
     }
-    
-    class JournalProperties {
-        var journalEntry: String = ""
-        var date: String = ""
-        var time: String = ""
-        
-        init(_ journal:String, _ date:String, _ time:String) {
-            self.journalEntry = journal
-            self.date = date
-            self.time = time
-        }
-    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

@@ -9,15 +9,24 @@
 import UIKit
 
 class JournalListTableViewController: UITableViewController {
+    
+    var sampleJournal = JournalProperties("I am pretty stressed", "21/10/2017", "10:55 PM")
+    var listOfJournals = [JournalProperties]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Test
+        listOfJournals.append(sampleJournal)
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        tableView.reloadData()
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,24 +37,21 @@ class JournalListTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return listOfJournals.count
     }
 
-    /*
+
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell", for: indexPath)
         // Configure the cell...
-
+        cell.textLabel?.text = listOfJournals[indexPath.row].date
+        
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.
@@ -82,14 +88,41 @@ class JournalListTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+        super.prepare(for: segue, sender: sender)
+        
+        switch(segue.identifier ?? "") {
+        case "CreateJournalEntryFromList":
+            break
+        
+        case "ShowJournalDetails":
+            guard let journalDetailsViewController = segue.destination as? JournalDetailsViewController else {
+                fatalError("Unexpected destination: \(segue.destination)")
+            }
+            
+            guard let selectedMealCell = sender as? UITableViewCell else {
+                fatalError("Unexpected sender: \(sender ?? "nil")")
+            }
+            
+            guard let indexPath = tableView.indexPath(for: selectedMealCell) else {
+                fatalError("The selected cell is not being displayed by the table")
+            }
+            
+            let selectedJournal = listOfJournals[indexPath.row]
+            journalDetailsViewController.selectedJournal = selectedJournal
+            
+            break
+        default:
+            fatalError("Unexpected Segue Identifier; \(segue.identifier ?? "nil")")
+        }
     }
-    */
+    
 
 }

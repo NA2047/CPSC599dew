@@ -10,6 +10,8 @@ import UIKit
 
 class JournalDetailsViewController: UIViewController {
 
+    var selectedJournal: JournalProperties?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
