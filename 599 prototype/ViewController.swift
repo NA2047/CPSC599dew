@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  NewJournalViewController.swift
 //  sampleJournal2
 //
 //  Created by Raza Qazi on 2017-11-15.

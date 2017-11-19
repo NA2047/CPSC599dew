@@ -8,10 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		7856B1C31FBCC7DE0014C0F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7856B1C21FBCC7DE0014C0F9 /* AppDelegate.swift */; };
-		7856B1C51FBCC7DE0014C0F9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7856B1C41FBCC7DE0014C0F9 /* ViewController.swift */; };
+		7856B1C51FBCC7DE0014C0F9 /* NewJournalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7856B1C41FBCC7DE0014C0F9 /* NewJournalViewController.swift */; };
 		7856B1C81FBCC7DE0014C0F9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7856B1C61FBCC7DE0014C0F9 /* Main.storyboard */; };
 		7856B1CA1FBCC7DE0014C0F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7856B1C91FBCC7DE0014C0F9 /* Assets.xcassets */; };
 		7856B1CD1FBCC7DE0014C0F9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7856B1CB1FBCC7DE0014C0F9 /* LaunchScreen.storyboard */; };
+		7878B73A1FC12794003482B5 /* EntryPointViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7878B7391FC12794003482B5 /* EntryPointViewController.swift */; };
+		7878B73E1FC127C1003482B5 /* JournalDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7878B73D1FC127C1003482B5 /* JournalDetailsViewController.swift */; };
+		7878B7401FC12960003482B5 /* JournalListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7878B73F1FC12960003482B5 /* JournalListTableViewController.swift */; };
 		8B951AE31FBFCCD900FC171D /* AlchemyLanguageV1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BD717941FBFBB1C002AB936 /* AlchemyLanguageV1.framework */; };
 		8B951AE41FBFCCD900FC171D /* AlchemyLanguageV1.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8BD717941FBFBB1C002AB936 /* AlchemyLanguageV1.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8B951AE51FBFCCD900FC171D /* ConversationV1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BD7179B1FBFBB1D002AB936 /* ConversationV1.framework */; };
@@ -93,11 +96,14 @@
 /* Begin PBXFileReference section */
 		7856B1BF1FBCC7DE0014C0F9 /* 599 Prototype.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "599 Prototype.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7856B1C21FBCC7DE0014C0F9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7856B1C41FBCC7DE0014C0F9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7856B1C41FBCC7DE0014C0F9 /* NewJournalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewJournalViewController.swift; sourceTree = "<group>"; };
 		7856B1C71FBCC7DE0014C0F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7856B1C91FBCC7DE0014C0F9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7856B1CC1FBCC7DE0014C0F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7856B1CE1FBCC7DE0014C0F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7878B7391FC12794003482B5 /* EntryPointViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryPointViewController.swift; sourceTree = "<group>"; };
+		7878B73D1FC127C1003482B5 /* JournalDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalDetailsViewController.swift; sourceTree = "<group>"; };
+		7878B73F1FC12960003482B5 /* JournalListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalListTableViewController.swift; sourceTree = "<group>"; };
 		8BD7178E1FBFBB1C002AB936 /* DocumentConversionV1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DocumentConversionV1.framework; path = Carthage/Build/iOS/DocumentConversionV1.framework; sourceTree = "<group>"; };
 		8BD7178F1FBFBB1C002AB936 /* SpeechToTextV1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpeechToTextV1.framework; path = Carthage/Build/iOS/SpeechToTextV1.framework; sourceTree = "<group>"; };
 		8BD717901FBFBB1C002AB936 /* TradeoffAnalyticsV1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TradeoffAnalyticsV1.framework; path = Carthage/Build/iOS/TradeoffAnalyticsV1.framework; sourceTree = "<group>"; };
@@ -181,11 +187,14 @@
 			isa = PBXGroup;
 			children = (
 				7856B1C21FBCC7DE0014C0F9 /* AppDelegate.swift */,
-				7856B1C41FBCC7DE0014C0F9 /* ViewController.swift */,
+				7856B1C41FBCC7DE0014C0F9 /* NewJournalViewController.swift */,
 				7856B1C61FBCC7DE0014C0F9 /* Main.storyboard */,
 				7856B1C91FBCC7DE0014C0F9 /* Assets.xcassets */,
 				7856B1CB1FBCC7DE0014C0F9 /* LaunchScreen.storyboard */,
 				7856B1CE1FBCC7DE0014C0F9 /* Info.plist */,
+				7878B7391FC12794003482B5 /* EntryPointViewController.swift */,
+				7878B73D1FC127C1003482B5 /* JournalDetailsViewController.swift */,
+				7878B73F1FC12960003482B5 /* JournalListTableViewController.swift */,
 			);
 			path = sampleJournal2;
 			sourceTree = "<group>";
@@ -330,8 +339,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7856B1C51FBCC7DE0014C0F9 /* ViewController.swift in Sources */,
+				7878B73A1FC12794003482B5 /* EntryPointViewController.swift in Sources */,
+				7878B73E1FC127C1003482B5 /* JournalDetailsViewController.swift in Sources */,
+				7856B1C51FBCC7DE0014C0F9 /* NewJournalViewController.swift in Sources */,
 				7856B1C31FBCC7DE0014C0F9 /* AppDelegate.swift in Sources */,
+				7878B7401FC12960003482B5 /* JournalListTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

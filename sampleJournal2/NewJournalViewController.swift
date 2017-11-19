@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  NewJournalViewController.swift
 //  sampleJournal2
 //
 //  Created by Raza Qazi on 2017-11-15.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITextViewDelegate {
+class NewJournalViewController: UIViewController, UITextViewDelegate {
 
     @IBOutlet var toolbar: UIToolbar!
     @IBOutlet weak var ViewTextField: UITextView!
