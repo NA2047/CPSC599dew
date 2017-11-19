@@ -12,7 +12,12 @@ class JournalProperties {
     var journalEntry: String = ""
     var date: String = ""
     var time: String = ""
-    var sentiment: (String, String) = ("","")
+    var sentiment: (String, String) {
+        get{
+            let result = performJournalAnalysis(journalEntry)
+            return(result)
+        }
+    }
     
     init(_ journal:String, _ date:String, _ time:String) {
         self.journalEntry = journal
@@ -21,8 +26,15 @@ class JournalProperties {
         // self.sentiment = performJournalAnalysis(journal)
     }
     
-    func performJournalAnalysis(_ text: String) {
-        // something something
-        // return performSentimentAnalysis(text)
+    private func performJournalAnalysis(_ text: String) -> (String, String)  {
+        let classificationService = ClassificationService()
+        let result = classificationService.predictSentiment(from: text)
+        let result2 = result.0.rawValue
+        return (result2,String(result.1))
+//        print(sentiment)
+        
+//        let percent =
+        
+        
     }
 }

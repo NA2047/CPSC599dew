@@ -5,7 +5,7 @@ enum Sentiment {
     case positive
     case negative
     
-    var emoji: String {
+    var rawValue: String {
         switch self {
         case .neutral:
             return "neutral"
@@ -15,7 +15,7 @@ enum Sentiment {
             return "negative"
         }
     }
-    
+  
 //    var color: UIColor? {
 //        switch self {
 //        case .neutral:
