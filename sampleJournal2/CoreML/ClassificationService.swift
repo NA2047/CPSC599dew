@@ -17,7 +17,7 @@ final class ClassificationService {
     
     // MARK: - Prediction
     
-    func predictSentiment(from text: String) -> Sentiment {
+    func predictSentiment(from text: String) -> (Sentiment,Double) {
         do {
             let inputFeatures = features(from: text)
             // Make prediction only with 2 or more words
@@ -29,14 +29,14 @@ final class ClassificationService {
             
             switch output.classLabel {
             case "Pos":
-                return .positive
+                return (.positive,output.classProbability["Pos"]!)
             case "Neg":
-                return .negative
+                return (.negative,output.classProbability["Neg"]!)
             default:
-                return .neutral
+                return (.neutral,1.1)
             }
         } catch {
-            return .neutral
+            return (.neutral,0.0)
         }
     }
 }
