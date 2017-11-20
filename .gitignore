@@ -1,0 +1,10 @@
+
+*.xcscheme
+*.xcuserstate
+*.xcbkptlist
+*.plist
+.idea/xcode.xml
+.idea/workspace.xml
+.idea/vcs.xml
+.idea/modules.xml
+.idea/.name
