@@ -42,7 +42,8 @@ class JournalListTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "JournalCell", for: indexPath)
         // Configure the cell...
-        cell.textLabel?.text = listOfJournals[indexPath.row].date
+        let currentJournal = listOfJournals[indexPath.row]
+        cell.textLabel?.text = currentJournal.date + " " + currentJournal.emoji
         cell.textLabel?.textColor = UIColor.white
         return cell
     }
@@ -64,6 +65,12 @@ class JournalListTableViewController: UITableViewController {
         if let sourceViewController = sender.source as? NewJournalViewController {
             let journal = sourceViewController.newJournal
             listOfJournals.append(journal!)
+        }
+        else if let sourceViewController = sender.source as? JournalDetailsViewController {
+            let journal = sourceViewController.selectedJournal
+//            delete the journal from the list of journals
+//            delete the journal itself?
+//            listOfJournals.remove(at: <#T##Int#>)
         }
         tableView.reloadData()
     }

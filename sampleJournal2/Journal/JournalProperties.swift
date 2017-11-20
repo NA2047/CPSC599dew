@@ -12,9 +12,19 @@ class JournalProperties {
     var journalEntry: String = ""
     var date: String = ""
     var time: String = ""
+    var emoji: String = ""
+    let positive: String = "🙂"
+    let negative: String = "🙁"
+    
     var sentiment: (String, String) {
         get{
             let result = performJournalAnalysis(journalEntry)
+            if (result.0 == "positive") {
+                emoji = positive
+            }
+            else if (result.0 == "negative") {
+                emoji = negative
+            }
             return(result)
         }
     }
