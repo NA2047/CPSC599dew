@@ -11,20 +11,20 @@ import UIKit
 
 extension UIViewController {
     
-    func findSentiment(stringToAnalyze text : String) -> String {
-        let classificationService = ClassificationService()
-        let sentiment = classificationService.predictSentiment(from: text)
-        switch sentiment {
-        case .neutral:
-            return "neutral"
-        case .positive:
-            return "positive"
-        case .negative:
-            return "negative"
-        }
-        
-        
-        
-    }
+//    func findSentiment(stringToAnalyze text : String) -> String {
+//        let classificationService = ClassificationService()
+//        let sentiment = classificationService.predictSentiment(from: text)
+//        switch sentiment {
+//        case .neutral:
+//            return "neutral"
+//        case .positive:
+//            return "positive"
+//        case .negative:
+//            return "negative"
+//        }
+//        
+//        
+//        
+//    }
     
 }
