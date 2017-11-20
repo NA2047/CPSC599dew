@@ -10,6 +10,8 @@ import UIKit
 
 class JournalDetailsViewController: UIViewController {
 
+    @IBOutlet weak var emotionLabel: UILabel!
+    @IBOutlet weak var journalTextView: UITextView!
     var selectedJournal: JournalProperties?
     
     override func viewDidLoad() {
@@ -18,6 +20,8 @@ class JournalDetailsViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         self.title = selectedJournal?.date
+        journalTextView.text = selectedJournal?.journalEntry
+        emotionLabel.text = selectedJournal?.sentiment.0
         
         print(selectedJournal?.journalEntry)
         print(selectedJournal?.time)

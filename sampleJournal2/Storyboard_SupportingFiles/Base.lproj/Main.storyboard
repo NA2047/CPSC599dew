@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aOH-Cu-pEZ">
-    <device id="retina4_0" orientation="portrait">
+    <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,11 +15,11 @@
             <objects>
                 <viewController title="New Journal" id="BYZ-38-t0r" customClass="NewJournalViewController" customModule="_99_Prototype" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Write here..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Vy1-gY-xmp">
-                                <rect key="frame" x="16" y="13" width="288" height="471"/>
+                                <rect key="frame" x="16" y="13" width="343" height="570"/>
                                 <color key="backgroundColor" red="0.22535832870005473" green="0.36349842034986535" blue="0.43404260716462495" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="textColor" red="0.97858951989999998" green="1" blue="0.9716497704" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -37,11 +37,13 @@
                     </view>
                     <navigationItem key="navigationItem" title="New Journal Entry" id="1L1-Dt-1Ge">
                         <barButtonItem key="leftBarButtonItem" title="&lt; Cancel" id="wfX-3N-tIZ">
+                            <color key="tintColor" red="0.41238034579999999" green="0.67727765870000001" blue="0.80858885110000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <segue destination="aOH-Cu-pEZ" kind="presentation" identifier="CancelNewJournalEntry" id="cVZ-sZ-4bH"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Save" id="TIv-sV-1QX">
+                            <color key="tintColor" red="0.41238034579999999" green="0.67727765870000001" blue="0.80858885110000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <segue destination="CbC-if-L7J" kind="unwind" unwindAction="unwindToJournalListWithSender:" id="PdU-JU-0F2"/>
                             </connections>
@@ -74,7 +76,7 @@
             <objects>
                 <navigationController title="Journal Entries Entry" id="8W9-VN-iVj" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="b4A-AM-gmG">
-                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.12941176469999999" green="0.20784313730000001" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="barTintColor" red="0.12941176469999999" green="0.20784313730000001" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -95,7 +97,7 @@
             <objects>
                 <tableViewController id="SuU-f4-Kqb" customClass="JournalListTableViewController" customModule="_99_Prototype" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="FQg-1K-9MP">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.12941176469999999" green="0.20784313730000001" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="separatorColor" red="0.97858951989999998" green="1" blue="0.9716497704" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -103,10 +105,10 @@
                         <color key="sectionIndexBackgroundColor" red="0.12941176469999999" green="0.20784313730000001" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="JournalCell" id="nxJ-xN-aGw">
-                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nxJ-xN-aGw" id="2ZR-n9-wXW">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <color key="backgroundColor" red="0.12941176469999999" green="0.20784313730000001" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </tableViewCellContentView>
@@ -123,11 +125,13 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Journal Entries" id="ztB-zp-PTn">
                         <barButtonItem key="leftBarButtonItem" title="&lt; Home" id="Oh3-pt-T6V">
+                            <color key="tintColor" red="0.41238034579999999" green="0.67727765870000001" blue="0.80858885110000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <segue destination="aOH-Cu-pEZ" kind="presentation" identifier="ReturnHomeFromList" id="jgT-w9-T3r"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="+" id="a8I-DU-eXJ">
+                            <color key="tintColor" red="0.41238034579999999" green="0.67727765870000001" blue="0.80858885110000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <segue destination="3Cl-g4-T5H" kind="presentation" identifier="CreateJournalEntryFromList" id="ECE-m2-Ere"/>
                             </connections>
@@ -143,7 +147,7 @@
             <objects>
                 <navigationController id="eeg-4H-BzB" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="6Bp-Ky-8lR">
-                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.12941176469999999" green="0.20784313730000001" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="barTintColor" red="0.12941176469999999" green="0.20784313730000001" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -167,34 +171,103 @@
             <objects>
                 <viewController id="Bg7-Sv-ZJP" customClass="JournalDetailsViewController" customModule="_99_Prototype" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="i2l-iK-Jan">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="2nr-Au-PaX">
+                                <rect key="frame" x="16" y="20" width="343" height="229"/>
+                                <color key="backgroundColor" red="0.2253583287" green="0.36349842030000001" blue="0.43404260719999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                <color key="textColor" red="0.97858951989999998" green="1" blue="0.9716497704" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Overall Emotion:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7g5-oh-IJU">
+                                <rect key="frame" x="16" y="257" width="132" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="132" id="Ylv-pz-MIW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.97858951989999998" green="1" blue="0.9716497704" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weather:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sns-bE-aXa">
+                                <rect key="frame" x="16" y="286" width="132" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.97858951989999998" green="1" blue="0.9716497704" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gBn-rm-Y1y">
+                                <rect key="frame" x="16" y="315" width="132" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.97858951989999998" green="1" blue="0.9716497704" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Check ins:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5AH-gL-dQa">
+                                <rect key="frame" x="16" y="344" width="132" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.97858951989999998" green="1" blue="0.9716497704" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="not calculated" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qq6-hF-t2t">
+                                <rect key="frame" x="156" y="257" width="203" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.97858951989999998" green="1" blue="0.9716497704" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="0.12941176469999999" green="0.20784313730000001" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="7g5-oh-IJU" firstAttribute="leading" secondItem="sns-bE-aXa" secondAttribute="leading" id="4xy-FC-85T"/>
+                            <constraint firstItem="2nr-Au-PaX" firstAttribute="leading" secondItem="xq3-Lc-KED" secondAttribute="leading" constant="16" id="5d3-QS-kQn"/>
+                            <constraint firstItem="sns-bE-aXa" firstAttribute="top" secondItem="7g5-oh-IJU" secondAttribute="bottom" constant="8" symbolic="YES" id="81g-NL-aui"/>
+                            <constraint firstItem="7g5-oh-IJU" firstAttribute="leading" secondItem="2nr-Au-PaX" secondAttribute="leading" id="85v-uX-WvO"/>
+                            <constraint firstItem="xq3-Lc-KED" firstAttribute="bottom" secondItem="2nr-Au-PaX" secondAttribute="bottom" constant="354" id="DFa-Or-WBD"/>
+                            <constraint firstItem="7g5-oh-IJU" firstAttribute="trailing" secondItem="sns-bE-aXa" secondAttribute="trailing" id="FhN-in-Pf3"/>
+                            <constraint firstItem="xq3-Lc-KED" firstAttribute="bottom" secondItem="5AH-gL-dQa" secondAttribute="bottom" constant="238" id="KAp-FP-i9u"/>
+                            <constraint firstItem="7g5-oh-IJU" firstAttribute="top" secondItem="qq6-hF-t2t" secondAttribute="top" id="MkF-mh-cg4"/>
+                            <constraint firstItem="7g5-oh-IJU" firstAttribute="bottom" secondItem="qq6-hF-t2t" secondAttribute="bottom" id="PJr-4E-blg"/>
+                            <constraint firstItem="7g5-oh-IJU" firstAttribute="leading" secondItem="gBn-rm-Y1y" secondAttribute="leading" id="Rfj-pJ-q9O"/>
+                            <constraint firstItem="qq6-hF-t2t" firstAttribute="leading" secondItem="7g5-oh-IJU" secondAttribute="trailing" constant="8" symbolic="YES" id="aRt-il-0Xz"/>
+                            <constraint firstItem="7g5-oh-IJU" firstAttribute="trailing" secondItem="gBn-rm-Y1y" secondAttribute="trailing" id="ehU-RT-JBV"/>
+                            <constraint firstItem="2nr-Au-PaX" firstAttribute="top" secondItem="xq3-Lc-KED" secondAttribute="top" constant="20" id="h9r-iN-LT2"/>
+                            <constraint firstItem="7g5-oh-IJU" firstAttribute="leading" secondItem="5AH-gL-dQa" secondAttribute="leading" id="nA6-VE-IWN"/>
+                            <constraint firstItem="7g5-oh-IJU" firstAttribute="trailing" secondItem="5AH-gL-dQa" secondAttribute="trailing" id="omN-lQ-uFf"/>
+                            <constraint firstItem="5AH-gL-dQa" firstAttribute="top" secondItem="gBn-rm-Y1y" secondAttribute="bottom" constant="8" symbolic="YES" id="v7q-PT-fDg"/>
+                            <constraint firstItem="xq3-Lc-KED" firstAttribute="trailing" secondItem="2nr-Au-PaX" secondAttribute="trailing" constant="16" id="vWF-Tv-1S9"/>
+                            <constraint firstItem="7g5-oh-IJU" firstAttribute="top" secondItem="2nr-Au-PaX" secondAttribute="bottom" constant="8" id="xBV-HV-A71"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="xq3-Lc-KED"/>
                     </view>
                     <navigationItem key="navigationItem" title="MMM/DD/YYYY" id="1VK-M4-Rbn">
                         <barButtonItem key="leftBarButtonItem" title="&lt; Back" id="gy3-Jz-vEy">
+                            <color key="tintColor" red="0.4123803458083512" green="0.67727765867918777" blue="0.80858885114959689" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <segue destination="8W9-VN-iVj" kind="presentation" identifier="ViewListFromSingleJournal" id="9kb-69-1n7"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Edit" id="k6J-GU-WGr">
+                            <color key="tintColor" red="0.41238034579999999" green="0.67727765870000001" blue="0.80858885110000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
-                                <segue destination="BYZ-38-t0r" kind="presentation" id="fKP-lx-8F3"/>
+                                <segue destination="3Cl-g4-T5H" kind="presentation" identifier="EditJournalEntry" id="yqC-hI-JWN"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="JournalTextView" destination="2nr-Au-PaX" id="Kjl-tZ-PmV"/>
+                        <outlet property="emotionLabel" destination="qq6-hF-t2t" id="yK2-cg-4bc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jTZ-OY-BAv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2842" y="-272"/>
+            <point key="canvasLocation" x="2840.8000000000002" y="-272.11394302848578"/>
         </scene>
         <!--New Journal Entry-->
         <scene sceneID="JOj-5R-gDu">
             <objects>
                 <navigationController title="New Journal Entry" id="3Cl-g4-T5H" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="dvB-Yc-9Wy">
-                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.12941176469999999" green="0.20784313730000001" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="barTintColor" red="0.12941176469999999" green="0.20784313730000001" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -218,7 +291,7 @@
             <objects>
                 <viewController id="kK4-JG-bxC" customClass="EntryPointViewController" customModule="_99_Prototype" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kTr-Ta-kCm">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AdL-td-1j7">
@@ -226,7 +299,7 @@
                                 <state key="normal" title="List of Journals"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jGk-rq-G8A">
-                                <rect key="frame" x="63" y="338" width="194" height="150"/>
+                                <rect key="frame" x="63" y="338" width="249" height="150"/>
                                 <color key="backgroundColor" red="0.2253583287" green="0.36349842030000001" blue="0.43404260719999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="List of Journals">
@@ -237,7 +310,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tkW-HN-2Uj">
-                                <rect key="frame" x="63" y="112" width="194" height="150"/>
+                                <rect key="frame" x="63" y="112" width="249" height="150"/>
                                 <color key="backgroundColor" red="0.2253583287" green="0.36349842030000001" blue="0.43404260719999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="OT1-3q-gzf"/>
@@ -278,7 +351,7 @@
                 <navigationController title="dew. Entry" automaticallyAdjustsScrollViewInsets="NO" id="aOH-Cu-pEZ" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="c0M-DM-IkL">
-                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.12941176469999999" green="0.20784313730000001" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="barTintColor" red="0.12941176469999999" green="0.20784313730000001" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -301,9 +374,8 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="cVZ-sZ-4bH"/>
-        <segue reference="XUj-cr-OZi"/>
-        <segue reference="PF2-rZ-FbB"/>
-        <segue reference="Mys-YU-2eI"/>
-        <segue reference="kyu-19-q4g"/>
+        <segue reference="yqC-hI-JWN"/>
+        <segue reference="ofX-kJ-8wb"/>
+        <segue reference="9kb-69-1n7"/>
     </inferredMetricsTieBreakers>
 </document>

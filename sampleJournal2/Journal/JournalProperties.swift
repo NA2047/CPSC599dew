@@ -18,7 +18,6 @@ class JournalProperties {
         self.journalEntry = journal
         self.date = date
         self.time = time
-        // self.sentiment = performJournalAnalysis(journal)
     }
     
     func performJournalAnalysis(_ text: String) {

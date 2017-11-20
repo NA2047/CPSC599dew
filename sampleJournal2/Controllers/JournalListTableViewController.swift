@@ -15,7 +15,8 @@ class JournalListTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        sampleJournal.performJournalAnalysis(sampleJournal.journalEntry)
+    
         // For testing purposes
         listOfJournals.append(sampleJournal)
         
