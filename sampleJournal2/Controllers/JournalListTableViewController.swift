@@ -22,6 +22,7 @@ class JournalListTableViewController: UITableViewController {
             // For testing purposes
             let sampleJournal = JournalProperties("I am pretty stressed", "21/10/2017", "10:55 PM", (51.077853, -114.130181), ("negative", "", "😔"))
             listOfJournals.append(sampleJournal!)
+            saveJournals()
         }
         
         tableView.reloadData()
@@ -94,10 +95,10 @@ class JournalListTableViewController: UITableViewController {
         tableView.reloadData()
     }
     
-    // MARK: - SaveJournals
+    // MARK: - Persistent Storage
+    
+    // SaveJournals
     private func saveJournals() {
-        
-        // CRASHES ON THIS LINE!
         let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(listOfJournals, toFile: JournalProperties.ArchiveURL.path)
         if isSuccessfulSave {
             os_log("Journals successfully saved.", log: OSLog.default, type: .debug)
