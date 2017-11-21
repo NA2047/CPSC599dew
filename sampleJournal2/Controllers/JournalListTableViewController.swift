@@ -7,17 +7,22 @@
 //
 
 import UIKit
+import os.log
 
 class JournalListTableViewController: UITableViewController {
     
-    var sampleJournal = JournalProperties("I am pretty stressed", "21/10/2017", "10:55 PM", (51.077853, -114.130181), ("negative", "", "😔"))
     var listOfJournals = [JournalProperties]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
     
-        // For testing purposes
-        listOfJournals.append(sampleJournal)
+        if let savedJournals = loadJournals() {
+            listOfJournals += savedJournals
+        } else {
+            // For testing purposes
+            let sampleJournal = JournalProperties("I am pretty stressed", "21/10/2017", "10:55 PM", (51.077853, -114.130181), ("negative", "", "😔"))
+            listOfJournals.append(sampleJournal!)
+        }
         
         tableView.reloadData()
 
@@ -63,18 +68,48 @@ class JournalListTableViewController: UITableViewController {
     // MARK: - Action
     @IBAction func unwindToJournalList(sender: UIStoryboardSegue) {
         if let sourceViewController = sender.source as? NewJournalViewController {
+            
+            // Compute newIndexPath for new journal
+            let newIndexPath = IndexPath(row: listOfJournals.count, section: 0)
+            
+            // Create new journal and add to array
             let journal = sourceViewController.newJournal
             listOfJournals.append(journal!)
+            
+            // Insert to table
+            tableView.insertRows(at: [newIndexPath], with: .automatic)
+            
         }
         else if let sourceViewController = sender.source as? JournalDetailsViewController {
-            let journal = sourceViewController.selectedJournal
+            _ = sourceViewController.selectedJournal
 //            delete the journal from the list of journals
 //            delete the journal itself?
 //            listOfJournals.remove(at: <#T##Int#>)
         }
+        
+        // Save array of journals after adding a new journal entry from NewJournalViewController
+        saveJournals()
+        
+        // Reload table just in case
         tableView.reloadData()
     }
     
+    // MARK: - SaveJournals
+    private func saveJournals() {
+        
+        // CRASHES ON THIS LINE!
+        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(listOfJournals, toFile: JournalProperties.ArchiveURL.path)
+        if isSuccessfulSave {
+            os_log("Journals successfully saved.", log: OSLog.default, type: .debug)
+        } else {
+            os_log("Failed to save journals...", log: OSLog.default, type: .error)
+        }
+    }
+    
+    // Load Journals
+    private func loadJournals() -> [JournalProperties]? {
+        return NSKeyedUnarchiver.unarchiveObject(withFile: JournalProperties.ArchiveURL.path) as? [JournalProperties]
+    }
     
     // MARK: - Navigation
 
