@@ -12,29 +12,14 @@ class JournalProperties {
     var journalEntry: String = ""
     var date: String = ""
     var time: String = ""
-    var sentiment: (String, String) {
-        get{
-            let result = performJournalAnalysis(journalEntry)
-            return(result)
-        }
-    }
+    var location: (longitude: Double, latitude: Double)? = nil
+    var sentiment: (String, String, String) = ("", "", "")
     
-    init(_ journal:String, _ date:String, _ time:String) {
+    init(_ journal:String, _ date: String, _ time: String, _ location: (Double, Double), _ sentiment: (String, String, String)) {
         self.journalEntry = journal
         self.date = date
         self.time = time
-        // self.sentiment = performJournalAnalysis(journal)
-    }
-    
-    private func performJournalAnalysis(_ text: String) -> (String, String)  {
-        let classificationService = ClassificationService()
-        let result = classificationService.predictSentiment(from: text)
-        let result2 = result.0.rawValue
-        return (result2,String(result.1))
-//        print(sentiment)
-        
-//        let percent =
-        
-        
+        self.location = location
+        self.sentiment = sentiment
     }
 }

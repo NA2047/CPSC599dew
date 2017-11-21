@@ -10,12 +10,12 @@ import UIKit
 
 class JournalListTableViewController: UITableViewController {
     
-    var sampleJournal = JournalProperties("I am pretty stressed", "21/10/2017", "10:55 PM")
+    var sampleJournal = JournalProperties("I am pretty stressed", "21/10/2017", "10:55 PM", (51.077853, -114.130181), ("negative", "", "😔"))
     var listOfJournals = [JournalProperties]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    
         // For testing purposes
         listOfJournals.append(sampleJournal)
         
@@ -42,7 +42,8 @@ class JournalListTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "JournalCell", for: indexPath)
         // Configure the cell...
-        cell.textLabel?.text = listOfJournals[indexPath.row].date
+        let currentJournal = listOfJournals[indexPath.row]
+        cell.textLabel?.text = currentJournal.date + " " + currentJournal.sentiment.2
         cell.textLabel?.textColor = UIColor.white
         return cell
     }
@@ -64,6 +65,12 @@ class JournalListTableViewController: UITableViewController {
         if let sourceViewController = sender.source as? NewJournalViewController {
             let journal = sourceViewController.newJournal
             listOfJournals.append(journal!)
+        }
+        else if let sourceViewController = sender.source as? JournalDetailsViewController {
+            let journal = sourceViewController.selectedJournal
+//            delete the journal from the list of journals
+//            delete the journal itself?
+//            listOfJournals.remove(at: <#T##Int#>)
         }
         tableView.reloadData()
     }

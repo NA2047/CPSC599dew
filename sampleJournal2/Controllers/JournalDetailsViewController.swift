@@ -9,7 +9,9 @@
 import UIKit
 
 class JournalDetailsViewController: UIViewController {
-
+    @IBOutlet weak var deleteJournalEntryButton: UIBarButtonItem!
+    @IBOutlet weak var emotionLabel: UILabel!
+    @IBOutlet weak var journalTextView: UITextView!
     var selectedJournal: JournalProperties?
     
     override func viewDidLoad() {
@@ -17,7 +19,10 @@ class JournalDetailsViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         
+        
         self.title = selectedJournal?.date
+        journalTextView.text = selectedJournal?.journalEntry
+        emotionLabel.text = (selectedJournal?.sentiment.0)! + " " + (selectedJournal?.sentiment.2)!
         
         print(selectedJournal?.journalEntry)
         print(selectedJournal?.time)
@@ -28,7 +33,21 @@ class JournalDetailsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    @IBAction func deleteJournalEntryButtonPressed(_ sender: UIBarButtonItem) {
+        let alert = UIAlertController(title: "Delete Journal Entry?", message: "This action cannot be undone.", preferredStyle: UIAlertControllerStyle.alert)
+        
+        let delete = UIAlertAction(title: "Delete", style: .destructive, handler: { action in
+            self.performSegue(withIdentifier: "unwindToJournalListWithSender", sender: self)
+        })
+        
+        let cancel = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.default)
+        
+        alert.addAction(cancel)
+        alert.addAction(delete)
+        
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     /*
     // MARK: - Navigation
 
