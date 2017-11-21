@@ -22,7 +22,7 @@
                                 <rect key="frame" x="16" y="13" width="343" height="570"/>
                                 <color key="backgroundColor" red="0.22535832870005473" green="0.36349842034986535" blue="0.43404260716462495" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="textColor" red="0.97858951989999998" green="1" blue="0.9716497704" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" spellCheckingType="yes"/>
                             </textView>
                         </subviews>
@@ -36,7 +36,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="New Journal Entry" id="1L1-Dt-1Ge">
-                        <barButtonItem key="leftBarButtonItem" title="&lt; Cancel" id="wfX-3N-tIZ">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="wfX-3N-tIZ">
                             <color key="tintColor" red="0.41238034579999999" green="0.67727765870000001" blue="0.80858885110000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <segue destination="aOH-Cu-pEZ" kind="presentation" identifier="CancelNewJournalEntry" id="cVZ-sZ-4bH"/>
@@ -376,7 +376,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="jgT-w9-T3r"/>
+        <segue reference="cVZ-sZ-4bH"/>
         <segue reference="ECE-m2-Ere"/>
         <segue reference="PF2-rZ-FbB"/>
     </inferredMetricsTieBreakers>
