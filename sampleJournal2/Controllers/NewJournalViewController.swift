@@ -18,10 +18,14 @@ class NewJournalViewController: UIViewController, UITextViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         ViewTextField.delegate = self;
+        
+        ViewTextField.layer.cornerRadius = 10
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+        
+
         // Dispose of any resources that can be recreated.
     }
     
