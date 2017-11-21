@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		59FADF921FC4D26500C9243D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59FADF911FC4D25C00C9243D /* CoreLocation.framework */; };
 		7856B1C31FBCC7DE0014C0F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7856B1C21FBCC7DE0014C0F9 /* AppDelegate.swift */; };
 		7856B1C51FBCC7DE0014C0F9 /* NewJournalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7856B1C41FBCC7DE0014C0F9 /* NewJournalViewController.swift */; };
 		7856B1C81FBCC7DE0014C0F9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7856B1C61FBCC7DE0014C0F9 /* Main.storyboard */; };
@@ -83,6 +84,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		59FADF911FC4D25C00C9243D /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		7856B1BF1FBCC7DE0014C0F9 /* 599 Prototype.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "599 Prototype.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7856B1C21FBCC7DE0014C0F9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7856B1C41FBCC7DE0014C0F9 /* NewJournalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewJournalViewController.swift; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59FADF921FC4D26500C9243D /* CoreLocation.framework in Frameworks */,
 				8B951AE91FBFCCD900FC171D /* DiscoveryV1.framework in Frameworks */,
 				8BD7179D1FBFBB1D002AB936 /* DocumentConversionV1.framework in Frameworks */,
 				8BD7179E1FBFBB1D002AB936 /* SpeechToTextV1.framework in Frameworks */,
@@ -234,6 +237,7 @@
 		8BD7178D1FBFBB1C002AB936 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				59FADF911FC4D25C00C9243D /* CoreLocation.framework */,
 				8BD717941FBFBB1C002AB936 /* AlchemyLanguageV1.framework */,
 				8BD7179B1FBFBB1D002AB936 /* ConversationV1.framework */,
 				8BD717931FBFBB1C002AB936 /* DialogV1.framework */,
