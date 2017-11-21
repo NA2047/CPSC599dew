@@ -22,7 +22,7 @@ class JournalDetailsViewController: UIViewController {
         
         self.title = selectedJournal?.date
         journalTextView.text = selectedJournal?.journalEntry
-        emotionLabel.text = (selectedJournal?.sentiment.0)! + " " + (selectedJournal?.emoji)!
+        emotionLabel.text = (selectedJournal?.sentiment.0)! + " " + (selectedJournal?.sentiment.2)!
         
         print(selectedJournal?.journalEntry)
         print(selectedJournal?.time)

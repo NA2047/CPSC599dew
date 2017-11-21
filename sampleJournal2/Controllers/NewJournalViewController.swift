@@ -59,8 +59,19 @@ class NewJournalViewController: UIViewController, UITextViewDelegate {
             // Store text entered into journal field
             let enteredJournal = ViewTextField.text
             
+            // TODO: sharon
+            // Get current location
+            let currentLocation = (0.0, 0.0)
+            
+            var currentSentiment: (String, String, String) {
+                get{
+                    let result = performJournalAnalysis(enteredJournal!)
+                    return(result)
+                }
+            }
+            
             // New journal object
-            let newJournal = JournalProperties(enteredJournal!, currentDate, currentTime)
+            let newJournal = JournalProperties(enteredJournal!, currentDate, currentTime, currentLocation, currentSentiment)
             self.newJournal = newJournal
             print(newJournal.sentiment)
             
@@ -75,5 +86,18 @@ class NewJournalViewController: UIViewController, UITextViewDelegate {
     
     @IBAction func textfieldDoneButtonTapped(_ sender: UIBarButtonItem) {
         self.view.endEditing(true)
+    }
+    
+    
+    private func performJournalAnalysis(_ text: String) -> (String, String, String)  {
+        let classificationService = ClassificationService()
+        let result = classificationService.predictSentiment(from: text)
+        let result2 = result.0.rawValue
+        return (result2, String(result.1), result.0.emoji)
+        //        print(sentiment)
+        
+        //        let percent =
+        
+        
     }
 }

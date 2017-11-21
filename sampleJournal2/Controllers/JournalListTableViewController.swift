@@ -10,7 +10,7 @@ import UIKit
 
 class JournalListTableViewController: UITableViewController {
     
-    var sampleJournal = JournalProperties("I am pretty stressed", "21/10/2017", "10:55 PM")
+    var sampleJournal = JournalProperties("I am pretty stressed", "21/10/2017", "10:55 PM", (51.077853, -114.130181), ("negative", "", "😔"))
     var listOfJournals = [JournalProperties]()
 
     override func viewDidLoad() {
@@ -43,7 +43,7 @@ class JournalListTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "JournalCell", for: indexPath)
         // Configure the cell...
         let currentJournal = listOfJournals[indexPath.row]
-        cell.textLabel?.text = currentJournal.date + " " + currentJournal.emoji
+        cell.textLabel?.text = currentJournal.date + " " + currentJournal.sentiment.2
         cell.textLabel?.textColor = UIColor.white
         return cell
     }
