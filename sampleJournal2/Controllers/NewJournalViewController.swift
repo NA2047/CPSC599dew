@@ -108,6 +108,7 @@ class NewJournalViewController: UIViewController, UITextViewDelegate, CLLocation
             print(newJournal.sentiment)
             
             print(newJournal.journalEntry)
+            print(newJournal.location!)
             
             
             
