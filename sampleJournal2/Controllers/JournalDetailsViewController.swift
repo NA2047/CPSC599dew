@@ -24,8 +24,8 @@ class JournalDetailsViewController: UIViewController {
         journalTextView.text = selectedJournal?.journalEntry
         emotionLabel.text = (selectedJournal?.sentiment.0)! + " " + (selectedJournal?.sentiment.2)!
         
-        print(selectedJournal?.journalEntry)
-        print(selectedJournal?.time)
+        print(selectedJournal?.journalEntry ?? "could not print journal entry")
+        print(selectedJournal?.time ?? "could not print time")
     }
 
     override func didReceiveMemoryWarning() {
@@ -48,7 +48,7 @@ class JournalDetailsViewController: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -56,6 +56,6 @@ class JournalDetailsViewController: UIViewController {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-    */
+    
 
 }

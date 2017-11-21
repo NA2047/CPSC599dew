@@ -77,9 +77,9 @@ class NewJournalViewController: UIViewController, UITextViewDelegate {
             // New journal object
             let newJournal = JournalProperties(enteredJournal!, currentDate, currentTime, currentLocation, currentSentiment)
             self.newJournal = newJournal
-            print(newJournal.sentiment)
+            print(newJournal?.sentiment)
             
-            print(newJournal.journalEntry)
+            print(newJournal?.journalEntry)
         }
     }
     
