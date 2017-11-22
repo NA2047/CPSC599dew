@@ -50,7 +50,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="ViewTextField" destination="Vy1-gY-xmp" id="V2E-ku-uzZ"/>
+                        <outlet property="journalTextView" destination="Vy1-gY-xmp" id="V2E-ku-uzZ"/>
+                        <outlet property="saveJournalEntryButton" destination="TIv-sV-1QX" id="v1V-ZR-JBU"/>
                         <outlet property="toolbar" destination="qul-R4-yAr" id="V5O-Gb-N2t"/>
                     </connections>
                 </viewController>
@@ -344,6 +345,10 @@
                         <viewLayoutGuide key="safeArea" id="6qh-Gq-bue"/>
                     </view>
                     <navigationItem key="navigationItem" title="dew." id="N8Q-9g-tw4"/>
+                    <connections>
+                        <outlet property="listOfJournalsButton" destination="jGk-rq-G8A" id="dl1-EW-j7a"/>
+                        <outlet property="newJournalEntryButton" destination="tkW-HN-2Uj" id="QhK-ha-bVd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="THk-mu-msh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

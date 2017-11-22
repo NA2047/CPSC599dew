@@ -15,7 +15,7 @@ class JournalProperties: NSObject, NSCoding {
     var date: String = ""
     var time: String = ""
     var location: (longitude: Double, latitude: Double)? = nil
-    var sentiment: (String, String, String) = ("", "", "")
+    var sentiment: (String, String, String) = ("", "", "") // emotionText, emotionConfidence, emotionEmoji
     
     
     // Property Keys
