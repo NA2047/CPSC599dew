@@ -82,13 +82,22 @@ class JournalListTableViewController: UITableViewController {
             
         }
         else if let sourceViewController = sender.source as? JournalDetailsViewController {
-            _ = sourceViewController.selectedJournal
-//            delete the journal from the list of journals
-//            delete the journal itself?
-//            listOfJournals.remove(at: <#T##Int#>)
+            // This is a very hacky fix to ensure that the journal is only deleted if it is
+            // flagged for deletion
+            if (!sourceViewController.deleteJournal){
+                return
+            }
+            
+            // Journal to be deleted
+            let journal = sourceViewController.selectedJournal
+            
+            // Find the journal in the array and delete the journal at the index
+            listOfJournals.remove(at: listOfJournals.index(of: journal!)!)
         }
         
-        // Save array of journals after adding a new journal entry from NewJournalViewController
+        // Save array of journals
+        //    after adding a new journal entry from NewJournalViewController
+        //    or if deleting an existing journal entry from JournalDetailsViewController
         saveJournals()
         
         // Reload table just in case

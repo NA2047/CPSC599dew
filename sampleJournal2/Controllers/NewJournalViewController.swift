@@ -10,29 +10,32 @@ import UIKit
 class NewJournalViewController: UIViewController, UITextViewDelegate {
     
     @IBOutlet var toolbar: UIToolbar!
-    @IBOutlet weak var ViewTextField: UITextView!
+    @IBOutlet weak var journalTextView: UITextView!
     
+    @IBOutlet weak var saveJournalEntryButton: UIBarButtonItem!
     var startEditing: Bool = false
-    var newJournal: JournalProperties?;
+    var newJournal: JournalProperties?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        ViewTextField.delegate = self;
-        
-        ViewTextField.layer.cornerRadius = 10
+        journalTextView.delegate = self
+        journalTextView.layer.cornerRadius = 10
+        saveJournalEntryButton.isEnabled = false
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        
-
         // Dispose of any resources that can be recreated.
+    }
+    
+    func textViewDidChange(_ textView: UITextView) {
+        saveJournalEntryButton.isEnabled = !textView.text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
     }
     
     func textViewDidBeginEditing(_ textView: UITextView) {
         if !self.startEditing {
             textView.text = ""
-            textView.textColor = UIColor.black
+            textView.textColor = UIColor.white
             self.startEditing = true
         }
     }
@@ -43,7 +46,7 @@ class NewJournalViewController: UIViewController, UITextViewDelegate {
     }
     
     func saveJournalEntry() {
-        if self.ViewTextField.text == "" || self.ViewTextField.text == "Write here..." {
+        if self.journalTextView.text == "" || self.journalTextView.text == "Write here..." {
             // Did not add anything new, yet.
             print("No change in text field")
         } else {
@@ -61,7 +64,7 @@ class NewJournalViewController: UIViewController, UITextViewDelegate {
             let currentTime = timeFormat.string(from: date)
             
             // Store text entered into journal field
-            let enteredJournal = ViewTextField.text
+            let enteredJournal = journalTextView.text
             
             // TODO: sharon
             // Get current location
