@@ -49,7 +49,7 @@ class JournalListTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "JournalCell", for: indexPath)
         // Configure the cell...
         let currentJournal = listOfJournals[indexPath.row]
-        cell.textLabel?.text = currentJournal.date + " " + currentJournal.sentiment.2
+        cell.textLabel?.text = currentJournal.date + " - " + currentJournal.time + " " + currentJournal.sentiment.2
         cell.textLabel?.textColor = UIColor.white
         return cell
     }

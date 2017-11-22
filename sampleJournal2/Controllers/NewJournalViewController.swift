@@ -11,6 +11,9 @@ class NewJournalViewController: UIViewController, UITextViewDelegate {
     
     @IBOutlet var toolbar: UIToolbar!
     @IBOutlet weak var journalTextView: UITextView!
+    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
+    
+    var oldBottomConstraint: CGFloat = 0.0
     
     @IBOutlet weak var saveJournalEntryButton: UIBarButtonItem!
     var startEditing: Bool = false
@@ -21,6 +24,9 @@ class NewJournalViewController: UIViewController, UITextViewDelegate {
         journalTextView.delegate = self
         journalTextView.layer.cornerRadius = 10
         saveJournalEntryButton.isEnabled = false
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardShown), name:NSNotification.Name.UIKeyboardWillShow, object: nil);
+
     }
     
     override func didReceiveMemoryWarning() {
@@ -93,6 +99,7 @@ class NewJournalViewController: UIViewController, UITextViewDelegate {
     
     @IBAction func textfieldDoneButtonTapped(_ sender: UIBarButtonItem) {
         self.view.endEditing(true)
+        bottomConstraint.constant = self.oldBottomConstraint
     }
     
     
@@ -106,5 +113,12 @@ class NewJournalViewController: UIViewController, UITextViewDelegate {
         //        let percent =
         
         
+    }
+    // From stack overflow - find keyboard height
+    @objc func keyboardShown(notification: NSNotification) {
+        let info = notification.userInfo!
+        let keyboardFrame: CGRect = (info[UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+        oldBottomConstraint = bottomConstraint.constant
+        bottomConstraint.constant = keyboardFrame.height + 10.0
     }
 }
