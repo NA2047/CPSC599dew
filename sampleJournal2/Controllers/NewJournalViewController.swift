@@ -91,13 +91,16 @@ class NewJournalViewController: UIViewController, UITextViewDelegate, CLLocation
             // should be working but seems like its not getting here?
             var currentLocation = (0.0,0.0)
             
-            let latitude = locationManager.location?.coordinate.latitude
-            let longitude = locationManager.location?.coordinate.longitude
+            if let latitude = locationManager.location?.coordinate.latitude,let longitude = locationManager.location?.coordinate.longitude {
+                currentLocation = (latitude,longitude)
+                print("here")
+                print(currentLocation)
+                print(longitude)
+                
+            }
+//            let longitude = locationManager.location?.coordinate.longitude
 //            currentLocation = ((locationManager.location?.coordinate.latitude ?? 0),(locationManager.location?.coordinate.longitude ?? 0))
-            currentLocation = (latitude!,longitude!)
-            print("here")
-            print(currentLocation)
-            print(longitude!)
+           
             
 
             
