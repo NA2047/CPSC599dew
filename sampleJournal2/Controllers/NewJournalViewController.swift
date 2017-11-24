@@ -32,10 +32,6 @@ class NewJournalViewController: UIViewController, UITextViewDelegate, CLLocation
         journalTextView.layer.cornerRadius = 10
         saveJournalEntryButton.isEnabled = false
         
-
-        ViewTextField.layer.cornerRadius = 10
-        
-        
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
@@ -100,7 +96,7 @@ class NewJournalViewController: UIViewController, UITextViewDelegate, CLLocation
             let latitude = locationManager.location?.coordinate.latitude
             let longitude = locationManager.location?.coordinate.longitude
 //            currentLocation = ((locationManager.location?.coordinate.latitude ?? 0),(locationManager.location?.coordinate.longitude ?? 0))
-            currentLocation = (latitude!, longitude!)
+            currentLocation = (longitude!, latitude!)
             print("here")
             print(currentLocation)
             print(longitude!)
@@ -122,9 +118,7 @@ class NewJournalViewController: UIViewController, UITextViewDelegate, CLLocation
             self.newJournal = newJournal
             print(newJournal?.sentiment)
             
-
-            print(newJournal.journalEntry)
-            print(newJournal.location!)
+            print(newJournal?.location!)
 
             print(newJournal?.journalEntry)
         }
