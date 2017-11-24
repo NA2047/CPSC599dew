@@ -9,11 +9,14 @@
 import UIKit
 
 class JournalDetailsViewController: UIViewController, UITextViewDelegate {
+    
+    @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var deleteJournalEntryButton: UIBarButtonItem!
     @IBOutlet weak var emotionLabel: UILabel!
     @IBOutlet weak var journalTextView: UITextView!
     var selectedJournal: JournalProperties?
     var deleteJournal = false
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +28,15 @@ class JournalDetailsViewController: UIViewController, UITextViewDelegate {
         self.title = selectedJournal?.date
         journalTextView.text = selectedJournal?.journalEntry
         emotionLabel.text = (selectedJournal?.sentiment.0)! + " " + (selectedJournal?.sentiment.2)!
+        
+        var longitude = selectedJournal?.location?.longitude
+        var latitude = selectedJournal?.location?.latitude
+        
+        locationLabel.text = "Location: \(longitude ?? 0), \(latitude ?? 0)"
+        
+        
+        
+        
         
         print(selectedJournal?.journalEntry ?? "could not print journal entry")
         print(selectedJournal?.time ?? "could not print time")

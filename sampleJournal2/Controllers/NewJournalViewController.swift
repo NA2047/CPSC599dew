@@ -33,7 +33,7 @@ class NewJournalViewController: UIViewController, UITextViewDelegate, CLLocation
         saveJournalEntryButton.isEnabled = false
         
 
-        ViewTextField.layer.cornerRadius = 10
+//        ViewTextField.layer.cornerRadius = 10
         
         
         locationManager.delegate = self
@@ -123,8 +123,8 @@ class NewJournalViewController: UIViewController, UITextViewDelegate, CLLocation
             print(newJournal?.sentiment)
             
 
-            print(newJournal.journalEntry)
-            print(newJournal.location!)
+            print(newJournal!.journalEntry)
+            print(newJournal!.location!)
 
             print(newJournal?.journalEntry)
         }

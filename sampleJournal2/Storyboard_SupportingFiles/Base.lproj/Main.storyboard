@@ -260,6 +260,7 @@
                         <outlet property="JournalTextView" destination="2nr-Au-PaX" id="Kjl-tZ-PmV"/>
                         <outlet property="deleteJournalEntryButton" destination="k6J-GU-WGr" id="d5O-6y-cPZ"/>
                         <outlet property="emotionLabel" destination="qq6-hF-t2t" id="yK2-cg-4bc"/>
+                        <outlet property="locationLabel" destination="gBn-rm-Y1y" id="yZE-ru-D7Y"/>
                         <segue destination="zX4-Vn-Weh" kind="unwind" identifier="unwindToJournalListWithSender" unwindAction="unwindToJournalListWithSender:" id="KrG-ef-qKm"/>
                     </connections>
                 </viewController>
@@ -383,14 +384,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-
-        <segue reference="jgT-w9-T3r"/>
-        <segue reference="ECE-m2-Ere"/>
-        <segue reference="PF2-rZ-FbB"/>
-
         <segue reference="cVZ-sZ-4bH"/>
         <segue reference="XUj-cr-OZi"/>
         <segue reference="ofX-kJ-8wb"/>
-
     </inferredMetricsTieBreakers>
 </document>
