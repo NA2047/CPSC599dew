@@ -94,7 +94,7 @@ class NewJournalViewController: UIViewController, UITextViewDelegate, CLLocation
             let latitude = locationManager.location?.coordinate.latitude
             let longitude = locationManager.location?.coordinate.longitude
 //            currentLocation = ((locationManager.location?.coordinate.latitude ?? 0),(locationManager.location?.coordinate.longitude ?? 0))
-            currentLocation = (longitude!, latitude!)
+            currentLocation = (latitude!,longitude!)
             print("here")
             print(currentLocation)
             print(longitude!)

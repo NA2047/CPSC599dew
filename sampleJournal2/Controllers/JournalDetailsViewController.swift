@@ -34,14 +34,17 @@ class JournalDetailsViewController: UIViewController, UITextViewDelegate {
         print(selectedJournal?.journalEntry ?? "could not print journal entry")
         print(selectedJournal?.time ?? "could not print time")
         
+        print( (selectedJournal?.location?.latitude)!)
         
-//        let location = CLLocation(latitude: (selectedJournal?.location?.longitude)!, longitude: (selectedJournal?.location?.latitude)!)
+        
+        let location = CLLocation(latitude: (selectedJournal?.location?.latitude)!, longitude: (selectedJournal?.location?.longitude)!)
         
         // 51.077660, -114.130413
         // mac hall coordinates
         // hardcoded for now, location isn't working properly
         
-        let location = CLLocation(latitude: 51.077660, longitude: -114.130413)
+//        let location = CLLocation(latitude: 51.077660, longitude: -114.130413)
+        
         
         
         centerMapOnLocation(location: location)
