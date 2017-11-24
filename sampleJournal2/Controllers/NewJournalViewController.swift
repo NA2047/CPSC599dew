@@ -6,16 +6,23 @@
 //  Copyright © 2017 Raza Qazi. All rights reserved.
 //
 import UIKit
+import CoreLocation
 
-class NewJournalViewController: UIViewController, UITextViewDelegate {
+class NewJournalViewController: UIViewController, UITextViewDelegate, CLLocationManagerDelegate {
     
     @IBOutlet var toolbar: UIToolbar!
     @IBOutlet weak var journalTextView: UITextView!
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     
+
+    var locationManager = CLLocationManager()
+
+    
+
     var oldBottomConstraint: CGFloat = 0.0
     
     @IBOutlet weak var saveJournalEntryButton: UIBarButtonItem!
+
     var startEditing: Bool = false
     var newJournal: JournalProperties?
     
@@ -25,7 +32,19 @@ class NewJournalViewController: UIViewController, UITextViewDelegate {
         journalTextView.layer.cornerRadius = 10
         saveJournalEntryButton.isEnabled = false
         
+
+        ViewTextField.layer.cornerRadius = 10
+        
+        
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
+        print((locationManager.location?.coordinate.latitude ?? 0))
+        print((locationManager.location?.coordinate.longitude ?? 0))
+        
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardShown), name:NSNotification.Name.UIKeyboardWillShow, object: nil);
+
 
     }
     
@@ -73,8 +92,22 @@ class NewJournalViewController: UIViewController, UITextViewDelegate {
             let enteredJournal = journalTextView.text
             
             // TODO: sharon
+            
             // Get current location
-            let currentLocation = (0.0, 0.0)
+            //should be working but seems like its not getting here?
+            var currentLocation = (0.0,0.0)
+            
+            let latitude = locationManager.location?.coordinate.latitude
+            let longitude = locationManager.location?.coordinate.longitude
+//            currentLocation = ((locationManager.location?.coordinate.latitude ?? 0),(locationManager.location?.coordinate.longitude ?? 0))
+            currentLocation = (latitude!, longitude!)
+            print("here")
+            print(currentLocation)
+            print(longitude!)
+            
+
+            
+//            currentLocation = (locationManager.)
             
             var currentSentiment: (String, String, String) {
                 get{
@@ -83,11 +116,16 @@ class NewJournalViewController: UIViewController, UITextViewDelegate {
                 }
             }
             
+            
             // New journal object
             let newJournal = JournalProperties(enteredJournal!, currentDate, currentTime, currentLocation, currentSentiment)
             self.newJournal = newJournal
             print(newJournal?.sentiment)
             
+
+            print(newJournal.journalEntry)
+            print(newJournal.location!)
+
             print(newJournal?.journalEntry)
         }
     }
@@ -114,6 +152,22 @@ class NewJournalViewController: UIViewController, UITextViewDelegate {
         
         
     }
+
+   
+    private func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation])->CLLocation {
+        let userLocation: CLLocation = locations[0]
+        
+//        let latitude = userLocation.coordinate.latitude
+//        let longitude = userLocation.coordinate.longitude
+//
+//        print(locations)
+        
+        
+        return userLocation
+    }
+    
+    
+
     // From stack overflow - find keyboard height
     @objc func keyboardShown(notification: NSNotification) {
         let info = notification.userInfo!
@@ -121,4 +175,5 @@ class NewJournalViewController: UIViewController, UITextViewDelegate {
         oldBottomConstraint = bottomConstraint.constant
         bottomConstraint.constant = keyboardFrame.height + 10.0
     }
+
 }
