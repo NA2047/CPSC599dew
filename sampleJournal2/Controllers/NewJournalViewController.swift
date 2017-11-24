@@ -11,18 +11,28 @@ import CoreLocation
 class NewJournalViewController: UIViewController, UITextViewDelegate, CLLocationManagerDelegate {
     
     @IBOutlet var toolbar: UIToolbar!
-    @IBOutlet weak var ViewTextField: UITextView!
+    @IBOutlet weak var journalTextView: UITextView!
+    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     
+
     var locationManager = CLLocationManager()
 
     
+
+    var oldBottomConstraint: CGFloat = 0.0
+    
+    @IBOutlet weak var saveJournalEntryButton: UIBarButtonItem!
+
     var startEditing: Bool = false
-    var newJournal: JournalProperties?;
+    var newJournal: JournalProperties?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        ViewTextField.delegate = self;
+        journalTextView.delegate = self
+        journalTextView.layer.cornerRadius = 10
+        saveJournalEntryButton.isEnabled = false
         
+
         ViewTextField.layer.cornerRadius = 10
         
         
@@ -33,19 +43,24 @@ class NewJournalViewController: UIViewController, UITextViewDelegate, CLLocation
         print((locationManager.location?.coordinate.latitude ?? 0))
         print((locationManager.location?.coordinate.longitude ?? 0))
         
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardShown), name:NSNotification.Name.UIKeyboardWillShow, object: nil);
+
+
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        
-
         // Dispose of any resources that can be recreated.
+    }
+    
+    func textViewDidChange(_ textView: UITextView) {
+        saveJournalEntryButton.isEnabled = !textView.text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
     }
     
     func textViewDidBeginEditing(_ textView: UITextView) {
         if !self.startEditing {
             textView.text = ""
-            textView.textColor = UIColor.black
+            textView.textColor = UIColor.white
             self.startEditing = true
         }
     }
@@ -56,7 +71,7 @@ class NewJournalViewController: UIViewController, UITextViewDelegate, CLLocation
     }
     
     func saveJournalEntry() {
-        if self.ViewTextField.text == "" || self.ViewTextField.text == "Write here..." {
+        if self.journalTextView.text == "" || self.journalTextView.text == "Write here..." {
             // Did not add anything new, yet.
             print("No change in text field")
         } else {
@@ -74,7 +89,7 @@ class NewJournalViewController: UIViewController, UITextViewDelegate, CLLocation
             let currentTime = timeFormat.string(from: date)
             
             // Store text entered into journal field
-            let enteredJournal = ViewTextField.text
+            let enteredJournal = journalTextView.text
             
             // TODO: sharon
             
@@ -105,15 +120,13 @@ class NewJournalViewController: UIViewController, UITextViewDelegate, CLLocation
             // New journal object
             let newJournal = JournalProperties(enteredJournal!, currentDate, currentTime, currentLocation, currentSentiment)
             self.newJournal = newJournal
-            print(newJournal.sentiment)
+            print(newJournal?.sentiment)
             
+
             print(newJournal.journalEntry)
             print(newJournal.location!)
-            
-            
-            
-            
-            
+
+            print(newJournal?.journalEntry)
         }
     }
     
@@ -124,6 +137,7 @@ class NewJournalViewController: UIViewController, UITextViewDelegate, CLLocation
     
     @IBAction func textfieldDoneButtonTapped(_ sender: UIBarButtonItem) {
         self.view.endEditing(true)
+        bottomConstraint.constant = self.oldBottomConstraint
     }
     
     
@@ -138,6 +152,7 @@ class NewJournalViewController: UIViewController, UITextViewDelegate, CLLocation
         
         
     }
+
    
     private func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation])->CLLocation {
         let userLocation: CLLocation = locations[0]
@@ -152,4 +167,13 @@ class NewJournalViewController: UIViewController, UITextViewDelegate, CLLocation
     }
     
     
+
+    // From stack overflow - find keyboard height
+    @objc func keyboardShown(notification: NSNotification) {
+        let info = notification.userInfo!
+        let keyboardFrame: CGRect = (info[UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+        oldBottomConstraint = bottomConstraint.constant
+        bottomConstraint.constant = keyboardFrame.height + 10.0
+    }
+
 }

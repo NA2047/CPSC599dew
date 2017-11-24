@@ -9,10 +9,13 @@
 import UIKit
 
 class EntryPointViewController: UIViewController {
-
+    @IBOutlet weak var newJournalEntryButton: UIButton!
+    @IBOutlet weak var listOfJournalsButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        newJournalEntryButton.layer.cornerRadius = 10
+        listOfJournalsButton.layer.cornerRadius = 10
         // Do any additional setup after loading the view.
     }
 
