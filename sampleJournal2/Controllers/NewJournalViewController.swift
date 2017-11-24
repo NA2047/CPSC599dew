@@ -87,10 +87,8 @@ class NewJournalViewController: UIViewController, UITextViewDelegate, CLLocation
             // Store text entered into journal field
             let enteredJournal = journalTextView.text
             
-            // TODO: sharon
-            
             // Get current location
-            //should be working but seems like its not getting here?
+            // should be working but seems like its not getting here?
             var currentLocation = (0.0,0.0)
             
             let latitude = locationManager.location?.coordinate.latitude

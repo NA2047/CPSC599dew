@@ -39,6 +39,7 @@ class JournalDetailsViewController: UIViewController, UITextViewDelegate {
         
         // 51.077660, -114.130413
         // mac hall coordinates
+        // hardcoded for now, location isn't working properly
         
         let location = CLLocation(latitude: 51.077660, longitude: -114.130413)
         
