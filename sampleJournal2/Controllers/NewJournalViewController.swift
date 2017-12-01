@@ -105,17 +105,10 @@ class NewJournalViewController: UIViewController, UITextViewDelegate, CLLocation
 
             
 //            currentLocation = (locationManager.)
-            
-            var currentSentiment: (String, String, String) {
-                get{
-                    let result = performJournalAnalysis(enteredJournal!)
-                    return(result)
-                }
-            }
-            
+
             
             // New journal object
-            let newJournal = JournalProperties(enteredJournal!, currentDate, currentTime, currentLocation, currentSentiment)
+            let newJournal = JournalProperties(enteredJournal!, currentDate, currentTime, currentLocation, enteredJournal!.performJournalAnalysis())
             self.newJournal = newJournal
             print(newJournal?.sentiment)
             
@@ -135,18 +128,7 @@ class NewJournalViewController: UIViewController, UITextViewDelegate, CLLocation
         bottomConstraint.constant = self.oldBottomConstraint
     }
     
-    
-    private func performJournalAnalysis(_ text: String) -> (String, String, String)  {
-        let classificationService = ClassificationService()
-        let result = classificationService.predictSentiment(from: text)
-        let result2 = result.0.rawValue
-        return (result2, String(result.1), result.0.emoji)
-        //        print(sentiment)
-        
-        //        let percent =
-        
-        
-    }
+
 
    
     private func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation])->CLLocation {

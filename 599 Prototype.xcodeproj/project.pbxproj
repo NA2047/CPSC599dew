@@ -17,6 +17,7 @@
 		7878B73E1FC127C1003482B5 /* JournalDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7878B73D1FC127C1003482B5 /* JournalDetailsViewController.swift */; };
 		7878B7401FC12960003482B5 /* JournalListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7878B73F1FC12960003482B5 /* JournalListTableViewController.swift */; };
 		7878B7421FC12F47003482B5 /* JournalProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7878B7411FC12F47003482B5 /* JournalProperties.swift */; };
+		8B15F3C61FD110AC0089332E /* ViewControllerExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B15F3C51FD110AC0089332E /* ViewControllerExtentions.swift */; };
 		8B951AE31FBFCCD900FC171D /* AlchemyLanguageV1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BD717941FBFBB1C002AB936 /* AlchemyLanguageV1.framework */; };
 		8B951AE41FBFCCD900FC171D /* AlchemyLanguageV1.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8BD717941FBFBB1C002AB936 /* AlchemyLanguageV1.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8B951AE51FBFCCD900FC171D /* ConversationV1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BD7179B1FBFBB1D002AB936 /* ConversationV1.framework */; };
@@ -37,6 +38,7 @@
 		8B951AFC1FBFCCD900FC171D /* TextToSpeechV1.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8BD7179A1FBFBB1D002AB936 /* TextToSpeechV1.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8B951AFE1FBFCCDA00FC171D /* ToneAnalyzerV3.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8BD717921FBFBB1C002AB936 /* ToneAnalyzerV3.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8B951B001FBFCCDA00FC171D /* TradeoffAnalyticsV1.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8BD717901FBFBB1C002AB936 /* TradeoffAnalyticsV1.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8BC514351FD1041100607EB9 /* CoreMLExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC514341FD1041100607EB9 /* CoreMLExtention.swift */; };
 		8BD7179D1FBFBB1D002AB936 /* DocumentConversionV1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BD7178E1FBFBB1C002AB936 /* DocumentConversionV1.framework */; };
 		8BD7179E1FBFBB1D002AB936 /* SpeechToTextV1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BD7178F1FBFBB1C002AB936 /* SpeechToTextV1.framework */; };
 		8BD7179F1FBFBB1D002AB936 /* TradeoffAnalyticsV1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BD717901FBFBB1C002AB936 /* TradeoffAnalyticsV1.framework */; };
@@ -50,8 +52,6 @@
 		8BEE6C291FC2256D00A87588 /* MLSentimentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEE6C281FC2256D00A87588 /* MLSentimentModel.swift */; };
 		8BEE6C2C1FC2257300A87588 /* ToneAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEE6C2B1FC2257300A87588 /* ToneAnalyzer.swift */; };
 		8BEE6C2E1FC2257700A87588 /* LinguisticWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEE6C2D1FC2257700A87588 /* LinguisticWrapper.swift */; };
-		8BEE6C311FC226B500A87588 /* ClassificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEE6C301FC226B500A87588 /* ClassificationService.swift */; };
-		8BEE6C331FC226DC00A87588 /* Sentiment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEE6C321FC226DC00A87588 /* Sentiment.swift */; };
 		8BEE6C341FC2274600A87588 /* SentimentPolarity.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 8BEE6C2A1FC2257000A87588 /* SentimentPolarity.mlmodel */; };
 /* End PBXBuildFile section */
 
@@ -96,6 +96,8 @@
 		7878B73D1FC127C1003482B5 /* JournalDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalDetailsViewController.swift; sourceTree = "<group>"; };
 		7878B73F1FC12960003482B5 /* JournalListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalListTableViewController.swift; sourceTree = "<group>"; };
 		7878B7411FC12F47003482B5 /* JournalProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalProperties.swift; sourceTree = "<group>"; };
+		8B15F3C51FD110AC0089332E /* ViewControllerExtentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtentions.swift; sourceTree = "<group>"; };
+		8BC514341FD1041100607EB9 /* CoreMLExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreMLExtention.swift; sourceTree = "<group>"; };
 		8BD7178E1FBFBB1C002AB936 /* DocumentConversionV1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DocumentConversionV1.framework; path = Carthage/Build/iOS/DocumentConversionV1.framework; sourceTree = "<group>"; };
 		8BD7178F1FBFBB1C002AB936 /* SpeechToTextV1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpeechToTextV1.framework; path = Carthage/Build/iOS/SpeechToTextV1.framework; sourceTree = "<group>"; };
 		8BD717901FBFBB1C002AB936 /* TradeoffAnalyticsV1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TradeoffAnalyticsV1.framework; path = Carthage/Build/iOS/TradeoffAnalyticsV1.framework; sourceTree = "<group>"; };
@@ -115,8 +117,6 @@
 		8BEE6C2A1FC2257000A87588 /* SentimentPolarity.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = SentimentPolarity.mlmodel; sourceTree = "<group>"; };
 		8BEE6C2B1FC2257300A87588 /* ToneAnalyzer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToneAnalyzer.swift; sourceTree = "<group>"; };
 		8BEE6C2D1FC2257700A87588 /* LinguisticWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinguisticWrapper.swift; sourceTree = "<group>"; };
-		8BEE6C301FC226B500A87588 /* ClassificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassificationService.swift; sourceTree = "<group>"; };
-		8BEE6C321FC226DC00A87588 /* Sentiment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sentiment.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,8 +199,8 @@
 			children = (
 				8BEE6C281FC2256D00A87588 /* MLSentimentModel.swift */,
 				8BEE6C2A1FC2257000A87588 /* SentimentPolarity.mlmodel */,
-				8BEE6C301FC226B500A87588 /* ClassificationService.swift */,
-				8BEE6C321FC226DC00A87588 /* Sentiment.swift */,
+				8BC514341FD1041100607EB9 /* CoreMLExtention.swift */,
+				8B15F3C51FD110AC0089332E /* ViewControllerExtentions.swift */,
 			);
 			path = CoreML;
 			sourceTree = "<group>";
@@ -362,18 +362,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BC514351FD1041100607EB9 /* CoreMLExtention.swift in Sources */,
 				8BEE6C341FC2274600A87588 /* SentimentPolarity.mlmodel in Sources */,
 				7878B73A1FC12794003482B5 /* EntryPointViewController.swift in Sources */,
 				8BEE6C2C1FC2257300A87588 /* ToneAnalyzer.swift in Sources */,
 				7878B73E1FC127C1003482B5 /* JournalDetailsViewController.swift in Sources */,
-				8BEE6C331FC226DC00A87588 /* Sentiment.swift in Sources */,
+				8B15F3C61FD110AC0089332E /* ViewControllerExtentions.swift in Sources */,
 				7856B1C51FBCC7DE0014C0F9 /* NewJournalViewController.swift in Sources */,
 				7856B1C31FBCC7DE0014C0F9 /* AppDelegate.swift in Sources */,
 				8BEE6C2E1FC2257700A87588 /* LinguisticWrapper.swift in Sources */,
 				8BEE6C291FC2256D00A87588 /* MLSentimentModel.swift in Sources */,
 				7878B7421FC12F47003482B5 /* JournalProperties.swift in Sources */,
 				7878B7401FC12960003482B5 /* JournalListTableViewController.swift in Sources */,
-				8BEE6C311FC226B500A87588 /* ClassificationService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
