@@ -66,6 +66,11 @@ extension String{
 //    }
 //
     
+//    func getWords() -> [String: Double]{
+//        return ClassificationService.features()
+//
+//    }
+    
     
     private final class ClassificationService {
         private enum Error: Swift.Error {
@@ -89,6 +94,7 @@ extension String{
         func predictSentiment(from text: String) -> (Sentiment,Double) {
             do {
                 let inputFeatures = features(from: text)
+                print(inputFeatures)
                 // Make prediction only with 2 or more words
                 guard inputFeatures.count > 1 else {
                     throw Error.featuresMissing
@@ -110,7 +116,7 @@ extension String{
         }
         
         
-        private func features(from text: String) -> [String: Double] {
+         func features(from text: String) -> [String: Double] {
             var wordCounts = [String: Double]()
             
             tagger.string = text

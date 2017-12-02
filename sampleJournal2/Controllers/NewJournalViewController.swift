@@ -28,6 +28,9 @@ class NewJournalViewController: UIViewController, UITextViewDelegate, CLLocation
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+      
         journalTextView.delegate = self
         journalTextView.layer.cornerRadius = 10
         saveJournalEntryButton.isEnabled = false
@@ -38,7 +41,7 @@ class NewJournalViewController: UIViewController, UITextViewDelegate, CLLocation
         locationManager.startUpdatingLocation()
         print((locationManager.location?.coordinate.latitude ?? 0))
         print((locationManager.location?.coordinate.longitude ?? 0))
-        
+       
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardShown), name:NSNotification.Name.UIKeyboardWillShow, object: nil);
 
 

@@ -22,6 +22,8 @@ class JournalDetailsViewController: UIViewController, UITextViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
 
         // Do any additional setup after loading the view.
         journalTextView.delegate = self
@@ -55,11 +57,17 @@ class JournalDetailsViewController: UIViewController, UITextViewDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+//        journalTextView.text = getColorForEmotion(text: journalTextView.text!, wordToColor: <#T##String#>)
+        
+    }
+    
     let regionRadius: CLLocationDistance = 1000
     func centerMapOnLocation(location: CLLocation) {
         let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate,
                                                                   regionRadius, regionRadius)
-        locationMapView.setRegion(coordinateRegion, animated: false)
+                <#This is broken will run once after you delete the app off the simulatorcrashs with a Thread 1: signal SIGABRT happneds when you click on a journal#>
+//        locationMapView.setRegion(coordinateRegion, animated: false)
         
         // Drop a pin at user's Current Location
         let myAnnotation: MKPointAnnotation = MKPointAnnotation()

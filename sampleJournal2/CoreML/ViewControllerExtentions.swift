@@ -11,11 +11,12 @@ import UIKit
 
 extension UIViewController{
     
-    func getColorForEmotion(text: String,wordToColor: String) {
+    func getColorForEmotion(text: String,wordToColor: String)->String {
         let range = (text as NSString).range(of: wordToColor)
         
         let attribute = NSMutableAttributedString.init(string: text)
-        return attribute.addAttribute(NSAttributedStringKey.foregroundColor, value: UIColor.red , range: range)
+         attribute.addAttribute(NSAttributedStringKey.foregroundColor, value: UIColor.red , range: range)
+        return attribute.string
         
         
 //        txtfield1 = UITextField.init(frame:CGRect(x:10 , y:20 ,width:100 , height:100))

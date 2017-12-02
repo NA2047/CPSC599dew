@@ -16,7 +16,30 @@ class EntryPointViewController: UIViewController {
         super.viewDidLoad()
         newJournalEntryButton.layer.cornerRadius = 10
         listOfJournalsButton.layer.cornerRadius = 10
-        // Do any additional setup after loading the view.
+//        guard let filepath = Bundle.main.path(forResource: "emotions", ofType: ".csv")
+//            else {
+//                return
+//        }
+//        var dict = [String:String]()
+//        let url = URL(fileURLWithPath: filepath)
+//        do {
+//            let file = try String(contentsOf: url)
+//            let rows = file.components(separatedBy: .newlines)
+//
+//            for row in rows {
+//                let fields = row.split(separator: ",")
+//                dict[fields[0]] = dict[fields[1]]
+//                let new = fields.map{(row)->[String:String] in
+//                    let dict: [String:String] = [row.0:row.1]
+//                    return dict
+//                }
+//
+//                print(fields[1])
+//            }
+//            print(dict)
+//        } catch {
+//            print(error)
+//        }
     }
 
     override func didReceiveMemoryWarning() {
