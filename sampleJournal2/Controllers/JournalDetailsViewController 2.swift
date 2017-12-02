@@ -39,7 +39,7 @@ class JournalDetailsViewController: UIViewController, UITextViewDelegate {
         print( (selectedJournal?.location?.latitude)!)
         
         
-        let location = CLLocation(latitude: (selectedJournal?.location?.latitude)!, longitude: (selectedJournal?.location?.longitude)!)
+        let location = CLLocationCoordinate2D(latitude: (selectedJournal?.location?.latitude)!, longitude: (selectedJournal?.location?.longitude)!)
         
         // 51.077660, -114.130413
         // mac hall coordinates
@@ -63,35 +63,34 @@ class JournalDetailsViewController: UIViewController, UITextViewDelegate {
     }
     
     
-    func centerMapOnLocation(location: CLLocation) {
-        let latitude: CLLocationDegrees = location.coordinate.latitude
-        let longitude: CLLocationDegrees = location.coordinate.longitude
-        
-        
-        let regionRadius: CLLocationDistance = 1000
-        
-        let coordinateRegion = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
-        
-        print(latitude, longitude)
-        
-        let lonDelta: CLLocationDegrees = 0.05
-        let lanDelta: CLLocationDegrees = 0.05
-        
-        let span = MKCoordinateSpan(latitudeDelta: lanDelta, longitudeDelta: lonDelta)
-        
-        let region = MKCoordinateRegion(center: coordinateRegion, span: span)
-        
+    
+    func centerMapOnLocation(location: CLLocationCoordinate2D) {
+       
 //                <#This is broken will run once after you delete the app off the simulatorcrashs with a Thread 1: signal SIGABRT happneds when you click on a journal#>
-        locationMapView.setRegion(region, animated: true)
+//        locationMapView.setRegion(coordinateRegion, animated: false)
         
         // Drop a pin at user's Current Location
         let myAnnotation: MKPointAnnotation = MKPointAnnotation()
-        myAnnotation.coordinate = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude);
         
+//        print(location.coordinate.latitude,location.coordinate.longitude)
         
+        let latDelta: CLLocationDegrees = 0.05
+        let lonDelta: CLLocationDegrees = 0.05
+        let span: MKCoordinateSpan = MKCoordinateSpan(latitudeDelta: latDelta, longitudeDelta: lonDelta)
+        
+        let coordinateRegion = MKCoordinateRegion(center: location, span: span)
+        
+        let annotation = MKPointAnnotation()
+        
+        annotation.coordinate = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: <#T##CLLocationDegrees#>)
+        
+        myAnnotation.coordinate = CLLocationCoordinate2DMake(location, location.coordinate.longitude);
 //        myAnnotation.title = "Current location"
         locationMapView.addAnnotation(myAnnotation)
     }
+    
+    
+    
     
     @IBAction func deleteJournalEntryButtonPressed(_ sender: UIBarButtonItem) {
         let alert = UIAlertController(title: "Delete Journal Entry?", message: "This action cannot be undone.", preferredStyle: UIAlertControllerStyle.alert)

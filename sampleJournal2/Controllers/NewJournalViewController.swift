@@ -39,6 +39,7 @@ class NewJournalViewController: UIViewController, UITextViewDelegate, CLLocation
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
+        
         print((locationManager.location?.coordinate.latitude ?? 0))
         print((locationManager.location?.coordinate.longitude ?? 0))
        

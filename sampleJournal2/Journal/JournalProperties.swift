@@ -86,7 +86,7 @@ class JournalProperties: NSObject, NSCoding {
             os_log("Unable to decode the journal entry for a JournalProperties object.", log: OSLog.default, type: .debug)
             return nil
         }
-        let location = (location_longitude, location_latitude)
+        let location = (location_latitude, location_longitude)
         
         // Process each sentiment variant
         guard let sentiment_0 = aDecoder.decodeObject(forKey: PropertyKey.sentiment_0) as? String else {
