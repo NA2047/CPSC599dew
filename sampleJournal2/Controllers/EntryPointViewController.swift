@@ -16,46 +16,35 @@ class EntryPointViewController: UIViewController {
         super.viewDidLoad()
         newJournalEntryButton.layer.cornerRadius = 10
         listOfJournalsButton.layer.cornerRadius = 10
-//        guard let filepath = Bundle.main.path(forResource: "emotions", ofType: ".csv")
-//            else {
-//                return
+//        var test: Dictionary = Dictionary<String,String>()
+//        do{
+//            let t = try test.csvOfTwoColoumToDictioanry(fileName: "emotions", typeOfFile: ".csv")
+//            print(t)
+//            
 //        }
-//        var dict = [String:String]()
-//        let url = URL(fileURLWithPath: filepath)
-//        do {
-//            let file = try String(contentsOf: url)
-//            let rows = file.components(separatedBy: .newlines)
-//
-//            for row in rows {
-//                let fields = row.split(separator: ",")
-//                dict[fields[0]] = dict[fields[1]]
-//                let new = fields.map{(row)->[String:String] in
-//                    let dict: [String:String] = [row.0:row.1]
-//                    return dict
-//                }
-//
-//                print(fields[1])
-//            }
-//            print(dict)
-//        } catch {
+//        catch{
 //            print(error)
 //        }
+      
+      
+     
+       
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

@@ -41,6 +41,7 @@ class JournalDetailsViewController: UIViewController, UITextViewDelegate {
         
         let location = CLLocation(latitude: (selectedJournal?.location?.latitude)!, longitude: (selectedJournal?.location?.longitude)!)
         
+        
         // 51.077660, -114.130413
         // mac hall coordinates
         // hardcoded for now, location isn't working properly
@@ -58,15 +59,26 @@ class JournalDetailsViewController: UIViewController, UITextViewDelegate {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-//        journalTextView.text = getColorForEmotion(text: journalTextView.text!, wordToColor: <#T##String#>)
+ 
+        let test: Dictionary = Dictionary<String,String>()
+        do{
+            let t = try test.csvOfTwoColoumToDictioanry(fileName: "emotions", typeOfFile: ".csv")
+            journalTextView.attributedText = getColorForEmotion(text: journalTextView.text!, wordToColor: "poop", dict: t)
         
+            
+        }
+        catch{
+            print(error)
+        }
+        //
+//
+//
     }
     
     
     func centerMapOnLocation(location: CLLocation) {
         let latitude: CLLocationDegrees = location.coordinate.latitude
         let longitude: CLLocationDegrees = location.coordinate.longitude
-        
         
         let regionRadius: CLLocationDistance = 1000
         
@@ -81,7 +93,7 @@ class JournalDetailsViewController: UIViewController, UITextViewDelegate {
         
         let region = MKCoordinateRegion(center: coordinateRegion, span: span)
         
-//                <#This is broken will run once after you delete the app off the simulatorcrashs with a Thread 1: signal SIGABRT happneds when you click on a journal#>
+
         locationMapView.setRegion(region, animated: true)
         
         // Drop a pin at user's Current Location
