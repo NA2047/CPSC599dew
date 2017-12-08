@@ -317,12 +317,17 @@ cruelly,fear
 cruelti,fear
 cruelty,fear
 crush,joy
+cry,sadness
+crying,sadness
+cried,sadness
 dander,anger
 dark,sadness
 dash,fear
 daunt,fear
 daze,surprise
 dazed,surprise
+decent,joy
+decently,joy
 deject,sadness
 delight,joy
 delighted,joy
@@ -362,6 +367,8 @@ detest,disgust
 detestable,disgust
 detestably,disgust
 detestation,anger
+devastate,sadness
+devastating,sadness
 devil,anger
 devot,joy
 devoted,joy
@@ -515,9 +522,10 @@ exasper,anger
 exasperate,anger
 exasperating,anger
 exasperation,anger
-excit,joy
+excite,joy
 excitement,joy
 exciting,joy
+excited, joy
 execr,anger
 execr,sadness
 execrable,sadness
@@ -622,8 +630,7 @@ galling,anger
 gay,joy
 gayli,joy
 gayly,joy
-get,surprise
-get_at,anger
+get_at,anger`
 get_down,sadness
 get_to,anger
 giving_protect,joy
@@ -1448,6 +1455,10 @@ uncheerful,sadness
 uncheerfulness,sadness
 uneasili,fear
 uneasily,fear
+unease,fear
+uneasy,fear
+unforunate,sadness
+unfortunately,sadness
 unhappi,sadness
 unhappiness,sadness
 unhappy,sadness
