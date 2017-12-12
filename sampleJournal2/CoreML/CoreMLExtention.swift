@@ -10,37 +10,9 @@ import Foundation
 import UIKit
 
 
-extension Array where Element: NSAttributedString {
-    func joined(separator: NSMutableAttributedString) -> NSMutableAttributedString {
-        var isFirst = true
-        return self.reduce(NSMutableAttributedString()) {
-            (r, e) in
-            if isFirst {
-                isFirst = false
-            } else {
-                r.append(separator)
-            }
-            r.append(e)
-            return r
-        }
-    }
-    
-    func joined(separator: String) -> NSMutableAttributedString {
-        return joined(separator: NSMutableAttributedString(string: separator))
-    }
-}
 
 extension String: Error{
     
-    
-    func getColorForEmotion(wordToColor: String) {
-        let range = (self as NSString).range(of: wordToColor)
-        
-        let attribute = NSMutableAttributedString.init(string: self)
-        attribute.addAttribute(NSAttributedStringKey.foregroundColor, value: UIColor.red , range: range)
-        
-        
-    }
     
     enum Sentiment {
         case neutral
@@ -55,20 +27,6 @@ extension String: Error{
                 return "positive"
             case .negative:
                 return "negative"
-            }
-        }
-        
-      
-        
-        
-        var color: UIColor? {
-            switch self {
-            case .neutral:
-                return UIColor(named: "NeutralColor")
-            case .positive:
-                return UIColor(named: "PositiveColor")
-            case .negative:
-                return UIColor(named: "NegativeColor")
             }
         }
         

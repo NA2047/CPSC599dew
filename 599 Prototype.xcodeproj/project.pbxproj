@@ -18,8 +18,8 @@
 		7878B7401FC12960003482B5 /* JournalListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7878B73F1FC12960003482B5 /* JournalListTableViewController.swift */; };
 		7878B7421FC12F47003482B5 /* JournalProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7878B7411FC12F47003482B5 /* JournalProperties.swift */; };
 		8B15F3C61FD110AC0089332E /* ViewControllerExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B15F3C51FD110AC0089332E /* ViewControllerExtentions.swift */; };
+		8B2B175F1FDF4F43007369BA /* LoadCSV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2B175E1FDF4F43007369BA /* LoadCSV.swift */; };
 		8B66234C1FD79B9800EAAFFD /* TempExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B66234B1FD79B9800EAAFFD /* TempExtensions.swift */; };
-		8B8590B51FD2C5BC00F134C9 /* DictionaryExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8590B41FD2C5BC00F134C9 /* DictionaryExtension.swift */; };
 		8B8590B71FD2CD4200F134C9 /* emotions.csv in Resources */ = {isa = PBXBuildFile; fileRef = 8B8590B61FD2CD4200F134C9 /* emotions.csv */; };
 		8B951AE31FBFCCD900FC171D /* AlchemyLanguageV1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BD717941FBFBB1C002AB936 /* AlchemyLanguageV1.framework */; };
 		8B951AE41FBFCCD900FC171D /* AlchemyLanguageV1.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8BD717941FBFBB1C002AB936 /* AlchemyLanguageV1.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -99,8 +99,8 @@
 		7878B73F1FC12960003482B5 /* JournalListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalListTableViewController.swift; sourceTree = "<group>"; };
 		7878B7411FC12F47003482B5 /* JournalProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalProperties.swift; sourceTree = "<group>"; };
 		8B15F3C51FD110AC0089332E /* ViewControllerExtentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtentions.swift; sourceTree = "<group>"; };
+		8B2B175E1FDF4F43007369BA /* LoadCSV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadCSV.swift; sourceTree = "<group>"; };
 		8B66234B1FD79B9800EAAFFD /* TempExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TempExtensions.swift; path = sampleJournal2/Controllers/TempExtensions.swift; sourceTree = SOURCE_ROOT; };
-		8B8590B41FD2C5BC00F134C9 /* DictionaryExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryExtension.swift; sourceTree = "<group>"; };
 		8B8590B61FD2CD4200F134C9 /* emotions.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = emotions.csv; sourceTree = "<group>"; };
 		8BC514341FD1041100607EB9 /* CoreMLExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreMLExtention.swift; sourceTree = "<group>"; };
 		8BD7178E1FBFBB1C002AB936 /* DocumentConversionV1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DocumentConversionV1.framework; path = Carthage/Build/iOS/DocumentConversionV1.framework; sourceTree = "<group>"; };
@@ -205,8 +205,8 @@
 				8BEE6C2A1FC2257000A87588 /* SentimentPolarity.mlmodel */,
 				8BC514341FD1041100607EB9 /* CoreMLExtention.swift */,
 				8B15F3C51FD110AC0089332E /* ViewControllerExtentions.swift */,
-				8B8590B41FD2C5BC00F134C9 /* DictionaryExtension.swift */,
 				8B66234B1FD79B9800EAAFFD /* TempExtensions.swift */,
+				8B2B175E1FDF4F43007369BA /* LoadCSV.swift */,
 			);
 			path = CoreML;
 			sourceTree = "<group>";
@@ -373,11 +373,11 @@
 				8BEE6C341FC2274600A87588 /* SentimentPolarity.mlmodel in Sources */,
 				7878B73A1FC12794003482B5 /* EntryPointViewController.swift in Sources */,
 				8BEE6C2C1FC2257300A87588 /* ToneAnalyzer.swift in Sources */,
-				8B8590B51FD2C5BC00F134C9 /* DictionaryExtension.swift in Sources */,
 				7878B73E1FC127C1003482B5 /* JournalDetailsViewController.swift in Sources */,
 				8B15F3C61FD110AC0089332E /* ViewControllerExtentions.swift in Sources */,
 				7856B1C51FBCC7DE0014C0F9 /* NewJournalViewController.swift in Sources */,
 				7856B1C31FBCC7DE0014C0F9 /* AppDelegate.swift in Sources */,
+				8B2B175F1FDF4F43007369BA /* LoadCSV.swift in Sources */,
 				8BEE6C2E1FC2257700A87588 /* LinguisticWrapper.swift in Sources */,
 				8B66234C1FD79B9800EAAFFD /* TempExtensions.swift in Sources */,
 				7878B7421FC12F47003482B5 /* JournalProperties.swift in Sources */,

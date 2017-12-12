@@ -33,36 +33,131 @@ extension String{
 //        case idiom
 //    }
     
-  
     
-    
-    var verbs: [String] {
+    var nouns: [String]?{
         get{
-            let vebs = computed(tag: .verb)
-            if let result = vebs["verbs"]{
-                return result
+            if (self == ""){
+                return nil
             }
             else{
-                precondition(vebs["verbs"] == nil, "much bigger problem with the verbs var")
+                let vebs = computed(tag: .noun)
+                if let result = vebs[String(describing: NSLinguisticTag.noun)]{
+                    return result
+                }
             }
-             return ["you", "are", "not","suppose","to","be","here"]
-        }
-        set{
-            
-            
+            return nil
         }
     }
     
     
+    var pronouns: [String]?{
+        get{
+            if (self == ""){
+                return nil
+            }
+            else{
+                let vebs = computed(tag: .pronoun)
+                if let result = vebs[String(describing: NSLinguisticTag.pronoun)]{
+                    return result
+                }
+            }
+            return nil
+        }
+    }
     
-//    var noun: [String]{
-//
+    var adjectives: [String]?{
+        get{
+            if (self == ""){
+                return nil
+            }
+            else{
+                let vebs = computed(tag: .adjective)
+                if let result = vebs[String(describing: NSLinguisticTag.adjective)]{
+                    return result
+                }
+            }
+            return nil
+        }
+    }
+  
+    
+    
+    var verbs: [String]? {
+        get{
+            if (self == ""){
+                return nil
+            }
+            else{
+                let vebs = computed(tag: .verb)
+                if let result = vebs[String(describing: NSLinguisticTag.verb)]{
+                    return result
+                }
+            }
+            return nil
+        }
+    }
+    
+    var personalNames: [String]?{
+        get{
+            if (self == ""){
+                return nil
+            }
+            let names = computed(tag: .personalName,linguisticTagScheme: .nameType)
+            if let result = names[String(describing: NSLinguisticTag.personalName)]{
+                return result
+            }
+            return nil
+        }
+    }
+    
+//    var sentences: [String]?{
+//        get{
+//            if (self == ""){
+//                return nil
+//            }
+//            let names = computed(linguisticTagScheme: .language)
+//            if let result = names[String(describing: NSLinguisticTag.personalName)]{
+//                return result
+//            }
+//            return nil
+//        }
 //    }
     
+    
+
+    
+    var organizationName: [String]?{
+        get{
+            if (self == ""){
+                return nil
+            }
+            let names = computed(tag: .organizationName,linguisticTagScheme: .nameType)
+            if let result = names[String(describing: NSLinguisticTag.organizationName)]{
+                return result
+            }
+            return nil
+        }
+    }
+    
+    var placeName: [String]?{
+        get{
+            if (self == ""){
+                return nil
+            }
+            let names = computed(tag: .placeName,linguisticTagScheme: .nameType)
+            if let result = names[String(describing: NSLinguisticTag.placeName)]{
+                return result
+            }
+            return nil
+        }
+        
+        
+    }
     
     
     var dominantLanguage: String {
         get{
+            
             let tagger = NSLinguisticTagger(tagSchemes: [.lexicalClass],options: 0)
             tagger.string = self
             if let dom = tagger.dominantLanguage{
@@ -75,23 +170,39 @@ extension String{
         }
     }
     
+    
+    
     func parseText(processString: String, tagSchema : NSLinguisticTagScheme, taggerOptions: Int, omitOptions: NSLinguisticTagger.Options,tags: [NSLinguisticTag]) -> [String:[String]] {
         
+        var arraySentences1 = [String]()
         var arraySentences = [String:[String]]()
         let tagger = NSLinguisticTagger(tagSchemes: [tagSchema],options: taggerOptions)
         tagger.string = processString
-        
         let range = NSRange(location: 0, length: processString.utf16.count)
         tagger.enumerateTags(in: range, unit: .word, scheme: tagSchema, options: omitOptions) { tag, tokenRange, _ in
             guard let tag = tag, tags.contains(tag) else { return }
             let token = ( processString as NSString).substring(with: tokenRange)
-            if var val = arraySentences[token]{
-                val.append(tag.rawValue)
-            }
-            else{
-                arraySentences[token]?.append(tag.rawValue)
-            }
+            arraySentences1.append(token)
         }
+        arraySentences[String(describing: tags[0])] = arraySentences1
+       
+        return arraySentences
+    }
+    
+    func parseText2(processString: String, tagSchema : NSLinguisticTagScheme, taggerOptions: Int, omitOptions: NSLinguisticTagger.Options,tags: [NSLinguisticTag]) -> [String:[String]] {
+        
+        var arraySentences1 = [String]()
+        var arraySentences = [String:[String]]()
+        let tagger = NSLinguisticTagger(tagSchemes: [tagSchema],options: taggerOptions)
+        tagger.string = processString
+        let range = NSRange(location: 0, length: processString.utf16.count)
+        tagger.enumerateTags(in: range, unit: .sentence, scheme: tagSchema, options: omitOptions) { tag, tokenRange, _ in
+            guard let tag = tag, tags.contains(tag) else { return }
+            let token = ( processString as NSString).substring(with: tokenRange)
+            arraySentences1.append(token)
+        }
+        arraySentences[String(describing: tags[0])] = arraySentences1
+        
         return arraySentences
     }
     
@@ -107,10 +218,12 @@ extension String{
     }
    
     func computed(tag:NSLinguisticTag) -> [String:[String]]{
-        let key = String(describing: tag)
-        let vebs =  parseText(processString: self,tagSchema: .lexicalClass,taggerOptions: 0,omitOptions: [.omitPunctuation,.omitWhitespace],tags: [tag])
-        
-        return vebs
+        let tags =  parseText(processString: self,tagSchema: .lexicalClass,taggerOptions: 0,omitOptions: [.omitPunctuation,.omitWhitespace],tags: [tag])
+        return tags
+    }
+    func computed(tag:NSLinguisticTag, linguisticTagScheme: NSLinguisticTagScheme) -> [String:[String]]{
+        let tags =  parseText(processString: self,tagSchema: linguisticTagScheme,taggerOptions: 0,omitOptions: [.omitPunctuation,.omitWhitespace],tags: [tag])
+        return tags
     }
     
     func computed(tagSchema : NSLinguisticTagScheme, taggerOptions: Int, omitOptions: NSLinguisticTagger.Options,tags: [NSLinguisticTag]) -> [String:[String]]{
@@ -122,6 +235,38 @@ extension String{
         return results
     }
     
+    typealias TaggedToken = (String, String?)
+    
+    func tag(text: String, scheme: String) -> [TaggedToken] {
+        let options: NSLinguisticTagger.Options = [.omitWhitespace, .omitPunctuation, .omitOther]
+        let tagger = NSLinguisticTagger(tagSchemes: NSLinguisticTagger.availableTagSchemes(forLanguage: "en"),
+                                        options: Int(options.rawValue))
+        tagger.string = text
+        
+        var tokens: [TaggedToken] = []
+        
+        // Using NSLinguisticTagger
+        let range = NSRange(location: 0, length: text.utf16.count)
+        tagger.enumerateTags(in: range, scheme:NSLinguisticTagScheme(rawValue: scheme), options: options) { tag, tokenRange, _, _ in
+            let token = (text as NSString).substring(with: tokenRange)
+            tokens.append((token, tag.map { $0.rawValue }))
+        }
+        return tokens
+    }
+    
+    // Implementation
+    
+    func partOfSpeech() -> [TaggedToken] {
+        return tag(text: self, scheme:NSLinguisticTagScheme.lexicalClass.rawValue)
+    }
+    
+    func lemmatize() -> [TaggedToken] {
+        return tag(text: self, scheme: NSLinguisticTagScheme.lemma.rawValue)
+    }
+    
+    func language() -> [TaggedToken] {
+        return tag(text: self, scheme: NSLinguisticTagScheme.language.rawValue)
+    }
     
 
 }

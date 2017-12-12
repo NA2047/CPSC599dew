@@ -59,20 +59,7 @@ class JournalDetailsViewController: UIViewController, UITextViewDelegate {
     }
     
     override func viewWillAppear(_ animated: Bool) {
- 
-        let test: Dictionary = Dictionary<String,String>()
-        do{
-            let t = try test.csvOfTwoColoumToDictioanry(fileName: "emotions", typeOfFile: ".csv")
-            journalTextView.attributedText = getColorForEmotion(text: journalTextView.text!, wordToColor: "poop", dict: t)
-        
-            
-        }
-        catch{
-            print(error)
-        }
-        //
-//
-//
+            journalTextView.attributedText = getColorForEmotion(text: journalTextView.text!, wordToColor: "poop", dict: LoadCSV.emotions)
     }
     
     
