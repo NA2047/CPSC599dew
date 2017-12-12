@@ -55,6 +55,8 @@ class JournalDetailsViewController: UIViewController, UITextViewDelegate {
             // TODO - ANDREW: the name of this function has typos...
             let t = try test.csvOfTwoColoumToDictioanry(fileName: "emotions", typeOfFile: ".csv")
             journalTextView.attributedText = getColorForEmotion(text: journalTextView.text!, wordToColor: "poop", dict: t)
+            
+            journalTextView.font = UIFont(name: (journalTextView.font?.fontName)!, size: 18.0)
             //  TODO - we should not have 'poop' in our code...
         }
         catch{

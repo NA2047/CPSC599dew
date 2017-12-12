@@ -16,7 +16,8 @@ extension UIViewController{
         let attribute = NSMutableAttributedString(string: text)
         let flat2 = text.split(separator: " ")
         for word in flat2 {
-            if let val = dict[String(word)] {
+            if var val = dict[String(word.lowercased().trimmingCharacters(in: .punctuationCharacters))] {
+                val = val.trimmingCharacters(in: .whitespacesAndNewlines)
                 if let color = val.UIColorEmotion{
                     let range = (text as NSString).range(of: String(word))
                     attribute.addAttribute(NSAttributedStringKey.foregroundColor, value:color , range: range)
