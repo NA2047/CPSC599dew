@@ -16,10 +16,10 @@ extension UIViewController{
         let attribute = NSMutableAttributedString(string: text)
         let flat2 = text.split(separator: " ")
         for word in flat2 {
+            let range = (text as NSString).range(of: String(word))
             if var val = dict[String(word.lowercased().trimmingCharacters(in: .punctuationCharacters))] {
                 val = val.trimmingCharacters(in: .whitespacesAndNewlines)
                 if let color = val.UIColorEmotion{
-                    let range = (text as NSString).range(of: String(word))
                     attribute.addAttribute(NSAttributedStringKey.foregroundColor, value:color , range: range)
                 }
                 else{
@@ -29,6 +29,7 @@ extension UIViewController{
             }
             else {
                 print("key not found for \(word)")
+                attribute.addAttribute(NSAttributedStringKey.foregroundColor, value:UIColor.white , range: range)
             }
         }
         return attribute
