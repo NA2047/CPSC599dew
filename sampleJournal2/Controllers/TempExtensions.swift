@@ -2,9 +2,10 @@
 //  TempExtensions.swift
 //  599 Prototype
 //
-//  Created by Andrew on 2017-12-05.
-//  Copyright © 2017 Raza Qazi. All rights reserved.
+//  Colours for various sentiments are defined in this class.
+//  These colours are used to colour text in JournalDetailsViewController.
 //
+//  TODO - ANDREW: why is this class called TempExtensions? Why 'temp'?
 
 import Foundation
 import UIKit

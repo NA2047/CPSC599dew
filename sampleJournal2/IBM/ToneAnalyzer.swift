@@ -2,8 +2,8 @@
 //  ToneAnalyzer.swift
 //  BackEndModels
 //
-//  Created by Andrew on 2017-11-17.
-//  Copyright © 2017 Andrew. All rights reserved.
+//  TODO - ANDREW: give a description of what this class does
+//  TODO - ANDREW: provide more documentation on what the code does
 //
 
 import Foundation

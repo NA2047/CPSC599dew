@@ -2,8 +2,9 @@
 //  ViewControllerExtentions.swift
 //  599 Prototype
 //
-//  Created by Andrew on 2017-11-30.
-//  Copyright © 2017 Raza Qazi. All rights reserved.
+//  TODO - ANDREW: give a description of what this class does
+//  TODO - ANDREW: fix the typo in the name of this class
+//  TODO - ANDREW: get rid of unused code, fix typos
 //
 
 import Foundation
@@ -22,16 +23,14 @@ extension UIViewController{
                 }
                 else{
                   print("\(word) cannot be assosiated to an emotion")
-                    
                 }
               
-            }else {
+            }
+            else {
                 print("key not found for \(word)")
             }
         }
         return attribute
-        
-        
 //        txtfield1 = UITextField.init(frame:CGRect(x:10 , y:20 ,width:100 , height:100))
 //        txtfield1.attributedText = attribute
         
@@ -71,9 +70,5 @@ extension UIViewController{
 ////        lbl_Second.attributedText = myMutableString
 ////
 //    }
-   
-    
-
     }
-
 }

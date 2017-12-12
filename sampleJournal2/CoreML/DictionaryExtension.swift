@@ -2,12 +2,13 @@
 //  DictionaryExtension.swift
 //  599 Prototype
 //
-//  Created by Andrew on 2017-12-02.
-//  Copyright © 2017 Raza Qazi. All rights reserved.
+//  TODO - ANDREW: give a description of what this class does
+//  TODO - ANDREW: provide more documentation for your code below, fix typos
 //
 
 import Foundation
 extension Dictionary{
+    // TODO - ANDREW: function name contains typos
     func csvOfTwoColoumToDictioanry(fileName fileToOpen: String, typeOfFile fileType: String ) throws -> [String:String]  {
         guard let filepath = Bundle.main.path(forResource: fileToOpen, ofType: fileType)
             else {
