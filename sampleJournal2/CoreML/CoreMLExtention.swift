@@ -2,17 +2,18 @@
 //  CoreMLExtention.swift
 //  599 Prototype
 //
-//  Created by Andrew on 2017-11-30.
-//  Copyright © 2017 Raza Qazi. All rights reserved.
+//  TODO - ANDREW: give a description of what this class does
+//  TODO - ANDREW: fix the typo in the naming of this file
+//  TODO - ANDREW: provide more documentation for your code, fix typos
 //
 
 import Foundation
 import UIKit
 
-
 extension Array where Element: NSAttributedString {
     func joined(separator: NSMutableAttributedString) -> NSMutableAttributedString {
         var isFirst = true
+        //  TODO - ANDREW: perhaps use better names than 'r' and 'e'
         return self.reduce(NSMutableAttributedString()) {
             (r, e) in
             if isFirst {
@@ -31,15 +32,11 @@ extension Array where Element: NSAttributedString {
 }
 
 extension String: Error{
-    
-    
     func getColorForEmotion(wordToColor: String) {
         let range = (self as NSString).range(of: wordToColor)
         
         let attribute = NSMutableAttributedString.init(string: self)
         attribute.addAttribute(NSAttributedStringKey.foregroundColor, value: UIColor.red , range: range)
-        
-        
     }
     
     enum Sentiment {
@@ -57,9 +54,6 @@ extension String: Error{
                 return "negative"
             }
         }
-        
-      
-        
         
         var color: UIColor? {
             switch self {
@@ -81,11 +75,7 @@ extension String: Error{
             case .negative:
                 return "😔"
             }
-            
         }
-        
-        
-    
 }
 
     func performJournalAnalysis() -> (String, String, String)  {
@@ -134,9 +124,11 @@ extension String: Error{
         
         // MARK: - Prediction
         
+        //  TODO - ANDREW: is this function still necessary?
+        //                 If so, the typo should be fixed.
+        //                 Otherwise, please remove the function.
         func getProbalities(){
-            
-            
+    
         }
         
         func predictSentiment(from text: String) -> (Sentiment,Double) {
@@ -158,7 +150,8 @@ extension String: Error{
                 default:
                     return (.neutral,1.1)
                 }
-            } catch {
+            }
+            catch {
                 return (.neutral,0.0)
             }
         }
@@ -177,18 +170,13 @@ extension String: Error{
                 guard token.count >= 3 else {
                     return
                 }
-                
                 if let value = wordCounts[token] {
                     wordCounts[token] = value + 1.0
                 } else {
                     wordCounts[token] = 1.0
                 }
             }
-            
             return wordCounts
         }
     }
-    
-
-
 }

@@ -2,9 +2,9 @@
 //  LinguisticWrapper.swift
 //  BackEndModels
 //
-//  Created by Andrew on 2017-11-01.
-//  Copyright © 2017 Andrew. All rights reserved.
-//
+//  TODO - ANDREW: give a description of what this class does
+//  TODO - ANDREW: provide more documentation on what the code does
+//  TODO - ANDREW: remove unnecessary code, fix typos
 
 import Foundation
 
@@ -32,10 +32,7 @@ extension String{
 //        case classifier
 //        case idiom
 //    }
-    
-  
-    
-    
+
     var verbs: [String] {
         get{
             let vebs = computed(tag: .verb)
@@ -49,17 +46,12 @@ extension String{
         }
         set{
             
-            
         }
     }
-    
-    
-    
+  
 //    var noun: [String]{
 //
 //    }
-    
-    
     
     var dominantLanguage: String {
         get{
@@ -103,11 +95,11 @@ extension String{
         } catch {
             return
         }
-        
     }
    
     func computed(tag:NSLinguisticTag) -> [String:[String]]{
         let key = String(describing: tag)
+        //  TODO - ANDREW: is this supposed to be 'vebs' or is it supposed to be 'verbs'?
         let vebs =  parseText(processString: self,tagSchema: .lexicalClass,taggerOptions: 0,omitOptions: [.omitPunctuation,.omitWhitespace],tags: [tag])
         
         return vebs
@@ -116,13 +108,10 @@ extension String{
     func computed(tagSchema : NSLinguisticTagScheme, taggerOptions: Int, omitOptions: NSLinguisticTagger.Options,tags: [NSLinguisticTag]) -> [String:[String]]{
         var results = [String:[String]]()
         for tag in tags{
-            let gather =  parseText(processString: self,tagSchema: tagSchema,taggerOptions: taggerOptions,omitOptions: omitOptions,tags: [tag])
+            let gather =  parseText(processString: self, tagSchema: tagSchema,taggerOptions: taggerOptions, omitOptions: omitOptions, tags: [tag])
             results.merge(dict: gather)
         }
         return results
     }
-    
-    
-
 }
 

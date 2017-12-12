@@ -2,9 +2,16 @@
 //  NewJournalViewController.swift
 //  sampleJournal2
 //
-//  Created by Raza Qazi on 2017-11-15.
-//  Copyright © 2017 Raza Qazi. All rights reserved.
+//  This class contains the logic for writing a new journal
+//  entry and grabbing the user's location. A new JournalProperties
+//  object is created once a user presses 'Save'.
 //
+//  Logic for linking a user's weather to a journal entry should be
+//  done here.
+//
+//  TODO - RAZA: provide more documentation for code, perhaps reorder functions as needed
+//  TODO - RAZA: remove unnecessary code
+
 import UIKit
 import CoreLocation
 
@@ -13,24 +20,16 @@ class NewJournalViewController: UIViewController, UITextViewDelegate, CLLocation
     @IBOutlet var toolbar: UIToolbar!
     @IBOutlet weak var journalTextView: UITextView!
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
-    
-
-    var locationManager = CLLocationManager()
-
-    
-
-    var oldBottomConstraint: CGFloat = 0.0
-    
     @IBOutlet weak var saveJournalEntryButton: UIBarButtonItem!
 
     var startEditing: Bool = false
     var newJournal: JournalProperties?
+    var locationManager = CLLocationManager()
+    var oldBottomConstraint: CGFloat = 0.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-      
+
         journalTextView.delegate = self
         journalTextView.layer.cornerRadius = 10
         saveJournalEntryButton.isEnabled = false
@@ -44,8 +43,6 @@ class NewJournalViewController: UIViewController, UITextViewDelegate, CLLocation
         print((locationManager.location?.coordinate.longitude ?? 0))
        
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardShown), name:NSNotification.Name.UIKeyboardWillShow, object: nil);
-
-
     }
     
     override func didReceiveMemoryWarning() {
@@ -95,29 +92,18 @@ class NewJournalViewController: UIViewController, UITextViewDelegate, CLLocation
             // should be working but seems like its not getting here?
             var currentLocation = (0.0,0.0)
             
-            if let latitude = locationManager.location?.coordinate.latitude,let longitude = locationManager.location?.coordinate.longitude {
+            if let latitude = locationManager.location?.coordinate.latitude, let longitude = locationManager.location?.coordinate.longitude {
                 currentLocation = (latitude,longitude)
                 print("here")
                 print(currentLocation)
                 print(longitude)
-                
             }
-//            let longitude = locationManager.location?.coordinate.longitude
-//            currentLocation = ((locationManager.location?.coordinate.latitude ?? 0),(locationManager.location?.coordinate.longitude ?? 0))
-           
-            
-
-            
-//            currentLocation = (locationManager.)
-
             
             // New journal object
             let newJournal = JournalProperties(enteredJournal!, currentDate, currentTime, currentLocation, enteredJournal!.performJournalAnalysis())
             self.newJournal = newJournal
             print(newJournal?.sentiment)
-            
             print(newJournal?.location!)
-
             print(newJournal?.journalEntry)
         }
     }
@@ -132,29 +118,20 @@ class NewJournalViewController: UIViewController, UITextViewDelegate, CLLocation
         bottomConstraint.constant = self.oldBottomConstraint
     }
     
-
-
-   
     private func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation])->CLLocation {
         let userLocation: CLLocation = locations[0]
-        
 //        let latitude = userLocation.coordinate.latitude
 //        let longitude = userLocation.coordinate.longitude
-//
 //        print(locations)
-        
-        
         return userLocation
     }
     
-    
-
     // From stack overflow - find keyboard height
+    //  TODO - RAZA: provide exact stack overflow link if possible
     @objc func keyboardShown(notification: NSNotification) {
         let info = notification.userInfo!
         let keyboardFrame: CGRect = (info[UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
         oldBottomConstraint = bottomConstraint.constant
         bottomConstraint.constant = keyboardFrame.height + 10.0
     }
-
 }
