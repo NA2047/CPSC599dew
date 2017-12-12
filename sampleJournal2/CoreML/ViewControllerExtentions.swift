@@ -2,8 +2,9 @@
 //  ViewControllerExtentions.swift
 //  599 Prototype
 //
-//  Created by Andrew on 2017-11-30.
-//  Copyright © 2017 Raza Qazi. All rights reserved.
+//  TODO - ANDREW: give a description of what this class does
+//  TODO - ANDREW: fix the typo in the name of this class
+//  TODO - ANDREW: get rid of unused code, fix typos
 //
 
 import Foundation
@@ -11,27 +12,26 @@ import UIKit
 
 extension UIViewController{
     
-    func getColorForEmotion(text: String,wordToColor: String, dict:[String:String] )->NSMutableAttributedString {
+    func getColorForEmotion(text: String, dict:[String:String] )->NSMutableAttributedString {
         let attribute = NSMutableAttributedString(string: text)
         let flat2 = text.split(separator: " ")
         for word in flat2 {
-            if let val = dict[String(word)] {
+            if var val = dict[String(word.lowercased().trimmingCharacters(in: .punctuationCharacters))] {
+                val = val.trimmingCharacters(in: .whitespacesAndNewlines)
                 if let color = val.UIColorEmotion{
                     let range = (text as NSString).range(of: String(word))
                     attribute.addAttribute(NSAttributedStringKey.foregroundColor, value:color , range: range)
                 }
                 else{
                   print("\(word) cannot be assosiated to an emotion")
-                    
                 }
               
-            }else {
+            }
+            else {
                 print("key not found for \(word)")
             }
         }
         return attribute
-        
-        
 //        txtfield1 = UITextField.init(frame:CGRect(x:10 , y:20 ,width:100 , height:100))
 //        txtfield1.attributedText = attribute
         
@@ -71,9 +71,5 @@ extension UIViewController{
 ////        lbl_Second.attributedText = myMutableString
 ////
 //    }
-   
-    
-
     }
-
 }

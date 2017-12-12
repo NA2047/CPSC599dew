@@ -2,17 +2,19 @@
 //  CoreMLExtention.swift
 //  599 Prototype
 //
-//  Created by Andrew on 2017-11-30.
-//  Copyright © 2017 Raza Qazi. All rights reserved.
+//  TODO - ANDREW: give a description of what this class does
+//  TODO - ANDREW: fix the typo in the naming of this file
+//  TODO - ANDREW: provide more documentation for your code, fix typos
 //
 
 import Foundation
-import UIKit
+
 
 
 
 extension String: Error{
     
+
     
     enum Sentiment {
         case neutral
@@ -30,6 +32,7 @@ extension String: Error{
             }
         }
         
+
         var emoji: String {
             switch self {
             case .neutral:
@@ -39,11 +42,7 @@ extension String: Error{
             case .negative:
                 return "😔"
             }
-            
         }
-        
-        
-    
 }
 
     func performJournalAnalysis() -> (String, String, String)  {
@@ -92,10 +91,12 @@ extension String: Error{
         
         // MARK: - Prediction
         
-        func getProbalities(){
-            
-            
-        }
+        //  TODO - ANDREW: is this function still necessary?
+        //                 If so, the typo should be fixed.
+        //                 Otherwise, please remove the function.
+//        func getProbalities(){
+//
+//        }
         
         func predictSentiment(from text: String) -> (Sentiment,Double) {
             do {
@@ -116,7 +117,8 @@ extension String: Error{
                 default:
                     return (.neutral,1.1)
                 }
-            } catch {
+            }
+            catch {
                 return (.neutral,0.0)
             }
         }
@@ -135,18 +137,13 @@ extension String: Error{
                 guard token.count >= 3 else {
                     return
                 }
-                
                 if let value = wordCounts[token] {
                     wordCounts[token] = value + 1.0
                 } else {
                     wordCounts[token] = 1.0
                 }
             }
-            
             return wordCounts
         }
     }
-    
-
-
 }

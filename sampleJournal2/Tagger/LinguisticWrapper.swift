@@ -2,9 +2,9 @@
 //  LinguisticWrapper.swift
 //  BackEndModels
 //
-//  Created by Andrew on 2017-11-01.
-//  Copyright © 2017 Andrew. All rights reserved.
-//
+//  TODO - ANDREW: give a description of what this class does
+//  TODO - ANDREW: provide more documentation on what the code does
+//  TODO - ANDREW: remove unnecessary code, fix typos
 
 import Foundation
 
@@ -32,6 +32,7 @@ extension String{
 //        case classifier
 //        case idiom
 //    }
+
     
     
     var nouns: [String]?{
@@ -51,6 +52,7 @@ extension String{
     
     
     var pronouns: [String]?{
+
         get{
             if (self == ""){
                 return nil
@@ -63,6 +65,7 @@ extension String{
             }
             return nil
         }
+
     }
     
     var adjectives: [String]?{
@@ -153,8 +156,9 @@ extension String{
         
         
     }
+
     
-    
+
     var dominantLanguage: String {
         get{
             
@@ -214,26 +218,32 @@ extension String{
         } catch {
             return
         }
-        
     }
    
     func computed(tag:NSLinguisticTag) -> [String:[String]]{
+
         let tags =  parseText(processString: self,tagSchema: .lexicalClass,taggerOptions: 0,omitOptions: [.omitPunctuation,.omitWhitespace],tags: [tag])
         return tags
     }
+
     func computed(tag:NSLinguisticTag, linguisticTagScheme: NSLinguisticTagScheme) -> [String:[String]]{
         let tags =  parseText(processString: self,tagSchema: linguisticTagScheme,taggerOptions: 0,omitOptions: [.omitPunctuation,.omitWhitespace],tags: [tag])
         return tags
+        let vebs =  parseText(processString: self,tagSchema: .lexicalClass,taggerOptions: 0,omitOptions: [.omitPunctuation,.omitWhitespace],tags: [tag])
+        
+        return vebs
+
     }
     
     func computed(tagSchema : NSLinguisticTagScheme, taggerOptions: Int, omitOptions: NSLinguisticTagger.Options,tags: [NSLinguisticTag]) -> [String:[String]]{
         var results = [String:[String]]()
         for tag in tags{
-            let gather =  parseText(processString: self,tagSchema: tagSchema,taggerOptions: taggerOptions,omitOptions: omitOptions,tags: [tag])
+            let gather =  parseText(processString: self, tagSchema: tagSchema,taggerOptions: taggerOptions, omitOptions: omitOptions, tags: [tag])
             results.merge(dict: gather)
         }
         return results
     }
+
     
     typealias TaggedToken = (String, String?)
     
@@ -268,6 +278,7 @@ extension String{
         return tag(text: self, scheme: NSLinguisticTagScheme.language.rawValue)
     }
     
+
 
 }
 

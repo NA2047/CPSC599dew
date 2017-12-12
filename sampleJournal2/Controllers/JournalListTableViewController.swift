@@ -2,8 +2,11 @@
 //  JournalListTableViewController.swift
 //  599 Prototype
 //
-//  Created by Raza Qazi on 2017-11-18.
-//  Copyright © 2017 Raza Qazi. All rights reserved.
+//  This class defines the View Controller for the list of journals.
+//  Persistent storage of journals occurs in this class.
+//
+//  TODO - RAZA: provide more documentation for code, reorder code in this file so that it's more intuitive?
+//  TODO - RAZA: remove unnecessary code
 //
 
 import UIKit
@@ -26,12 +29,10 @@ class JournalListTableViewController: UITableViewController {
         }
         
         tableView.reloadData()
-
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        
         // Dispose of any resources that can be recreated.
     }
 
@@ -44,7 +45,6 @@ class JournalListTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return listOfJournals.count
     }
-
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "JournalCell", for: indexPath)
@@ -159,12 +159,9 @@ class JournalListTableViewController: UITableViewController {
         // Tapping "home" from Journal Entries
         case "ReturnHomeFromList":
             break
-        
             
         default:
             fatalError("Unexpected Segue Identifier; \(segue.identifier ?? "nil")")
         }
     }
-    
-
 }

@@ -2,9 +2,11 @@
 //  EntryPointViewController.swift
 //  599 Prototype
 //
-//  Created by Raza Qazi on 2017-11-18.
-//  Copyright © 2017 Raza Qazi. All rights reserved.
+//  This View Controller simply contains the two buttons
+//  that allow for adding a new journal entry or viewing
+//  the list of journal entries.
 //
+//  TODO - RAZA: remove unnecessary code, if any
 
 import UIKit
 import ToneAnalyzerV3
@@ -15,6 +17,7 @@ class EntryPointViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         newJournalEntryButton.layer.cornerRadius = 10
         listOfJournalsButton.layer.cornerRadius = 10
         
@@ -42,11 +45,16 @@ class EntryPointViewController: UIViewController {
 //                }
 //              
 //            }
+//        var test: Dictionary = Dictionary<String,String>()
+//        do{
+//            let t = try test.csvOfTwoColoumToDictioanry(fileName: "emotions", typeOfFile: ".csv")
+//            print(t)
+//            
 //        }
-      
-      
-     
-       
+//        catch{
+//            print(error)
+
+//        }
     }
     
     override func didReceiveMemoryWarning() {

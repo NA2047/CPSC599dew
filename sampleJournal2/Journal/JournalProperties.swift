@@ -2,8 +2,12 @@
 //  JournalProperties.swift
 //  599 Prototype
 //
-//  Created by Raza Qazi on 2017-11-18.
-//  Copyright © 2017 Raza Qazi. All rights reserved.
+//  This class stores the details for a journal entry.
+//  Persistent storage is factored into this class.
+//
+//  An attribute for weather can be added in here.
+//
+//  TODO - RAZA: provide more documentation for code, reorder code in this file so that it's more intuitive?
 //
 
 import Foundation
@@ -11,10 +15,10 @@ import os.log
 
 class JournalProperties: NSObject, NSCoding {
     
-    var journalEntry: String = ""
-    var date: String = ""
-    var time: String = ""
-    var location: (latitude: Double, longitude: Double)? = nil
+    var journalEntry: String = "" // Text written in journal
+    var date: String = "" // Date of journal entry
+    var time: String = "" // Timestamp of journal entry
+    var location: (latitude: Double, longitude: Double)? = nil // Location of journal entry
     var sentiment: (String, String, String) = ("", "", "") // emotionText, emotionConfidence, emotionEmoji
     
     

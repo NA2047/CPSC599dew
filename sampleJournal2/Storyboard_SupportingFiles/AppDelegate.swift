@@ -2,9 +2,6 @@
 //  AppDelegate.swift
 //  sampleJournal2
 //
-//  Created by Raza Qazi on 2017-11-15.
-//  Copyright © 2017 Raza Qazi. All rights reserved.
-//
 
 import UIKit
 
