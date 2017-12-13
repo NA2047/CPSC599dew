@@ -16,6 +16,32 @@ struct Tones{
 //    private let version:String
     private let ToneAnalyzes:ToneAnalyzer
     
+    var failure: (Error) -> Void {
+        
+        get{
+//            ((Error) -> Swift.Void)? = default
+            return{ (error: Error) in print(error) }
+        }
+        
+        set{
+            failure = newValue
+        }
+    }
+    
+    var connectivity:Bool{
+        
+        get{
+            if Reachability.isConnectedToNetwork(){
+                return true
+//                print("Internet Connection Available!")
+            }else{
+                return false
+//                print("Internet Connection not Available!")
+            }
+        }
+        
+    }
+    
     
     
     init(userName: String, password: String,version:String) {
@@ -31,7 +57,11 @@ struct Tones{
     }
     
     func getTones(textToBeAnalyzed textToBeProcessed: String) {
-        let failure = { (error: Error) in print(error) }
+        
+        if connectivity{
+            print("yes")
+        }
+        
         ToneAnalyzes.getTone(ofText: textToBeProcessed, failure: failure) { toneAnalysis in
             for i in toneAnalysis.documentTone{
                 print(i.categoryID)

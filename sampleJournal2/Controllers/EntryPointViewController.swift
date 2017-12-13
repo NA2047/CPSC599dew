@@ -57,11 +57,11 @@ class EntryPointViewController: UIViewController {
 //            print(error)
 
 //        }
-//        let username = "7ed26589-b179-4365-b91f-836a6b9af90c"
-//        let password =  "utIZLIYCNQwD"
-//        let version = "2017-07-06"
-//        let t = Tones(userName: username, password: password, version: version)
-//        t.getTones(textToBeAnalyzed: texts)
+        let username = "7ed26589-b179-4365-b91f-836a6b9af90c"
+        let password =  "utIZLIYCNQwD"
+        let version = "2017-07-06"
+        let t = Tones(userName: username, password: password, version: version)
+        t.getTones(textToBeAnalyzed: texts)
         
         
     }

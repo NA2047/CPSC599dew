@@ -12,7 +12,7 @@ import Foundation
 struct LoadCSV{
     static let emotions = loadEmotions()
     
-    static func loadEmotions() -> [String:String] {
+    static private func loadEmotions() -> [String:String] {
          let contentsCSV: Dictionary = Dictionary<String,String>()
         do{
             return try contentsCSV.csvOfTwoColoumToDictioanry(fileName: "emotions", typeOfFile: ".csv")
