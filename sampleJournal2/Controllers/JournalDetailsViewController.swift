@@ -56,33 +56,33 @@ class JournalDetailsViewController: UIViewController, UITextViewDelegate {
   
     }
     
-    //  TODO - MIKE: remove any code that's unnecessary
-    //  TODO - MIKE: add more documentation if you think it's warranted
+
     func centerMapOnLocation(location: CLLocation) {
+        //Gets long and lat from stored location
         let latitude: CLLocationDegrees = location.coordinate.latitude
         let longitude: CLLocationDegrees = location.coordinate.longitude
         
-        //  TODO - MIKE: Xcode is saying that regionRadius is never used. Can we get rid of it?
-        let regionRadius: CLLocationDistance = 1000
-        
+        //Sets coordinates for map
         let coordinateRegion = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
         
-        print(latitude, longitude)
+        //trouble shooting code
+        //print(latitude, longitude)
         
+        //Controls how the map appears, how zoomed in it is
         let lonDelta: CLLocationDegrees = 0.05
         let lanDelta: CLLocationDegrees = 0.05
         
         let span = MKCoordinateSpan(latitudeDelta: lanDelta, longitudeDelta: lonDelta)
         
+        //sets centre of map and how zoomed in it will be
         let region = MKCoordinateRegion(center: coordinateRegion, span: span)
 
+        //creates view
         locationMapView.setRegion(region, animated: true)
         
         // Drop a pin at user's Current Location
         let myAnnotation: MKPointAnnotation = MKPointAnnotation()
         myAnnotation.coordinate = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude);
-        
-//        myAnnotation.title = "Current location"
         locationMapView.addAnnotation(myAnnotation)
     }
     
