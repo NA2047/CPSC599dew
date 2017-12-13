@@ -35,17 +35,15 @@ extension String{
     
     var sentences: [String]?{
         get{
-            var range = [Range<String.Index>]()
-            let tagger = self.linguisticTags(in: self.startIndex..<self.endIndex, scheme: NSLinguisticTagScheme.lexicalClass.rawValue,options:[.omitWhitespace],tokenRanges:&range)
+            var ranges = [Range<String.Index>]()
+            let tagger = self.linguisticTags(in: self.startIndex..<self.endIndex, scheme: NSLinguisticTagScheme.lexicalClass.rawValue,options:[.omitWhitespace],tokenRanges:&ranges)
             var result = [String]()
-            print(result)
-            let ixs = tagger.enumerated().filter {$0.1 == "SentenceTerminator"}.map {range[$0.0].lowerBound}
-            print(ixs)
+            let terminators = tagger.enumerated().filter {$0.1 == "SentenceTerminator"}.map {ranges[$0.0].lowerBound}
             var prev = self.startIndex
-            for ix in ixs {
-                let rangeS = prev...ix
-                result.append(self[rangeS].trimmingCharacters(in: NSCharacterSet.whitespaces))
-                prev = self.index(after: ix)
+            for index in terminators {
+                let terminatorRange = prev...index
+                result.append(self[terminatorRange].trimmingCharacters(in: NSCharacterSet.whitespaces))
+                prev = self.index(after: index)
             }
             return result
             
@@ -215,7 +213,7 @@ extension String{
                 return dom
             }
             else{
-                precondition(tagger.dominantLanguage == nil, "much bigger problem iwht your domLang")
+                precondition(tagger.dominantLanguage == nil, "much bigger problem with your domLang")
             }
             return "should not get here, if you are you got a problem"
         }

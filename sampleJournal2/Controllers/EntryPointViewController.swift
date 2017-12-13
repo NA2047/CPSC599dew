@@ -35,7 +35,7 @@ class EntryPointViewController: UIViewController {
 //        let version = "2017-07-06" // use today's date for the most recent version
 //        let toneAnalyzer = ToneAnalyzer(username: username, password: password, version: version)
 //        
-//        var text = "I was asked to sign a third party contract a week out from stay. If it wasn't an 8 person group that took a lot of wrangling I would have cancelled the booking straight away. Bathrooms - there are no stand alone bathrooms. Please consider this - you have to clear out the main bedroom to use that bathroom. Other option is you walk through a different bedroom to get to its en-suite. Signs all over the apartment - there are signs everywhere - some helpful - some telling you rules. Perhaps some people like this but It negatively affected our enjoyment of the accommodation. Stairs - lots of them - some had slightly bending wood which caused a minor injury."
+        var texts = "I was asked to sign a third party contract a week out from stay. If it wasn't an 8 person group that took a lot of wrangling I would have cancelled the booking straight away. Bathrooms - there are no stand alone bathrooms. Please consider this - you have to clear out the main bedroom to use that bathroom. Other option is you walk through a different bedroom to get to its en-suite. Signs all over the apartment - there are signs everywhere - some helpful - some telling you rules. Perhaps some people like this but It negatively affected our enjoyment of the accommodation. Stairs - lots of them - some had slightly bending wood which caused a minor injury."
 //        var failure = { (error: Error) in print(error) }
 //        //        let tones = ["emotion", "this-tone-is-invalid"]
 //        toneAnalyzer.getTone(ofText: text, failure: failure) { tones in
@@ -57,6 +57,13 @@ class EntryPointViewController: UIViewController {
 //            print(error)
 
 //        }
+//        let username = "7ed26589-b179-4365-b91f-836a6b9af90c"
+//        let password =  "utIZLIYCNQwD"
+//        let version = "2017-07-06"
+//        let t = Tones(userName: username, password: password, version: version)
+//        t.getTones(textToBeAnalyzed: texts)
+        
+        
     }
     
     override func didReceiveMemoryWarning() {
