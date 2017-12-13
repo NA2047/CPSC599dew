@@ -32,8 +32,69 @@ extension String{
 //        case classifier
 //        case idiom
 //    }
-
     
+    var sentences: [String]?{
+        get{
+            var range = [Range<String.Index>]()
+            let tagger = self.linguisticTags(in: self.startIndex..<self.endIndex, scheme: NSLinguisticTagScheme.lexicalClass.rawValue,options:[.omitWhitespace],tokenRanges:&range)
+            var result = [String]()
+            print(result)
+            let ixs = tagger.enumerated().filter {$0.1 == "SentenceTerminator"}.map {range[$0.0].lowerBound}
+            print(ixs)
+            var prev = self.startIndex
+            for ix in ixs {
+                let rangeS = prev...ix
+                result.append(self[rangeS].trimmingCharacters(in: NSCharacterSet.whitespaces))
+                prev = self.index(after: ix)
+            }
+            return result
+            
+        }
+    }
+
+    var predispostion: [String]?{
+        get{
+            if (self == ""){
+                return nil
+            }
+            else{
+                let vebs = computed(tag: .noun)
+                if let result = vebs[String(describing: NSLinguisticTag.preposition)]{
+                    return result
+                }
+            }
+            return nil
+        }
+    }
+    var adverbs: [String]?{
+        get{
+            if (self == ""){
+                return nil
+            }
+            else{
+                let vebs = computed(tag: .noun)
+                if let result = vebs[String(describing: NSLinguisticTag.adverb)]{
+                    return result
+                }
+            }
+            return nil
+        }
+    }
+    
+    var idioms: [String]?{
+        get{
+            if (self == ""){
+                return nil
+            }
+            else{
+                let vebs = computed(tag: .noun)
+                if let result = vebs[String(describing: NSLinguisticTag.idiom)]{
+                    return result
+                }
+            }
+            return nil
+        }
+    }
     
     var nouns: [String]?{
         get{
@@ -113,18 +174,6 @@ extension String{
         }
     }
     
-//    var sentences: [String]?{
-//        get{
-//            if (self == ""){
-//                return nil
-//            }
-//            let names = computed(linguisticTagScheme: .language)
-//            if let result = names[String(describing: NSLinguisticTag.personalName)]{
-//                return result
-//            }
-//            return nil
-//        }
-//    }
     
     
 
@@ -156,8 +205,6 @@ extension String{
         
         
     }
-
-    
 
     var dominantLanguage: String {
         get{
@@ -193,23 +240,6 @@ extension String{
         return arraySentences
     }
     
-    func parseText2(processString: String, tagSchema : NSLinguisticTagScheme, taggerOptions: Int, omitOptions: NSLinguisticTagger.Options,tags: [NSLinguisticTag]) -> [String:[String]] {
-        
-        var arraySentences1 = [String]()
-        var arraySentences = [String:[String]]()
-        let tagger = NSLinguisticTagger(tagSchemes: [tagSchema],options: taggerOptions)
-        tagger.string = processString
-        let range = NSRange(location: 0, length: processString.utf16.count)
-        tagger.enumerateTags(in: range, unit: .sentence, scheme: tagSchema, options: omitOptions) { tag, tokenRange, _ in
-            guard let tag = tag, tags.contains(tag) else { return }
-            let token = ( processString as NSString).substring(with: tokenRange)
-            arraySentences1.append(token)
-        }
-        arraySentences[String(describing: tags[0])] = arraySentences1
-        
-        return arraySentences
-    }
-    
     mutating func removingRegexMatches(pattern: String, replaceWith: String = "") {
         do {
             let regex = try NSRegularExpression(pattern: pattern, options: NSRegularExpression.Options.caseInsensitive)
@@ -229,9 +259,7 @@ extension String{
     func computed(tag:NSLinguisticTag, linguisticTagScheme: NSLinguisticTagScheme) -> [String:[String]]{
         let tags =  parseText(processString: self,tagSchema: linguisticTagScheme,taggerOptions: 0,omitOptions: [.omitPunctuation,.omitWhitespace],tags: [tag])
         return tags
-        let vebs =  parseText(processString: self,tagSchema: .lexicalClass,taggerOptions: 0,omitOptions: [.omitPunctuation,.omitWhitespace],tags: [tag])
-        
-        return vebs
+       
 
     }
     
@@ -250,12 +278,10 @@ extension String{
     func tag(text: String, scheme: String) -> [TaggedToken] {
         let options: NSLinguisticTagger.Options = [.omitWhitespace, .omitPunctuation, .omitOther]
         let tagger = NSLinguisticTagger(tagSchemes: NSLinguisticTagger.availableTagSchemes(forLanguage: "en"),
-                                        options: Int(options.rawValue))
+        options: Int(options.rawValue))
         tagger.string = text
-        
         var tokens: [TaggedToken] = []
         
-        // Using NSLinguisticTagger
         let range = NSRange(location: 0, length: text.utf16.count)
         tagger.enumerateTags(in: range, scheme:NSLinguisticTagScheme(rawValue: scheme), options: options) { tag, tokenRange, _, _ in
             let token = (text as NSString).substring(with: tokenRange)
@@ -263,6 +289,11 @@ extension String{
         }
         return tokens
     }
+    
+    
+   
+    
+    
     
     // Implementation
     

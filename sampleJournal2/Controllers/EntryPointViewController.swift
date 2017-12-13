@@ -22,11 +22,13 @@ class EntryPointViewController: UIViewController {
         listOfJournalsButton.layer.cornerRadius = 10
         
         var text = "I was asked to sign a third party contract a week out from stay. If it wasn't an 8 person group that took a lot of wrangling I would have cancelled the booking straight away. Bathrooms - there are no stand alone bathrooms. Please consider this - you have to clear out the main bedroom to use that bathroom. Other option is you walk through a different bedroom to get to its en-suite. Signs all over the apartment - there are signs everywhere - some helpful - some telling you rules. Perhaps some people like this but It negatively affected our enjoyment of the accommodation. Stairs - lots of them - some had slightly bending wood which caused a minor injury."
-        text.verbs
+//        text.verbs
 //        print(text.verbs)
 //        print(text.dominantLanguage)
 //        print(text.pronouns)
-        print(text.language())
+//        print(text.language())
+//        print(text.sentences)
+        text.sentences
         
 //        var username = "7ed26589-b179-4365-b91f-836a6b9af90c"
 //        var password = "utIZLIYCNQwD"
