@@ -9,8 +9,6 @@
 //  Logic for linking a user's weather to a journal entry should be
 //  done here.
 //
-//  TODO - RAZA: provide more documentation for code, perhaps reorder functions as needed
-//  TODO - RAZA: remove unnecessary code
 
 import UIKit
 import CoreLocation
@@ -32,16 +30,20 @@ class NewJournalViewController: UIViewController, UITextViewDelegate, CLLocation
 
         journalTextView.delegate = self
         journalTextView.layer.cornerRadius = 10
+        
+        // Disable save button until journal text view is populated
         saveJournalEntryButton.isEnabled = false
         
+        // Store bottom constraint
+        oldBottomConstraint = bottomConstraint.constant
+        
+        // Setup Location Manager to access device location
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
-        
-        print((locationManager.location?.coordinate.latitude ?? 0))
-        print((locationManager.location?.coordinate.longitude ?? 0))
        
+        // Call 'keyboardShown' when keyboard is detected to show onscreen
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardShown), name:NSNotification.Name.UIKeyboardWillShow, object: nil);
     }
     
@@ -50,23 +52,7 @@ class NewJournalViewController: UIViewController, UITextViewDelegate, CLLocation
         // Dispose of any resources that can be recreated.
     }
     
-    func textViewDidChange(_ textView: UITextView) {
-        saveJournalEntryButton.isEnabled = !textView.text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
-    }
-    
-    func textViewDidBeginEditing(_ textView: UITextView) {
-        if !self.startEditing {
-            textView.text = ""
-            textView.textColor = UIColor.white
-            self.startEditing = true
-        }
-    }
-    
-    func textViewShouldBeginEditing(_ textView: UITextView) -> Bool {
-        textView.inputAccessoryView = toolbar
-        return true
-    }
-    
+    // Store Journal after tapping the "Save" button
     func saveJournalEntry() {
         if self.journalTextView.text == "" || self.journalTextView.text == "Write here..." {
             // Did not add anything new, yet.
@@ -94,44 +80,56 @@ class NewJournalViewController: UIViewController, UITextViewDelegate, CLLocation
             
             if let latitude = locationManager.location?.coordinate.latitude, let longitude = locationManager.location?.coordinate.longitude {
                 currentLocation = (latitude,longitude)
-                print("here")
-                print(currentLocation)
-                print(longitude)
             }
             
             // New journal object
             let newJournal = JournalProperties(enteredJournal!, currentDate, currentTime, currentLocation, enteredJournal!.performJournalAnalysis())
             self.newJournal = newJournal
-            print(newJournal?.sentiment)
-            print(newJournal?.location!)
-            print(newJournal?.journalEntry)
         }
     }
     
+    // Detect segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
         saveJournalEntry()
     }
     
+    // Hide keyboard and resize textview field to height of display
     @IBAction func textfieldDoneButtonTapped(_ sender: UIBarButtonItem) {
         self.view.endEditing(true)
         bottomConstraint.constant = self.oldBottomConstraint
     }
     
-    private func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation])->CLLocation {
-        let userLocation: CLLocation = locations[0]
-//        let latitude = userLocation.coordinate.latitude
-//        let longitude = userLocation.coordinate.longitude
-//        print(locations)
-        return userLocation
+    // Enable "Save" button
+    func textViewDidChange(_ textView: UITextView) {
+        saveJournalEntryButton.isEnabled = !textView.text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
     }
     
-    // From stack overflow - find keyboard height
-    //  TODO - RAZA: provide exact stack overflow link if possible
+    // Remove preloaded text and set text color
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if !self.startEditing {
+            textView.text = ""
+            textView.textColor = UIColor.white
+            self.startEditing = true
+        }
+    }
+    
+    // Show keyboard toolbar with "Done" icon
+    func textViewShouldBeginEditing(_ textView: UITextView) -> Bool {
+        textView.inputAccessoryView = toolbar
+        return true
+    }
+    
+    // Find keyboard height
+    // Source: https://stackoverflow.com/questions/25451001/getting-keyboard-size-from-userinfo-in-swift
     @objc func keyboardShown(notification: NSNotification) {
         let info = notification.userInfo!
         let keyboardFrame: CGRect = (info[UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
-        oldBottomConstraint = bottomConstraint.constant
         bottomConstraint.constant = keyboardFrame.height + 10.0
+    }
+    
+    private func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation])->CLLocation {
+        let userLocation: CLLocation = locations[0]
+        return userLocation
     }
 }

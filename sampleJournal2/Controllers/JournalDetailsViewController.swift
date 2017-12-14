@@ -8,39 +8,43 @@
 //  Other information like weather and dew. survey results can be
 //  displayed in this View Controller.
 //
-//  TODO - RAZA: provide more documentation for code if you think it's needed
-//  TODO - RAZA: remove unnecessary code
 
 import UIKit
 import MapKit
 
 class JournalDetailsViewController: UIViewController, UITextViewDelegate {
+    // Connect UI elements from Storyboard
     @IBOutlet weak var deleteJournalEntryButton: UIBarButtonItem!
     @IBOutlet weak var emotionLabel: UILabel!
     @IBOutlet weak var journalTextView: UITextView!
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var locationMapView: MKMapView!
     
+    // Contains selected journal from list view
     var selectedJournal: JournalProperties?
-    var deleteJournal = false // delete journal flag -> true == delete, false == do not delete
+    
+    //delete journal flag -> true == delete, false == do not delete
+    var deleteJournal = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        // Set delegate to self to detect
         journalTextView.delegate = self
-        journalTextView.layer.cornerRadius = 10 // rounded text view box
-        deleteJournal = false // reset deleteJournal flag to false
+        
+        // rounded text view box
+        journalTextView.layer.cornerRadius = 10
+        
+        // reset deleteJournal flag to false
+        deleteJournal = false
+        
+        // Populate UI with journal details
         self.title = selectedJournal?.date
         journalTextView.text = selectedJournal?.journalEntry
         emotionLabel.text = (selectedJournal?.sentiment.0)! + " " + (selectedJournal?.sentiment.2)!
-
-        print(selectedJournal?.journalEntry ?? "could not print journal entry")
-        print(selectedJournal?.time ?? "could not print time")
-        print( (selectedJournal?.location?.latitude)!)
         
+        // Set locationview with journal location data
         let location = CLLocation(latitude: (selectedJournal?.location?.latitude)!, longitude: (selectedJournal?.location?.longitude)!)
-        
         centerMapOnLocation(location: location)
     }
 
@@ -50,13 +54,9 @@ class JournalDetailsViewController: UIViewController, UITextViewDelegate {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-
-            journalTextView.attributedText = getColorForEmotion(text: journalTextView.text!, dict: LoadCSV.emotions)
-
-  
+        journalTextView.attributedText = getColorForEmotion(text: journalTextView.text!, dict: LoadCSV.emotions)
     }
     
-
     func centerMapOnLocation(location: CLLocation) {
         //Gets long and lat from stored location
         let latitude: CLLocationDegrees = location.coordinate.latitude
