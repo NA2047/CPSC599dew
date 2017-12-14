@@ -5,29 +5,30 @@
 //  This class defines the View Controller for the list of journals.
 //  Persistent storage of journals occurs in this class.
 //
-//  TODO - RAZA: provide more documentation for code, reorder code in this file so that it's more intuitive?
-//  TODO - RAZA: remove unnecessary code
-//
 
 import UIKit
 import os.log
 
 class JournalListTableViewController: UITableViewController {
     
+    // Contains a list of journals
     var listOfJournals = [JournalProperties]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
     
+        // If previous journals exist
         if let savedJournals = loadJournals() {
+            // Return the list of journals from local storage
             listOfJournals += savedJournals
         } else {
-            // For testing purposes
+            // For testing purposes - create a sample journal and add to list
             let sampleJournal = JournalProperties("I am pretty stressed", "21/10/2017", "10:55 PM", (51.077853, -114.130181), ("negative", "", "😔"))
             listOfJournals.append(sampleJournal!)
             saveJournals()
         }
         
+        // Reload table view rows
         tableView.reloadData()
     }
 
@@ -42,34 +43,27 @@ class JournalListTableViewController: UITableViewController {
         return 1
     }
 
+    // Count number of journals in list
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return listOfJournals.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "JournalCell", for: indexPath)
-        // Configure the cell...
+        
+        // Configure the cell with journal data
         let currentJournal = listOfJournals[indexPath.row]
         cell.textLabel?.text = currentJournal.date + " - " + currentJournal.time + " " + currentJournal.sentiment.2
         cell.textLabel?.textColor = UIColor.white
         return cell
     }
 
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
     // MARK: - Action
+    
+    // When returning from another view controller
     @IBAction func unwindToJournalList(sender: UIStoryboardSegue) {
         if let sourceViewController = sender.source as? NewJournalViewController {
+            // New journal created
             
             // Compute newIndexPath for new journal
             let newIndexPath = IndexPath(row: listOfJournals.count, section: 0)
@@ -107,7 +101,7 @@ class JournalListTableViewController: UITableViewController {
     
     // MARK: - Persistent Storage
     
-    // SaveJournals
+    // Save Journals to local storage
     private func saveJournals() {
         let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(listOfJournals, toFile: JournalProperties.ArchiveURL.path)
         if isSuccessfulSave {
@@ -117,7 +111,7 @@ class JournalListTableViewController: UITableViewController {
         }
     }
     
-    // Load Journals
+    // Load Journals from local storage
     private func loadJournals() -> [JournalProperties]? {
         return NSKeyedUnarchiver.unarchiveObject(withFile: JournalProperties.ArchiveURL.path) as? [JournalProperties]
     }
@@ -127,8 +121,8 @@ class JournalListTableViewController: UITableViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
         
+        // Pass the selected object to the new view controller.
         super.prepare(for: segue, sender: sender)
         
         switch(segue.identifier ?? "") {
@@ -143,11 +137,11 @@ class JournalListTableViewController: UITableViewController {
                 fatalError("Unexpected destination: \(segue.destination)")
             }
             
-            guard let selectedMealCell = sender as? UITableViewCell else {
+            guard let selectedJournalCell = sender as? UITableViewCell else {
                 fatalError("Unexpected sender: \(sender ?? "nil")")
             }
             
-            guard let indexPath = tableView.indexPath(for: selectedMealCell) else {
+            guard let indexPath = tableView.indexPath(for: selectedJournalCell) else {
                 fatalError("The selected cell is not being displayed by the table")
             }
             
