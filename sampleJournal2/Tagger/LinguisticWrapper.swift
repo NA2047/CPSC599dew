@@ -1,21 +1,13 @@
 //
 //  LinguisticWrapper.swift
-//  BackEndModels
 //
-//  TODO - ANDREW: give a description of what this class does
-//  TODO - ANDREW: provide more documentation on what the code does
-//  TODO - ANDREW: remove unnecessary code, fix typos
+//
+
 
 import Foundation
 
-extension Dictionary {
-    mutating func merge(dict: [Key: Value]){
-        for (k, v) in dict {
-            updateValue(v, forKey: k)
-        }
-    }
-}
 
+// This extension provides a wrapper for the NSLingisticTagger and adds some of the functionality to the String class
 extension String{
 
     /**

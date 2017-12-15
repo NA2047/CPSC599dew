@@ -1,11 +1,10 @@
-//
-//  LoadCSV.swift
-//  599 Prototype
-//
 
 import Foundation
 
-
+/**
+ This function struct is used to store and hold a single loaded value of emotions CSV
+ 
+ */
 struct LoadCSV{
     static let emotions = loadEmotions()
     

@@ -1,15 +1,14 @@
-//
-//  UIColourStringExtensions.swift
-//  599 Prototype
-//
-//  Colours for various sentiments are defined in this class.
-//  These colours are used to colour text in JournalDetailsViewController.
+
+
 //
 //
 
 import Foundation
 import UIKit
-
+/**
+ Colours for various sentiments are defined in this class.
+ These colours are used to colour text in JournalDetailsViewController.
+ */
 extension String{
     
     var UIColorEmotion:UIColor? {

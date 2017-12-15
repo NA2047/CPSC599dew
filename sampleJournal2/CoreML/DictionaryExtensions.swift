@@ -1,14 +1,16 @@
-//
-//  DictionaryExtensions.swift
-//  599 Prototype
-//
-//  Created by Andrew on 2017-12-14.
-//  Copyright © 2017 Raza Qazi. All rights reserved.
-//
+
 
 import Foundation
 
 extension Dictionary{
+    
+    /**
+     This function loads in a two colum CSV and converts it to a dictionary with  the first colum  as the key and the second as the value.
+     
+     - parameter fileName: the name of the file to be loaded in String form without extension
+      - parameter typeOfFile: file extension of the file
+     - return a Ditionary of type [String:String]
+     */
     func csvOfTwoColoumToDictioanry(fileName fileToOpen: String, typeOfFile fileType: String ) throws -> [String:String]  {
         guard let filepath = Bundle.main.path(forResource: fileToOpen, ofType: fileType)
             else {
@@ -32,4 +34,17 @@ extension Dictionary{
         }
         return dict
     }
+    
+    
+    
+    /**
+    merges two dictionaries together
+     
+     - parameter dict: a ditionary to be merged with the calling instance
+     */
+        mutating func merge(dict: [Key: Value]){
+            for (k, v) in dict {
+                updateValue(v, forKey: k)
+            }
+        }
 }
