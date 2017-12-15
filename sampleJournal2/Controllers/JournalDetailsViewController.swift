@@ -51,7 +51,7 @@ class JournalDetailsViewController: UIViewController, UITextViewDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
 
-            journalTextView.attributedText = getColorForEmotion(text: journalTextView.text!, dict: LoadCSV.emotions)
+            journalTextView.attributedText = getColorForEmotion(text: journalTextView.text!, emotionToToneDictionary: LoadCSV.emotions)
 
   
     }

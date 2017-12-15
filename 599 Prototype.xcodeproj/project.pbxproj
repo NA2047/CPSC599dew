@@ -17,10 +17,10 @@
 		7878B73E1FC127C1003482B5 /* JournalDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7878B73D1FC127C1003482B5 /* JournalDetailsViewController.swift */; };
 		7878B7401FC12960003482B5 /* JournalListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7878B73F1FC12960003482B5 /* JournalListTableViewController.swift */; };
 		7878B7421FC12F47003482B5 /* JournalProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7878B7411FC12F47003482B5 /* JournalProperties.swift */; };
-		8B15F3C61FD110AC0089332E /* ViewControllerExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B15F3C51FD110AC0089332E /* ViewControllerExtentions.swift */; };
+		8B15F3C61FD110AC0089332E /* ViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B15F3C51FD110AC0089332E /* ViewControllerExtensions.swift */; };
 		8B2B175F1FDF4F43007369BA /* LoadCSV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2B175E1FDF4F43007369BA /* LoadCSV.swift */; };
 		8B3586A91FE0EC4D00D080A3 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3586A81FE0EC4D00D080A3 /* Reachability.swift */; };
-		8B66234C1FD79B9800EAAFFD /* TempExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B66234B1FD79B9800EAAFFD /* TempExtensions.swift */; };
+		8B66234C1FD79B9800EAAFFD /* UIColourStringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B66234B1FD79B9800EAAFFD /* UIColourStringExtensions.swift */; };
 		8B8590B71FD2CD4200F134C9 /* emotions.csv in Resources */ = {isa = PBXBuildFile; fileRef = 8B8590B61FD2CD4200F134C9 /* emotions.csv */; };
 		8B951AE31FBFCCD900FC171D /* AlchemyLanguageV1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BD717941FBFBB1C002AB936 /* AlchemyLanguageV1.framework */; };
 		8B951AE41FBFCCD900FC171D /* AlchemyLanguageV1.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8BD717941FBFBB1C002AB936 /* AlchemyLanguageV1.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -42,7 +42,7 @@
 		8B951AFC1FBFCCD900FC171D /* TextToSpeechV1.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8BD7179A1FBFBB1D002AB936 /* TextToSpeechV1.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8B951AFE1FBFCCDA00FC171D /* ToneAnalyzerV3.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8BD717921FBFBB1C002AB936 /* ToneAnalyzerV3.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8B951B001FBFCCDA00FC171D /* TradeoffAnalyticsV1.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8BD717901FBFBB1C002AB936 /* TradeoffAnalyticsV1.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		8BC514351FD1041100607EB9 /* CoreMLExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC514341FD1041100607EB9 /* CoreMLExtention.swift */; };
+		8BC514351FD1041100607EB9 /* CoreMLStringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC514341FD1041100607EB9 /* CoreMLStringExtension.swift */; };
 		8BD7179D1FBFBB1D002AB936 /* DocumentConversionV1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BD7178E1FBFBB1C002AB936 /* DocumentConversionV1.framework */; };
 		8BD7179E1FBFBB1D002AB936 /* SpeechToTextV1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BD7178F1FBFBB1C002AB936 /* SpeechToTextV1.framework */; };
 		8BD7179F1FBFBB1D002AB936 /* TradeoffAnalyticsV1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BD717901FBFBB1C002AB936 /* TradeoffAnalyticsV1.framework */; };
@@ -53,6 +53,7 @@
 		8BD717A71FBFBB1D002AB936 /* PersonalityInsightsV3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BD717981FBFBB1D002AB936 /* PersonalityInsightsV3.framework */; };
 		8BD717A81FBFBB1D002AB936 /* RetrieveAndRankV1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BD717991FBFBB1D002AB936 /* RetrieveAndRankV1.framework */; };
 		8BD717A91FBFBB1D002AB936 /* TextToSpeechV1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BD7179A1FBFBB1D002AB936 /* TextToSpeechV1.framework */; };
+		8BED53B51FE2D1B60005CD3F /* DictionaryExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BED53B41FE2D1B60005CD3F /* DictionaryExtensions.swift */; };
 		8BEE6C2C1FC2257300A87588 /* ToneAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEE6C2B1FC2257300A87588 /* ToneAnalyzer.swift */; };
 		8BEE6C2E1FC2257700A87588 /* LinguisticWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEE6C2D1FC2257700A87588 /* LinguisticWrapper.swift */; };
 		8BEE6C341FC2274600A87588 /* SentimentPolarity.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 8BEE6C2A1FC2257000A87588 /* SentimentPolarity.mlmodel */; };
@@ -99,12 +100,12 @@
 		7878B73D1FC127C1003482B5 /* JournalDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalDetailsViewController.swift; sourceTree = "<group>"; };
 		7878B73F1FC12960003482B5 /* JournalListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalListTableViewController.swift; sourceTree = "<group>"; };
 		7878B7411FC12F47003482B5 /* JournalProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalProperties.swift; sourceTree = "<group>"; };
-		8B15F3C51FD110AC0089332E /* ViewControllerExtentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtentions.swift; sourceTree = "<group>"; };
+		8B15F3C51FD110AC0089332E /* ViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtensions.swift; sourceTree = "<group>"; };
 		8B2B175E1FDF4F43007369BA /* LoadCSV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadCSV.swift; sourceTree = "<group>"; };
 		8B3586A81FE0EC4D00D080A3 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
-		8B66234B1FD79B9800EAAFFD /* TempExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TempExtensions.swift; path = sampleJournal2/Controllers/TempExtensions.swift; sourceTree = SOURCE_ROOT; };
+		8B66234B1FD79B9800EAAFFD /* UIColourStringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UIColourStringExtensions.swift; path = sampleJournal2/Controllers/UIColourStringExtensions.swift; sourceTree = SOURCE_ROOT; };
 		8B8590B61FD2CD4200F134C9 /* emotions.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = emotions.csv; sourceTree = "<group>"; };
-		8BC514341FD1041100607EB9 /* CoreMLExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreMLExtention.swift; sourceTree = "<group>"; };
+		8BC514341FD1041100607EB9 /* CoreMLStringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreMLStringExtension.swift; sourceTree = "<group>"; };
 		8BD7178E1FBFBB1C002AB936 /* DocumentConversionV1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DocumentConversionV1.framework; path = Carthage/Build/iOS/DocumentConversionV1.framework; sourceTree = "<group>"; };
 		8BD7178F1FBFBB1C002AB936 /* SpeechToTextV1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpeechToTextV1.framework; path = Carthage/Build/iOS/SpeechToTextV1.framework; sourceTree = "<group>"; };
 		8BD717901FBFBB1C002AB936 /* TradeoffAnalyticsV1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TradeoffAnalyticsV1.framework; path = Carthage/Build/iOS/TradeoffAnalyticsV1.framework; sourceTree = "<group>"; };
@@ -120,6 +121,7 @@
 		8BD7179A1FBFBB1D002AB936 /* TextToSpeechV1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TextToSpeechV1.framework; path = Carthage/Build/iOS/TextToSpeechV1.framework; sourceTree = "<group>"; };
 		8BD7179B1FBFBB1D002AB936 /* ConversationV1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ConversationV1.framework; path = Carthage/Build/iOS/ConversationV1.framework; sourceTree = "<group>"; };
 		8BD7179C1FBFBB1D002AB936 /* NaturalLanguageClassifierV1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NaturalLanguageClassifierV1.framework; path = Carthage/Build/iOS/NaturalLanguageClassifierV1.framework; sourceTree = "<group>"; };
+		8BED53B41FE2D1B60005CD3F /* DictionaryExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryExtensions.swift; sourceTree = "<group>"; };
 		8BEE6C2A1FC2257000A87588 /* SentimentPolarity.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = SentimentPolarity.mlmodel; sourceTree = "<group>"; };
 		8BEE6C2B1FC2257300A87588 /* ToneAnalyzer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToneAnalyzer.swift; sourceTree = "<group>"; };
 		8BEE6C2D1FC2257700A87588 /* LinguisticWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinguisticWrapper.swift; sourceTree = "<group>"; };
@@ -206,9 +208,10 @@
 			children = (
 				8B8590B61FD2CD4200F134C9 /* emotions.csv */,
 				8BEE6C2A1FC2257000A87588 /* SentimentPolarity.mlmodel */,
-				8BC514341FD1041100607EB9 /* CoreMLExtention.swift */,
-				8B15F3C51FD110AC0089332E /* ViewControllerExtentions.swift */,
-				8B66234B1FD79B9800EAAFFD /* TempExtensions.swift */,
+				8BC514341FD1041100607EB9 /* CoreMLStringExtension.swift */,
+				8B15F3C51FD110AC0089332E /* ViewControllerExtensions.swift */,
+				8B66234B1FD79B9800EAAFFD /* UIColourStringExtensions.swift */,
+				8BED53B41FE2D1B60005CD3F /* DictionaryExtensions.swift */,
 				8B2B175E1FDF4F43007369BA /* LoadCSV.swift */,
 			);
 			path = CoreML;
@@ -373,17 +376,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B3586A91FE0EC4D00D080A3 /* Reachability.swift in Sources */,
-				8BC514351FD1041100607EB9 /* CoreMLExtention.swift in Sources */,
+				8BC514351FD1041100607EB9 /* CoreMLStringExtension.swift in Sources */,
 				8BEE6C341FC2274600A87588 /* SentimentPolarity.mlmodel in Sources */,
 				7878B73A1FC12794003482B5 /* EntryPointViewController.swift in Sources */,
 				8BEE6C2C1FC2257300A87588 /* ToneAnalyzer.swift in Sources */,
+				8BED53B51FE2D1B60005CD3F /* DictionaryExtensions.swift in Sources */,
 				7878B73E1FC127C1003482B5 /* JournalDetailsViewController.swift in Sources */,
-				8B15F3C61FD110AC0089332E /* ViewControllerExtentions.swift in Sources */,
+				8B15F3C61FD110AC0089332E /* ViewControllerExtensions.swift in Sources */,
 				7856B1C51FBCC7DE0014C0F9 /* NewJournalViewController.swift in Sources */,
 				7856B1C31FBCC7DE0014C0F9 /* AppDelegate.swift in Sources */,
 				8B2B175F1FDF4F43007369BA /* LoadCSV.swift in Sources */,
 				8BEE6C2E1FC2257700A87588 /* LinguisticWrapper.swift in Sources */,
-				8B66234C1FD79B9800EAAFFD /* TempExtensions.swift in Sources */,
+				8B66234C1FD79B9800EAAFFD /* UIColourStringExtensions.swift in Sources */,
 				7878B7421FC12F47003482B5 /* JournalProperties.swift in Sources */,
 				7878B7401FC12960003482B5 /* JournalListTableViewController.swift in Sources */,
 			);

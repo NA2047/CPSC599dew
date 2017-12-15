@@ -1,11 +1,18 @@
 //
-//  CoreMLExtention.swift
+//  CoreMLExtension.swift
 //  599 Prototype
 //
-//  TODO - ANDREW: give a description of what this class does
-//  TODO - ANDREW: fix the typo in the naming of this file
-//  TODO - ANDREW: provide more documentation for your code, fix typos
-//
+// These extentions are used to access the coreML model called sentimentPolarity which allows users to call functions are use an interal private class that use the CoreML model to generate a decision on wether the string is positive, neative or netural
+
+//  Created by Vadym Markov
+//  Refference https://github.com/cocoa-ai/SentimentCoreMLDemo
+//MIT License
+//A short and simple permissive license with conditions only requiring preservation of copyright and license notices. Licensed works, modifications, and larger works may be distributed under different terms and without source code.
+//Permissions:
+    //Commercial use
+    //Modification
+    //Distribution
+    //Private use
 
 import Foundation
 
@@ -13,8 +20,6 @@ import Foundation
 
 
 extension String: Error{
-    
-
     
     enum Sentiment {
         case neutral
@@ -64,17 +69,11 @@ extension String: Error{
         return result.1
     }
     
-//    func getSetimentProbabilities()->(Double,Double){
-//        let classificationService = ClassificationService()
-//        let result = classificationService.predictSentiment(from: self)
-//        return result
-//    }
-//
-    
-//    func getWords() -> [String: Double]{
-//        return ClassificationService.features()
-//
-//    }
+    func getSetimentProbabilities()->(Double,Double){
+        let classificationService = ClassificationService()
+        let result = classificationService.getProp(from: self)
+        return result
+    }
     
     
     private final class ClassificationService {
@@ -88,15 +87,6 @@ extension String: Error{
             tagSchemes: NSLinguisticTagger.availableTagSchemes(forLanguage: "en"),
             options: Int(self.options.rawValue)
         )
-        
-        // MARK: - Prediction
-        
-        //  TODO - ANDREW: is this function still necessary?
-        //                 If so, the typo should be fixed.
-        //                 Otherwise, please remove the function.
-//        func getProbalities(){
-//
-//        }
         
         func predictSentiment(from text: String) -> (Sentiment,Double) {
             do {
@@ -121,6 +111,25 @@ extension String: Error{
             catch {
                 return (.neutral,0.0)
             }
+        }
+        func getProp(from text: String) -> (Double,Double) {
+            do {
+                let inputFeatures = features(from: text)
+                
+                print(inputFeatures)
+                // Make prediction only with 2 or more words
+                guard inputFeatures.count > 1 else {
+                    throw Error.featuresMissing
+                }
+                
+                let output = try model.prediction(input: inputFeatures)
+                return (output.classProbability["Pos"]!,output.classProbability["Neg"]!)
+               
+            }
+            catch {
+                return (0.0,0.0)
+            }
+            
         }
         
         

@@ -1,19 +1,15 @@
 abhor,anger
-abhorr,anger
 abhorr,disgust
 abhorrence,anger
 abhorrent,disgust
 abomin,anger
-abomin,disgust
 abominably,disgust
 abominate,anger
 abomination,anger
 admir,joy
-admir,surprise
 admirable,joy
 admirably,joy
 admiration,joy
-admiration,surprise
 admire,joy
 ador,joy
 adorably,joy
@@ -122,20 +118,17 @@ avid,joy
 avidity,joy
 avidness,joy
 aw,fear
-aw,surprise
 awe,surprise
 awed,surprise
 awestricken,surprise
 awestruck,surprise
 awful,fear
-awful,surprise
 awfully,fear
 bad,sadness
 bad_blood,anger
 bad_temp,anger
 bad_temper,anger
 baffl,anger
-baffl,surprise
 baffle,surprise
 baffled,anger
 balk,anger
@@ -257,9 +250,7 @@ churn_up,disgust
 class_feel,anger
 class_feeling,anger
 cliff-hang,fear
-cliff-hang,joy
 cliff-hanging,fear
-cliff-hanging,joy
 close,joy
 closeness,joy
 coldhearted,fear
@@ -363,7 +354,6 @@ despondency,sadness
 despondent,sadness
 despondently,sadness
 detest,anger
-detest,disgust
 detestable,disgust
 detestably,disgust
 detestation,anger
@@ -386,9 +376,7 @@ disconsol,sadness
 disconsolate,sadness
 disconsolateness,sadness
 discourag,anger
-discourag,sadness
 discouraged,anger
-discouraged,sadness
 disdain,anger
 disgust,disgust
 disgusted,disgust
@@ -401,7 +389,6 @@ disheartened,sadness
 disheartening,sadness
 dismal,sadness
 dismay,fear
-dismay,sadness
 dispirit,sadness
 dispirited,sadness
 dispiritedness,sadness
@@ -527,7 +514,6 @@ excitement,joy
 exciting,joy
 excited, joy
 execr,anger
-execr,sadness
 execrable,sadness
 execrate,anger
 execration,anger
@@ -675,7 +661,6 @@ gratify,joy
 gratifying,joy
 gratifyingly,joy
 gravel,anger
-gravel,surprise
 great,joy
 greedi,anger
 greedy,anger
@@ -711,7 +696,6 @@ gusto,joy
 hackl,anger
 hackles,anger
 hangdog,fear
-hangdog,sadness
 hapless,sadness
 happi,joy
 happili,joy
@@ -719,7 +703,6 @@ happily,joy
 happiness,joy
 happy,joy
 harass,anger
-harass,sadness
 harassed,anger
 harassment,anger
 hardheart,fear
@@ -759,7 +742,6 @@ hesitancy,fear
 hesitantly,fear
 hesitatingly,fear
 hideous,disgust
-hideous,fear
 hideously,fear
 high_dudgeon,anger
 high_spirit,joy
@@ -786,7 +768,6 @@ horrify,fear
 horrifying,fear
 horrifyingly,fear
 horror,disgust
-horror,fear
 horror-stricken,fear
 horror-struck,fear
 hostil,anger
@@ -918,7 +899,6 @@ livid,anger
 lividity,anger
 lividly,anger
 loath,anger
-loath,disgust
 loathe,anger
 loathing,anger
 loathly,disgust
@@ -1047,20 +1027,17 @@ odiously,disgust
 odium,anger
 offend,anger
 offens,anger
-offens,disgust
 offense,anger
 offensive,disgust
 offering_protect,joy
 offering_protection,joy
 oppress,anger
-oppress,sadness
 oppressed,sadness
 oppression,sadness
 oppressive,sadness
 oppressively,sadness
 oppressiveness,sadness
 outrag,anger
-outrag,fear
 outrage,anger
 outraged,anger
 outrageous,fear
@@ -1095,9 +1072,7 @@ perki,joy
 perkiness,joy
 perplex,surprise
 persecut,anger
-persecut,sadness
 persecute,anger
-persecute,sadness
 persecuted,sadness
 peski,anger
 pesky,anger
@@ -1362,13 +1337,9 @@ surprisedly,surprise
 surprising,surprise
 surprisingly,surprise
 suspens,fear
-suspens,joy
 suspense,fear
-suspense,joy
 suspenseful,fear
-suspenseful,joy
 suspensive,fear
-suspensive,joy
 sympathet,joy
 sympathetic,joy
 sympathetically,joy
@@ -1383,7 +1354,6 @@ tear,sadness
 tearful,sadness
 tearfulness,sadness
 teas,anger
-teas,joy
 teased,joy
 teasing,anger
 temper,anger
