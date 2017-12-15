@@ -2,9 +2,6 @@
 //  LoadCSV.swift
 //  599 Prototype
 //
-//  Created by Andrew on 2017-12-11.
-//  Copyright © 2017 Raza Qazi. All rights reserved.
-//
 
 import Foundation
 

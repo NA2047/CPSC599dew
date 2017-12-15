@@ -7,8 +7,6 @@
 //
 //  An attribute for weather can be added in here.
 //
-//  TODO - RAZA: provide more documentation for code, reorder code in this file so that it's more intuitive?
-//
 
 import Foundation
 import os.log
@@ -22,7 +20,7 @@ class JournalProperties: NSObject, NSCoding {
     var sentiment: (String, String, String) = ("", "", "") // emotionText, emotionConfidence, emotionEmoji
     
     
-    // Property Keys
+    // Property Keys to define each journal element key and value
     struct PropertyKey {
         static let journalEntry = "journalEntry"
         static let date = "date"
@@ -38,11 +36,11 @@ class JournalProperties: NSObject, NSCoding {
         static let sentiment_2 = "sentiment_2"
     }
     
-    //MARK: Archiving Paths
+    //MARK: Archiving Paths to local storage locatiom
     static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
     static let ArchiveURL = DocumentsDirectory.appendingPathComponent("journals")
     
-    
+    // Object initialization when creating a new journal object
     init?(_ journal:String, _ date: String, _ time: String, _ location: (Double, Double), _ sentiment: (String, String, String)) {
         self.journalEntry = journal
         self.date = date
@@ -51,6 +49,7 @@ class JournalProperties: NSObject, NSCoding {
         self.sentiment = sentiment
     }
     
+    // Technique to encode object properties to local storage
     func encode(with aCoder: NSCoder) {
         aCoder.encode(journalEntry, forKey: PropertyKey.journalEntry)
         aCoder.encode(date, forKey: PropertyKey.date)
@@ -66,8 +65,11 @@ class JournalProperties: NSObject, NSCoding {
         aCoder.encode(sentiment.2, forKey: PropertyKey.sentiment_2)
     }
     
+    // When reading from local storage, technique to decode stored data to object properties
     required convenience init?(coder aDecoder: NSCoder) {
         // The journal Entry is required. If we cannot decode a name string, the initializer should fail.
+       
+        // Process journal entry, time, and date to object properties
         guard let journalEntry = aDecoder.decodeObject(forKey: PropertyKey.journalEntry) as? String else {
             os_log("Unable to decode the journal entry for a JournalProperties object.", log: OSLog.default, type: .debug)
             return nil
@@ -81,7 +83,7 @@ class JournalProperties: NSObject, NSCoding {
             return nil
         }
         
-        // Process each location tuple value
+        // Process each location tuple value and store to object
         guard let location_latitude = aDecoder.decodeObject(forKey: PropertyKey.location_latitude) as? Double else {
             os_log("Unable to decode the journal entry for a JournalProperties object.", log: OSLog.default, type: .debug)
             return nil
@@ -92,7 +94,7 @@ class JournalProperties: NSObject, NSCoding {
         }
         let location = (location_latitude, location_longitude)
         
-        // Process each sentiment variant
+        // Process each sentiment variant and store to object
         guard let sentiment_0 = aDecoder.decodeObject(forKey: PropertyKey.sentiment_0) as? String else {
             os_log("Unable to decode the journal sentiment for a JournalProperties object.", log: OSLog.default, type: .debug)
             return nil
@@ -107,7 +109,7 @@ class JournalProperties: NSObject, NSCoding {
         }
         let sentiment = (sentiment_0, sentiment_1, sentiment_2)
         
-        
+        // Initialize object from decoded value
         self.init(journalEntry, date, time, location, sentiment)
     }
 }

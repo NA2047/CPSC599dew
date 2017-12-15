@@ -12,47 +12,47 @@ import UIKit
 
 extension UIViewController{
     
-    func highlightTextWithResponse(text: String, emotionToToneDictionary:[String:String]) {
-        let highlightedText = NSMutableAttributedString(attributedString: text)
-        
-        if let positiveElements = response["positive"].array {
-            for element in positiveElements {
-                guard let elementText = element["original_text"].string else {
-                    continue
-                }
-                
-                highlightedText.addAttribute(NSForegroundColorAttributeName,
-                                             value: UIColor.white,
-                                             range: (text as NSString).range(of: elementText)
-                )
-                
-                highlightedText.addAttribute(NSBackgroundColorAttributeName,
-                                             value: AppColor.positive,
-                                             range: (text as NSString).range(of: elementText)
-                )
-            }
-        }
-        
-        if let negativeElements = response["negative"].array {
-            for element in negativeElements {
-                guard let elementText = element["original_text"].string else {
-                    continue
-                }
-                
-                highlightedText.addAttribute(NSForegroundColorAttributeName,
-                                             value: UIColor.white,
-                                             range: (text as NSString).range(of: elementText)
-                )
-                
-                highlightedText.addAttribute(NSBackgroundColorAttributeName,
-                                             value: AppColor.negative,
-                                             range: (text as NSString).range(of: elementText)
-                )
-            }
-        }
-        
-        self.attributedText = highlightedText
-    }
+//    func highlightTextWithResponse(text: String, emotionToToneDictionary:[String:String]) {
+//        let highlightedText = NSMutableAttributedString(attributedString: text)
+//        
+//        if let positiveElements = response["positive"].array {
+//            for element in positiveElements {
+//                guard let elementText = element["original_text"].string else {
+//                    continue
+//                }
+//                
+//                highlightedText.addAttribute(NSForegroundColorAttributeName,
+//                                             value: UIColor.white,
+//                                             range: (text as NSString).range(of: elementText)
+//                )
+//                
+//                highlightedText.addAttribute(NSBackgroundColorAttributeName,
+//                                             value: AppColor.positive,
+//                                             range: (text as NSString).range(of: elementText)
+//                )
+//            }
+//        }
+//        
+//        if let negativeElements = response["negative"].array {
+//            for element in negativeElements {
+//                guard let elementText = element["original_text"].string else {
+//                    continue
+//                }
+//                
+//                highlightedText.addAttribute(NSForegroundColorAttributeName,
+//                                             value: UIColor.white,
+//                                             range: (text as NSString).range(of: elementText)
+//                )
+//                
+//                highlightedText.addAttribute(NSBackgroundColorAttributeName,
+//                                             value: AppColor.negative,
+//                                             range: (text as NSString).range(of: elementText)
+//                )
+//            }
+//        }
+//        
+//        self.attributedText = highlightedText
+//    }
     
     
     /**
