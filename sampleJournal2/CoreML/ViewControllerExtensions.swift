@@ -1,11 +1,3 @@
-//
-//  ViewControllerExtentions.swift
-//  599 Prototype
-//
-//  TODO - ANDREW: give a description of what this class does
-//  TODO - ANDREW: fix the typo in the name of this class
-//  TODO - ANDREW: get rid of unused code, fix typos
-//
 
 import Foundation
 import UIKit
