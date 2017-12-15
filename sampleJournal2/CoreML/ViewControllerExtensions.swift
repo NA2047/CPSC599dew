@@ -53,7 +53,7 @@ extension UIViewController{
 //        
 //        self.attributedText = highlightedText
 //    }
-    
+//    
     
     /**
      This function gets the UI color assosiated to the Tone type

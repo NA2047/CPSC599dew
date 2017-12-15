@@ -76,7 +76,7 @@ extension String: Error{
     }
     
     
-    private final class ClassificationService {
+    fileprivate final class ClassificationService {
         private enum Error: Swift.Error {
             case featuresMissing
         }

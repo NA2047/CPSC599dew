@@ -17,21 +17,7 @@ extension Dictionary {
 }
 
 extension String{
-//    private enum type{
-//        case verb
-//        case noun
-//        case adjective
-//        case adverb
-//        case pronoun
-//        case determiner
-//        case particle
-//        case predispostion
-//        case number
-//        case conjunction
-//        case interjection
-//        case classifier
-//        case idiom
-//    }
+
     /**
      Analyze the given text.
      
