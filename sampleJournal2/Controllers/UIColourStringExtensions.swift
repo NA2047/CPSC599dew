@@ -11,7 +11,7 @@ import UIKit
  */
 extension String{
     
-    var UIColorEmotion:UIColor? {
+    var UIColorEmotion:UIColor{
         get{
             switch self{
             case "anger":
@@ -27,7 +27,7 @@ extension String{
             case "fear":
                 return UIColor(red: 165/255, green: 139/255, blue: 212/255, alpha: 1.0)
             default:
-                return nil
+                return UIColor.white
             }
         }
     }

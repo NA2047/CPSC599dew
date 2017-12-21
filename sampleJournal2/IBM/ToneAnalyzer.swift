@@ -164,6 +164,8 @@ class Tones{
      - parameter sentence: flag to check the enitre string or each sentence in the string
      */
     func analyzes(textToBeAnalyzed textToBeProcessed: String, tones : [String],sentences: Bool, failFunction: @escaping (Error) -> Void, type: String){
+        
+        
         var dict = Dictionary<String, Any>()
         ToneAnalyzes.getTone(ofText: textToBeProcessed, tones: tones, sentences: sentences, failure: failFunction){[weak self]tone in
             withExtendedLifetime(self){

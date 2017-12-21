@@ -9,7 +9,11 @@ import Foundation
 
 // This extension provides a wrapper for the NSLingisticTagger and adds some of the functionality to the String class
 extension String{
-
+    
+    
+    
+    
+    
     /**
      Analyze the given text.
      
@@ -21,7 +25,7 @@ extension String{
     func generticTagger(tags : [NSLinguisticTag]) -> [String:[String]]? {
         var ts = [String:[String]]()
         for tag in tags{
-          ts[String(describing: tag)] = parseText(processString: self, tagSchema : .lexicalClass, taggerOptions: 0, omitOptions: [.omitWhitespace,.omitPunctuation],tags: [tag])[String(describing: tag)]
+            ts[String(describing: tag)] = parseText(processString: self, tagSchema : .lexicalClass, taggerOptions: 0, omitOptions: [.omitWhitespace,.omitPunctuation],tags: [tag])[String(describing: tag)]
         }
         print(ts)
         return ts
@@ -48,7 +52,28 @@ extension String{
             
         }
     }
-
+    
+    
+    var words:[String]?{
+        
+        get{
+            let options: NSLinguisticTagger.Options = [.omitWhitespace]
+            let scheme = [NSLinguisticTagScheme.lexicalClass]
+            let tagger = NSLinguisticTagger(tagSchemes: scheme, options: Int(options.rawValue))
+            let range = NSMakeRange(0, (self as NSString).length)
+            tagger.string = self
+            var parts : [String] = []
+            tagger.enumerateTags(in: range, unit: .word, scheme: .lexicalClass, options: options) { tag, tokenRange, _ in
+                let token = (self as NSString).substring(with :tokenRange)
+                parts.append(token)
+            }
+            return parts
+        }
+        
+        
+        
+    }
+    
     /**
      Analyze the given text.
      
@@ -137,7 +162,7 @@ extension String{
      
      */
     var pronouns: [String]?{
-
+        
         get{
             if (self == ""){
                 return nil
@@ -150,7 +175,7 @@ extension String{
             }
             return nil
         }
-
+        
     }
     /**
      Analyze the given text.
@@ -172,7 +197,7 @@ extension String{
             return nil
         }
     }
-  
+    
     
     /**
      Analyze the given text.
@@ -215,7 +240,7 @@ extension String{
     
     
     
-
+    
     /**
      Analyze the given text.
      
@@ -280,11 +305,11 @@ extension String{
      Analyze the given text. This function is more full fetured and can use the full power of the NSLinguisticTagger
      
      This function is used to simplfy the process of calling NSLinguisticTagger
-      - parameter processString: string to be passed to the NSLinguisticTagger
-      - parameter tagSchema: this tells the NSLinguisticTagger what to look for, with the most common being nameType, lexicalClass, lemma
-      - parameter taggerOptions: not yet implemented , future updates to swift will add functionality
-      - parameter omitOptions: these are areas where the NSLinguisticTagger should skip withint the string   eg. [.omitPunctuation,.omitWhitespace].
-      - parameter tags: an array of NSLinguisticTags of what to look for in the String eg. [.noun,.verb].
+     - parameter processString: string to be passed to the NSLinguisticTagger
+     - parameter tagSchema: this tells the NSLinguisticTagger what to look for, with the most common being nameType, lexicalClass, lemma
+     - parameter taggerOptions: not yet implemented , future updates to swift will add functionality
+     - parameter omitOptions: these are areas where the NSLinguisticTagger should skip withint the string   eg. [.omitPunctuation,.omitWhitespace].
+     - parameter tags: an array of NSLinguisticTags of what to look for in the String eg. [.noun,.verb].
      
      - returns: A new Dictionary of type [String:[String]]
      */
@@ -297,12 +322,12 @@ extension String{
         let range = NSRange(location: 0, length: processString.utf16.count)
         tagger.enumerateTags(in: range, unit: .word, scheme: tagSchema, options: omitOptions) { tag, tokenRange, _ in
             guard let tag = tag, tags.contains(tag) else { return }
-//            print(tag)
+            //            print(tag)
             let token = ( processString as NSString).substring(with: tokenRange)
             arraySentences1.append(token)
         }
         arraySentences[String(describing: tags[0])] = arraySentences1
-       
+        
         return arraySentences
     }
     
@@ -323,16 +348,16 @@ extension String{
             return
         }
     }
-   
+    
     /**
      This function is used return only taged strings that are needed from the tagSchema
      .lexicalClass
      
-    - parameter tags: an array of NSLinguisticTags eg. [.noun,.verb].
-    - returns: A new Dictionary of type [String:[String]]
+     - parameter tags: an array of NSLinguisticTags eg. [.noun,.verb].
+     - returns: A new Dictionary of type [String:[String]]
      */
     func computed(tag:NSLinguisticTag) -> [String:[String]]{
-
+        
         let tags =  parseText(processString: self,tagSchema: .lexicalClass,taggerOptions: 0,omitOptions: [.omitPunctuation,.omitWhitespace],tags: [tag])
         return tags
     }
@@ -340,17 +365,17 @@ extension String{
      This function is used return only taged strings that are needed from the tagSchema
      but can also choose which NSLinguisticTagScheme to use
      
-    - parameter tags: an array of NSLinguisticTags eg. [.noun,.verb].
-    - parameter linguisticTagScheme: this tells the NSLinguisticTagger what to look for, with the most common being nameType, lexicalClass, lemma
+     - parameter tags: an array of NSLinguisticTags eg. [.noun,.verb].
+     - parameter linguisticTagScheme: this tells the NSLinguisticTagger what to look for, with the most common being nameType, lexicalClass, lemma
      - returns: A new Dictionary of type [String:[String]]
      */
     func computed(tags:NSLinguisticTag, linguisticTagScheme: NSLinguisticTagScheme) -> [String:[String]]{
         let tags =  parseText(processString: self,tagSchema: linguisticTagScheme,taggerOptions: 0,omitOptions: [.omitPunctuation,.omitWhitespace],tags: [tags])
         return tags
-       
-
+        
+        
     }
-   
+    
     func mergeTagger(tagSchema : NSLinguisticTagScheme, taggerOptions: Int, omitOptions: NSLinguisticTagger.Options,tags: [NSLinguisticTag]) -> [String:[String]]{
         var results = [String:[String]]()
         for tag in tags{
@@ -359,14 +384,14 @@ extension String{
         }
         return results
     }
-
+    
     
     typealias TaggedToken = (String, String?)
     
     func tag(text: String, scheme: String) -> [TaggedToken] {
         let options: NSLinguisticTagger.Options = [.omitWhitespace, .omitPunctuation, .omitOther]
         let tagger = NSLinguisticTagger(tagSchemes: NSLinguisticTagger.availableTagSchemes(forLanguage: "en"),
-        options: Int(options.rawValue))
+                                        options: Int(options.rawValue))
         tagger.string = text
         var tokens: [TaggedToken] = []
         
@@ -379,7 +404,7 @@ extension String{
     }
     
     
-   
+    
     
     func partOfSpeech() -> [TaggedToken] {
         return tag(text: self, scheme:NSLinguisticTagScheme.lexicalClass.rawValue)
@@ -393,7 +418,7 @@ extension String{
         return tag(text: self, scheme: NSLinguisticTagScheme.language.rawValue)
     }
     
-
-
+    
+    
 }
 

@@ -16,7 +16,6 @@ extension Dictionary{
             else {
                 throw "File not found"
         }
-        //        var dict = [String: String]()
         var dict = self as! [String:String]
         let url = URL(fileURLWithPath: filepath)
         do {
@@ -35,7 +34,8 @@ extension Dictionary{
         return dict
     }
     
-    
+//    let mutableAttributedString = NSMutableAttributedString()
+
     
     /**
     merges two dictionaries together
@@ -48,3 +48,16 @@ extension Dictionary{
             }
         }
 }
+
+//extension NSMutableAttributedString {
+//    
+//    static func + (left: NSAttributedString, right: NSAttributedString) -> NSAttributedString
+//    {
+//        let result = NSMutableAttributedString()
+//        result.append(left)
+//        result.append(right)
+//        return result
+//    }
+//    
+//}
+
