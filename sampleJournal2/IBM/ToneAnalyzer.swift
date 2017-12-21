@@ -27,7 +27,7 @@ class Tones{
      */
     fileprivate var writing:[String:Any]?
     /**
-      This social styles variable is used as a private storage after getToneTypes for emotions
+     This social styles variable is used as a private storage after getToneTypes for emotions
      */
     fileprivate var social:[String:Any]?
     
@@ -42,7 +42,7 @@ class Tones{
      
      -usage Tones.socialDocumentTones = "Text to be anaylized"
      if let tone = Tones.socialDocumentTones {
-        do something with the return type
+     do something with the return type
      }
      */
     var socialDocumentTones:Any?{
@@ -110,7 +110,7 @@ class Tones{
     }
     
     /**
-    this variable is used to check to see if device has internet
+     this variable is used to check to see if device has internet
      */
     var connectivity:Bool{
         get{

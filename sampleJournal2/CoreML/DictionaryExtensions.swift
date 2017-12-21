@@ -8,7 +8,7 @@ extension Dictionary{
      This function loads in a two colum CSV and converts it to a dictionary with  the first colum  as the key and the second as the value.
      
      - parameter fileName: the name of the file to be loaded in String form without extension
-      - parameter typeOfFile: file extension of the file
+     - parameter typeOfFile: file extension of the file
      - return a Ditionary of type [String:String]
      */
     func csvOfTwoColoumToDictioanry(fileName fileToOpen: String, typeOfFile fileType: String ) throws -> [String:String]  {
@@ -34,19 +34,19 @@ extension Dictionary{
         return dict
     }
     
-//    let mutableAttributedString = NSMutableAttributedString()
-
+    //    let mutableAttributedString = NSMutableAttributedString()
+    
     
     /**
-    merges two dictionaries together
+     merges two dictionaries together
      
      - parameter dict: a ditionary to be merged with the calling instance
      */
-        mutating func merge(dict: [Key: Value]){
-            for (k, v) in dict {
-                updateValue(v, forKey: k)
-            }
+    mutating func merge(dict: [Key: Value]){
+        for (k, v) in dict {
+            updateValue(v, forKey: k)
         }
+    }
 }
 
 //extension NSMutableAttributedString {

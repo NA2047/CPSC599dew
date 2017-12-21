@@ -9,10 +9,10 @@
 //MIT License
 //A short and simple permissive license with conditions only requiring preservation of copyright and license notices. Licensed works, modifications, and larger works may be distributed under different terms and without source code.
 //Permissions:
-    //Commercial use
-    //Modification
-    //Distribution
-    //Private use
+//Commercial use
+//Modification
+//Distribution
+//Private use
 
 import Foundation
 
@@ -37,7 +37,7 @@ extension String: Error{
             }
         }
         
-
+        
         var emoji: String {
             switch self {
             case .neutral:
@@ -48,8 +48,8 @@ extension String: Error{
                 return "😔"
             }
         }
-}
-
+    }
+    
     func performJournalAnalysis() -> (String, String, String)  {
         let classificationService = ClassificationService()
         let result = classificationService.predictSentiment(from: self )
@@ -124,7 +124,7 @@ extension String: Error{
                 
                 let output = try model.prediction(input: inputFeatures)
                 return (output.classProbability["Pos"]!,output.classProbability["Neg"]!)
-               
+                
             }
             catch {
                 return (0.0,0.0)
@@ -133,7 +133,7 @@ extension String: Error{
         }
         
         
-         func features(from text: String) -> [String: Double] {
+        func features(from text: String) -> [String: Double] {
             var wordCounts = [String: Double]()
             
             tagger.string = text

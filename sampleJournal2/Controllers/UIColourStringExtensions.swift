@@ -31,6 +31,26 @@ extension String{
             }
         }
     }
+    var UIColorEmotionText:UIColor{
+        get{
+            switch self{
+            case "anger":
+                return UIColor.black
+            case "disgust":
+                return UIColor.black
+            case "joy":
+                return UIColor.black
+            case "surprise":
+                return UIColor.black
+            case "sadness":
+                return UIColor.black
+            case "fear":
+                return UIColor.black
+            default:
+                return UIColor.white
+            }
+        }
+    }
 }
 
 
